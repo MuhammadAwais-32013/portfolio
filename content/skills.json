@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Computer Vision & Edge AI",
+    "description": "Deep learning architectures for real-time video inference, object detection, and spatial edge analytics.",
+    "skills": [
+      { "name": "YOLOv8 / YOLOv11", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Custom 4.2k frame dataset training & tuning" },
+      { "name": "PyTorch", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Custom model training & loss formulation" },
+      { "name": "OpenCV", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Frame preprocessing, optical flow & ROI masking" },
+      { "name": "TensorRT & Quantization", "level": "Proficient", "projectSlug": "traffic-choking-detection", "provenBy": "Edge FP16 engine conversion for 42 FPS throughput" },
+      { "name": "Dataset Annotation & Curation", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Self-collected multi-weather Pakistani roadway corpus" }
+    ]
+  },
+  {
+    "category": "LLM & Agentic Systems",
+    "description": "Multi-agent orchestration, retrieval-augmented generation (RAG), and deterministic tool use.",
+    "skills": [
+      { "name": "LangGraph & Multi-Agent State", "level": "Advanced", "projectSlug": "multi-agent-research-system", "provenBy": "3-agent supervisor reflection loop" },
+      { "name": "Dense Retrieval & RAG", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Hybrid BM25 + dense vector indexing over 50k papers" },
+      { "name": "Google Gemini API & SDKs", "level": "Advanced", "projectSlug": "multi-agent-research-system", "provenBy": "Structured outputs, function calling & reasoning pipelines" },
+      { "name": "Vector Databases (Qdrant/Chroma)", "level": "Proficient", "projectSlug": "articlesift", "provenBy": "Sub-800ms cosine similarity clustering" },
+      { "name": "Prompt Engineering & Guardrails", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Zero hallucination medical triage constraints" }
+    ]
+  },
+  {
+    "category": "Full-Stack Web Engineering",
+    "description": "Production-grade responsive web applications with TypeScript, modern component systems, and high performance.",
+    "skills": [
+      { "name": "Next.js (App Router)", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Production SSR/SSG apps and server actions" },
+      { "name": "React 19 & TypeScript", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Type-safe component design and custom state hooks" },
+      { "name": "Tailwind CSS & Design Tokens", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Accessible dark/light design systems" },
+      { "name": "FastAPI & Python Backend", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Async inference endpoints and telemetry feeds" },
+      { "name": "Node.js & Express", "level": "Proficient", "projectSlug": "ai-smart-health-platform", "provenBy": "Microservice routing and middleware pipelines" }
+    ]
+  },
+  {
+    "category": "Security & Cloud Infrastructure",
+    "description": "Security-first engineering: RBAC, cryptographic data protection, containerization, and automated deployments.",
+    "skills": [
+      { "name": "RBAC & Authorization", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Multi-tenant role boundaries at stayOvers.pk & Smart Health" },
+      { "name": "JWT & OAuth2 Security", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "OWASP-compliant token verification and refresh mechanics" },
+      { "name": "PostgreSQL & Database Design", "level": "Proficient", "projectSlug": "ai-smart-health-platform", "provenBy": "Normalized schemas, indexed queries, encrypted fields" },
+      { "name": "Docker & Containerization", "level": "Proficient", "projectSlug": "multi-agent-research-system", "provenBy": "Reproducible inference sandboxes and local testing" },
+      { "name": "Postman API Contract Testing", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Automated regression suites at NIC Islamabad" }
+    ]
+  },
+  {
+    "category": "Scientific Research & Academic Methods",
+    "description": "Empirical evaluation, metric auditing, paper drafting, and experimental rigor.",
+    "skills": [
+      { "name": "Empirical Model Evaluation", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "mAP@0.5:0.95, PR curves, and confusion matrix auditing" },
+      { "name": "LaTeX & Technical Writing", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Comprehensive FYP thesis and Overleaf academic CV" },
+      { "name": "Statistical Analysis (NumPy/Pandas)", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Benchmarking inference throughput and latency distributions" },
+      { "name": "Literature Review & Synthesis", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Systematic survey of edge vision and real-time congestion models" }
+    ]
+  }
+]

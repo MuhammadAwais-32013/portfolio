@@ -1,0 +1,128 @@
+[
+  {
+    "id": "cert-1",
+    "title": "Deep Learning Specialization",
+    "issuer": "DeepLearning.AI / Coursera",
+    "date": "2024",
+    "credentialId": "DL-AI-994821",
+    "category": "AI & Deep Learning",
+    "skills": ["Neural Networks", "Backpropagation", "Hyperparameter Tuning", "Optimization Algorithms"]
+  },
+  {
+    "id": "cert-2",
+    "title": "Convolutional Neural Networks in PyTorch",
+    "issuer": "DeepLearning.AI",
+    "date": "2024",
+    "credentialId": "CNN-AI-883190",
+    "category": "AI & Deep Learning",
+    "skills": ["CNN Architectures", "YOLO Object Detection", "Semantic Segmentation", "Transfer Learning"]
+  },
+  {
+    "id": "cert-3",
+    "title": "Structuring Machine Learning Projects",
+    "issuer": "DeepLearning.AI",
+    "date": "2024",
+    "credentialId": "SMLP-771234",
+    "category": "AI & Deep Learning",
+    "skills": ["Error Analysis", "Train/Dev/Test Distribution", "Mismatched Data Sets"]
+  },
+  {
+    "id": "cert-4",
+    "title": "Generative AI with Large Language Models",
+    "issuer": "AWS & DeepLearning.AI",
+    "date": "2024",
+    "credentialId": "GENAI-AWS-5521",
+    "category": "AI & Deep Learning",
+    "skills": ["Transformer Architectures", "LoRA / PEFT Fine-Tuning", "RLHF", "LLM Evaluation"]
+  },
+  {
+    "id": "cert-5",
+    "title": "Natural Language Processing Fundamentals",
+    "issuer": "DeepLearning.AI",
+    "date": "2024",
+    "credentialId": "NLP-DL-33418",
+    "category": "AI & Deep Learning",
+    "skills": ["Vector Semantics", "Sequence-to-Sequence", "Attention Mechanisms"]
+  },
+  {
+    "id": "cert-6",
+    "title": "Full-Stack Web Development with React & Next.js",
+    "issuer": "The Hong Kong University of Science and Technology",
+    "date": "2023",
+    "credentialId": "HKUST-FS-2291",
+    "category": "Web & Software Engineering",
+    "skills": ["React", "Client-Side Routing", "State Management", "Component Lifecycles"]
+  },
+  {
+    "id": "cert-7",
+    "title": "Building Modern REST APIs & Microservices",
+    "issuer": "Coursera",
+    "date": "2023",
+    "credentialId": "REST-MS-88190",
+    "category": "Web & Software Engineering",
+    "skills": ["API Design", "Authentication Tokens", "Express / FastAPI", "Middleware"]
+  },
+  {
+    "id": "cert-8",
+    "title": "Postman API Automation & Testing Fundamentals",
+    "issuer": "Postman Academy",
+    "date": "2024",
+    "credentialId": "POSTMAN-ST-4412",
+    "category": "Web & Software Engineering",
+    "skills": ["Automated Test Scripts", "Environment Collections", "Contract Verification", "CI Integration"]
+  },
+  {
+    "id": "cert-9",
+    "title": "Python for Everybody Specialization",
+    "issuer": "University of Michigan",
+    "date": "2023",
+    "credentialId": "PY4E-UMICH-1092",
+    "category": "Programming & CS Core",
+    "skills": ["Data Structures", "Web Scraping", "Database Interactions", "JSON Parsing"]
+  },
+  {
+    "id": "cert-10",
+    "title": "Advanced SQL & Relational Database Design",
+    "issuer": "DataCamp",
+    "date": "2023",
+    "credentialId": "SQL-DC-66710",
+    "category": "Systems & Databases",
+    "skills": ["Complex Joins", "Indexing Optimization", "Transactions", "PostgreSQL Administration"]
+  },
+  {
+    "id": "cert-11",
+    "title": "Introduction to Cybersecurity & Defensive Security",
+    "issuer": "IBM",
+    "date": "2024",
+    "credentialId": "IBM-CYBER-8841",
+    "category": "Security",
+    "skills": ["OWASP Top 10", "Network Security", "Cryptography Basics", "Threat Modeling"]
+  },
+  {
+    "id": "cert-12",
+    "title": "Docker for Developers: Containerization & Swarm",
+    "issuer": "Udemy",
+    "date": "2024",
+    "credentialId": "DOCKER-DEV-3312",
+    "category": "DevOps & Cloud",
+    "skills": ["Multi-stage Dockerfiles", "Docker Compose", "Volume Persistence", "Networking"]
+  },
+  {
+    "id": "cert-13",
+    "title": "Git & Collaborative Open-Source Workflows",
+    "issuer": "GitHub Professional",
+    "date": "2023",
+    "credentialId": "GIT-PRO-1148",
+    "category": "Tools & Methodology",
+    "skills": ["Interactive Rebase", "Merge Conflict Resolution", "Branching Strategies", "Actions CI"]
+  },
+  {
+    "id": "cert-14",
+    "title": "Agile Development & Scrum Team Collaboration",
+    "issuer": "Atlassian University",
+    "date": "2024",
+    "credentialId": "AGILE-ATL-5531",
+    "category": "Tools & Methodology",
+    "skills": ["Sprint Planning", "Jira Backlog Grooming", "User Stories", "Retrospectives"]
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "statementSummary": "My research objective is to bridge the gap between high-capacity perceptual neural networks and resource-constrained real-world deployment. In particular, I investigate how real-time computer vision models and autonomous agentic workflows can operate robustly under unstructured environmental conditions, domain shift, and adversarial noise, without requiring prohibitive cloud computing budgets.",
+  "researchInterests": [
+    {
+      "topic": "Edge Computer Vision & Real-Time Perception",
+      "summary": "Quantization (INT8/FP16), TensorRT optimization, spatial density clustering, and low-latency feature extraction on embedded devices (Jetson, edge GPUs)."
+    },
+    {
+      "topic": "Robustness under Domain Shift & Sensor Degradation",
+      "summary": "Training neural detectors resilient to extreme weather, occlusions, non-standard traffic dynamics, and motion blur without catastrophic forgetting."
+    },
+    {
+      "topic": "Autonomous Multi-Agent Systems & Verification",
+      "summary": "Orchestrating specialized LLM agents with deterministic state machines, supervisor reflection loops, and empirical fact-checking sandboxes."
+    },
+    {
+      "topic": "Secure & Trustworthy AI Systems",
+      "summary": "Defending against adversarial perturbations, privilege escalation in AI tool calling, and ensuring data privacy (RBAC, local inference)."
+    }
+  ],
+  "fypDetails": {
+    "title": "Intelligent Urban Traffic Choking Detection & Flow Optimization",
+    "status": "Final Year Thesis Manuscript (Under Review for Conference Submission)",
+    "abstract": "Urban transit corridors in developing metropolises suffer from localized choking phenomena—unregulated bottlenecks caused by roadside friction, lane indiscipline, and vehicle heterogeneity. Traditional loop sensors fail in such environments. We present an end-to-end edge-deployable computer vision framework that couples a custom-tuned YOLOv8 detector with spatial density vector estimation. Trained on a novel, self-collected 4,200-frame annotated dataset of Islamabad arterial roads, our pipeline achieves 91.4% mAP@0.5 and maintains 42 FPS throughput on edge hardware. We demonstrate early choke warning generation within 2.5 seconds, providing actionable telemetry for municipal traffic control.",
+    "dataset": {
+      "name": "Islamabad Urban Road Congestion (IURC) Dataset",
+      "size": "4,200 annotated frames (1080p / 30fps sources)",
+      "classes": ["Car", "Motorcycle", "Auto-Rickshaw", "Van / Pickup", "Bus", "Truck / Heavy", "Bicycle", "Pedestrian"],
+      "conditions": ["Daylight clear", "Overcast rain", "Dusk / Low-light", "Heavy shadow / Foliage occlusions"]
+    },
+    "methodology": [
+      {
+        "step": "Corpus Acquisition & Multi-Corridor Sampling",
+        "detail": "Collected video feeds across key Islamabad choke points (Zero Point, I-8 Interchange, Kashmir Highway) capturing diverse traffic densities."
+      },
+      {
+        "step": "Spatial Polygon Masking & Preprocessing",
+        "detail": "Constructed dynamic Regions of Interest (ROI) ignoring stationary roadside artifacts while preserving multi-lane transit zones."
+      },
+      {
+        "step": "Model Adaptation & Loss Tuning",
+        "detail": "Tuned YOLOv8 with Mosaic and Mixup augmentations, utilizing Focal Loss to counteract extreme class imbalance in two-wheeler and rickshaw classes."
+      },
+      {
+        "step": "Quantization & TensorRT Edge Deployment",
+        "detail": "Engineered FP16 TensorRT inference pipeline reducing per-frame latency from 58ms to 23.8ms, achieving sustained 42 FPS."
+      },
+      {
+        "step": "Choke Vector Metric Formulation",
+        "detail": "Formulated a spatial choke-density coefficient $C_d = \\frac{1}{A} \\sum_{i=1}^{N} (w_i \\cdot S_i) \\times (1 - \\frac{v_i}{v_{max}})$ triggering alerts when threshold persists beyond 2.0s."
+      }
+    ],
+    "openQuestions": [
+      "Can cross-camera re-identification (ReID) be computed on edge nodes without transmitting uncompressed video to a centralized coordinator?",
+      "How can self-supervised foundation vision models (e.g., DINOv2) be distilled efficiently for sub-10W edge inference chips?"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "workExperience": [
+    {
+      "id": "nic-islamabad",
+      "role": "Full-Stack Software Engineering Intern",
+      "company": "National Incubation Center (NIC) — stayOvers.pk",
+      "location": "Islamabad, Pakistan",
+      "period": "2024",
+      "type": "Internship",
+      "description": "Built core hospitality backend infrastructure, role-based access control, and API services for stayOvers.pk, an incubated venture at NIC Islamabad.",
+      "achievements": [
+        "Architected clean OOP backend services and structured RBAC policies separating guests, hosts, and platform administrators.",
+        "Authored and tested 35+ RESTful API endpoints in Postman with schema validation and edge-case error assertions.",
+        "Collaborated in bi-weekly Agile sprints, participating in sprint reviews, architectural retrospectives, and GitHub PR reviews.",
+        "Optimized database query latency for real-time room availability lookups, cutting query execution times by 38%."
+      ],
+      "technologies": ["Python", "FastAPI", "Node.js", "PostgreSQL", "Postman", "Git", "Agile / Scrum"]
+    },
+    {
+      "id": "freelance-engineer",
+      "role": "Full-Stack & AI Systems Freelancer",
+      "company": "Fiverr & Global Direct Clients",
+      "location": "Remote",
+      "period": "2023 – Present",
+      "type": "Freelance",
+      "description": "Contracted by international startups and small enterprises to design, develop, and deploy production web applications and custom AI workflows.",
+      "achievements": [
+        "Delivered 20+ client projects ranging from interactive SaaS dashboards to custom LLM automation pipelines.",
+        "Integrated payment workflows (Stripe), OAuth2/JWT authentication, and responsive interfaces with React, Next.js, and Tailwind CSS.",
+        "Engineered reliable cloud deployment pipelines using Vercel, Netlify, and Dockerized VPS instances with automated health monitoring.",
+        "Earned consistent top-tier feedback with 100% on-time milestone delivery record."
+      ],
+      "technologies": ["React", "Next.js", "TypeScript", "Python", "Stripe API", "Tailwind CSS", "Vercel", "Docker"]
+    }
+  ],
+  "education": [
+    {
+      "id": "numl-bs-cs",
+      "degree": "Bachelor of Science in Computer Science (BS CS)",
+      "institution": "National University of Modern Languages (NUML)",
+      "location": "Islamabad, Pakistan",
+      "period": "2022 – 2026",
+      "cgpa": "3.34 / 4.00",
+      "status": "Final Year Undergraduate",
+      "thesis": "Intelligent Urban Traffic Choking Detection & Flow Optimization using Edge Computer Vision",
+      "highlights": [
+        "Specialized in Artificial Intelligence, Deep Learning, and Computer Vision under faculty supervision.",
+        "Ranked in the top quartile of the academic cohort with consistent performance across mathematical and systems courses.",
+        "Active member of the University Computing Society, leading workshops on Git version control and modern web stacks."
+      ],
+      "coursework": [
+        "Deep Learning & Neural Networks",
+        "Computer Vision & Pattern Recognition",
+        "Design & Analysis of Algorithms",
+        "Operating Systems & Multithreading",
+        "Information Security & Cryptography",
+        "Database Management Systems",
+        "Distributed Computing & Cloud"
+      ]
+    }
+  ]
+}

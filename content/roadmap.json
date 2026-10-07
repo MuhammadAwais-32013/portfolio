@@ -1,0 +1,98 @@
+{
+  "currentStatus": {
+    "title": "Graduating Senior & Full-Stack AI Engineer",
+    "summary": "Completing BS Computer Science at NUML (CGPA 3.34) with deployed computer vision models, multi-agent frameworks, and enterprise software engineering experience.",
+    "targetIntake": "Fall 2026 / Spring 2027",
+    "primaryFields": ["Computer Vision & Edge Intelligence", "Autonomous Agent Systems", "Secure & Robust AI Infrastructure"]
+  },
+  "tracks": [
+    {
+      "id": "track-csc",
+      "name": "Chinese Government Scholarship (CSC) - Type B",
+      "country": "China",
+      "focus": "MS in Artificial Intelligence / Computer Vision",
+      "status": "Contacting Professors",
+      "deadline": "November 2026 – February 2027",
+      "targetUniversities": [
+        "Tsinghua University (THU) - Institute for AI",
+        "Zhejiang University (ZJU) - College of Computer Science",
+        "Shanghai Jiao Tong University (SJTU) - School of Electronic Info & EE",
+        "University of Science and Technology of China (USTC)"
+      ],
+      "whatIBring": "Empirical dataset curation experience, custom YOLO edge quantization (42 FPS), published codebases, and strong mathematical foundation.",
+      "milestones": [
+        { "step": "Target Professor Mapping & Paper Analysis", "completed": true, "date": "Q3 2026" },
+        { "step": "Initial Research Outreach & Fit Page Dispatch", "completed": true, "date": "Oct 2026" },
+        { "step": "Secure Provisional Pre-Acceptance Letters", "completed": false, "date": "Nov–Dec 2026" },
+        { "step": "CSC Portal Formal Application Submission", "completed": false, "date": "Jan 2027" }
+      ]
+    },
+    {
+      "id": "track-anso",
+      "name": "Alliance of International Science Organizations (ANSO) Scholarship",
+      "country": "China (CAS / USTC)",
+      "focus": "Master's Degree in Computational Intelligence",
+      "status": "Targeting & Outreach",
+      "deadline": "December 2026 – February 2027",
+      "targetUniversities": [
+        "University of Chinese Academy of Sciences (UCAS)",
+        "University of Science and Technology of China (USTC)"
+      ],
+      "whatIBring": "Demonstrated initiative in solving regional traffic congestion bottlenecks using vision models; self-driven research mindset.",
+      "milestones": [
+        { "step": "Lab Selection & CAS Mentor Identification", "completed": true, "date": "Oct 2026" },
+        { "step": "Formal Supervisor Communication & Proposal Review", "completed": false, "date": "Nov 2026" },
+        { "step": "Application Package Assembly (Transcripts, 2 Ref Letters)", "completed": false, "date": "Dec 2026" },
+        { "step": "ANSO University System Submission", "completed": false, "date": "Jan 2027" }
+      ]
+    },
+    {
+      "id": "track-italy",
+      "name": "Italian Ministry of Foreign Affairs / Regional Scholarships (DSU)",
+      "country": "Italy",
+      "focus": "MSc in Artificial Intelligence Systems / Cybersecurity",
+      "status": "Application Prepared",
+      "deadline": "December 2026 – April 2027",
+      "targetUniversities": [
+        "Politecnico di Milano (PoliMi) - Computer Science & Engineering",
+        "Sapienza University of Rome - AI & Robotics",
+        "University of Padua - Data Science & AI",
+        "Politecnico di Torino (PoliTo) - Smart Systems"
+      ],
+      "whatIBring": "Production full-stack engineering portfolio, RBAC security background, zero tuition reliance through DSU regional merit grants.",
+      "milestones": [
+        { "step": "CIMEA & Document Verification Verification", "completed": true, "date": "Q3 2026" },
+        { "step": "First Call Direct University Applications", "completed": false, "date": "Dec 2026" },
+        { "step": "Pre-Enrollment on Universitaly Portal", "completed": false, "date": "Feb 2027" },
+        { "step": "DSU Regional Grant Documentation Submission", "completed": false, "date": "May 2027" }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "date": "October 2026",
+      "title": "Outreach & Pre-Application Phase",
+      "description": "Engaging prospective research advisors via tailored `/fit/` research pages; refining FYP manuscript for submission."
+    },
+    {
+      "date": "November – December 2026",
+      "title": "Supervisor Alignment & Proposal Finalization",
+      "description": "Finalizing supervisor acceptance letters for CSC/ANSO; submitting early-round Italian university applications."
+    },
+    {
+      "date": "January – February 2027",
+      "title": "Government & University Portal Submissions",
+      "description": "Formal submissions across CSC portal, CAS institutes, and European admissions systems."
+    },
+    {
+      "date": "March – June 2027",
+      "title": "Interviews, Offer Letters & Visa Processing",
+      "description": "Attending faculty video interviews, accepting top-choice scholarship offer, and securing student visa documentation."
+    },
+    {
+      "date": "Fall 2027",
+      "title": "Graduate Studies Matriculation",
+      "description": "Commencing MS in Artificial Intelligence, advancing research in edge perception and reliable agentic systems."
+    }
+  ]
+}

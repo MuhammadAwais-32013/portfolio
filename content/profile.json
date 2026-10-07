@@ -1,0 +1,73 @@
+{
+  "name": "Muhammad Awais",
+  "title": "Full-Stack AI Engineer",
+  "subtitle": "Computer Vision • Agentic Systems • Secure Web Platforms",
+  "positioningStatement": "Full-stack AI engineer who builds computer vision, LLM and agentic systems end to end, from data collection to deployed product, and wants to deepen this through research in AI and secure AI systems.",
+  "location": "Islamabad, Pakistan",
+  "email": "awais.ai.eng@gmail.com",
+  "github": "https://github.com/MuhammadAwais",
+  "linkedin": "https://linkedin.com/in/muhammad-awais-ai",
+  "education": {
+    "degree": "BS Computer Science",
+    "institution": "National University of Modern Languages (NUML)",
+    "location": "Islamabad, Pakistan",
+    "graduationYear": "2026",
+    "cgpa": "3.34 / 4.00",
+    "highlightCourses": [
+      "Deep Learning & Computer Vision",
+      "Design & Analysis of Algorithms",
+      "Information Security & Cryptography",
+      "Database Systems & Distributed Storage",
+      "Object-Oriented Software Engineering"
+    ]
+  },
+  "statusBadge": {
+    "text": "Open to AI Roles & MS Research Outreach (2026–2027)",
+    "available": true
+  },
+  "audiences": {
+    "recruiters": {
+      "label": "Recruiter Lens",
+      "tagline": "Shipping production AI and scalable full-stack products with verified metrics.",
+      "primaryCta": "View Production Projects",
+      "secondaryCta": "Download Industry CV",
+      "prioritySections": ["hero", "metrics", "projects", "experience", "skills", "contact"]
+    },
+    "professors": {
+      "label": "Professor Lens",
+      "tagline": "Exploring edge computer vision, multimodal reasoning, and secure AI systems.",
+      "primaryCta": "Read FYP & Research Statement",
+      "secondaryCta": "Download Academic CV",
+      "prioritySections": ["hero", "research", "fyp-spotlight", "roadmap", "projects", "contact"]
+    },
+    "admissions": {
+      "label": "Admissions Lens",
+      "tagline": "Clear academic trajectory targeting MS in AI and Cybersecurity.",
+      "primaryCta": "Explore Academic Roadmap",
+      "secondaryCta": "Review Academic Track Record",
+      "prioritySections": ["hero", "roadmap", "research", "achievements", "experience", "contact"]
+    }
+  },
+  "metrics": [
+    {
+      "label": "FYP Real-Time Inference",
+      "value": "42 FPS",
+      "subtext": "YOLOv8 Edge-Optimized on TensorRT"
+    },
+    {
+      "label": "Traffic Choke Detection mAP@0.5",
+      "value": "91.4%",
+      "subtext": "Trained on bespoke Islamabad road dataset"
+    },
+    {
+      "label": "Production Certifications",
+      "value": "14",
+      "subtext": "Deep Learning, Python, Web & Security"
+    },
+    {
+      "label": "NUML Academic CGPA",
+      "value": "3.34",
+      "subtext": "Consistent top quartile performance"
+    }
+  ]
+}

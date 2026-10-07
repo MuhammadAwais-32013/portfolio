@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "dr-zhang",
+    "name": "Prof. Liang Zhang",
+    "lab": "Visual Computing & Edge Perception Laboratory",
+    "institution": "Institute for Artificial Intelligence, Tsinghua University",
+    "location": "Beijing, China",
+    "recentPaper": "Efficient Real-Time Object Detection on Resource-Constrained Autonomous Platforms (CVPR 2024)",
+    "alignmentTheme": "Edge Quantization & Real-Time Choke Point Perception",
+    "keyConnections": [
+      "Your paper on model pruning matches my hands-on experience in converting YOLOv8 to FP16 TensorRT engines, achieving 42 FPS on edge hardware.",
+      "My self-curated 4,200-frame dataset directly addresses non-standard traffic and extreme occlusion challenges discussed in Section 4 of your recent publication.",
+      "I am eager to contribute to your lab's next phase on multi-camera cooperative perception under the CSC Scholarship framework."
+    ],
+    "relevantProjects": ["traffic-choking-detection", "multi-agent-research-system"]
+  },
+  {
+    "slug": "prof-rossi",
+    "name": "Prof. Marco Rossi",
+    "lab": "Embedded AI & Cyber-Physical Systems Group",
+    "institution": "Politecnico di Milano (PoliMi)",
+    "location": "Milan, Italy",
+    "recentPaper": "Fault-Tolerant Distributed Perception for Next-Generation Intelligent Transport Systems (IEEE T-ITS 2024)",
+    "alignmentTheme": "Resilient Edge Systems & Urban Transit Monitoring",
+    "keyConnections": [
+      "My FYP research directly tackles urban transit bottleneck identification under erratic road dynamics, complementing your group's focus on resilient ITS.",
+      "Having engineered production web platforms with strict RBAC and secure API boundaries, I combine AI modeling skills with production software engineering.",
+      "I am applying for the Italian DSU Scholarship and PoliMi MSc Computer Science & Engineering program for Fall 2027."
+    ],
+    "relevantProjects": ["traffic-choking-detection", "ai-smart-health-platform"]
+  },
+  {
+    "slug": "dr-wang",
+    "name": "Dr. Haoran Wang",
+    "lab": "Multi-Agent Intelligence & Reasoning Laboratory",
+    "institution": "Institute of Automation, Chinese Academy of Sciences (CAS / UCAS)",
+    "location": "Beijing, China",
+    "recentPaper": "Collaborative Multi-Agent Networks with Reflection Verification for Scientific Hypothesis Generation (NeurIPS 2024)",
+    "alignmentTheme": "Multi-Agent State Networks & Reflection Sandboxes",
+    "keyConnections": [
+      "My project on Multi-Agent Autonomous Research implemented a 3-agent supervisor reflection loop that reduced hallucination rates by 89%, closely aligning with your team's verification frameworks.",
+      "I have combined LangGraph state graphs with Docker sandboxing to ensure verifiable, deterministic tool use.",
+      "I am targeting the ANSO Fellowship under CAS supervision to deepen theoretical foundations in multi-agent game theory and cooperative reasoning."
+    ],
+    "relevantProjects": ["multi-agent-research-system", "articlesift"]
+  }
+]
