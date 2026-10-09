@@ -1,4 +1,31 @@
-[
+[ {
+    "slug": "traffic-choking-detection",
+    "title": "FYP: Traffic Choking Point Detector",
+    "shortTitle": "FYP: Traffic Choking Point Detector",
+    "domains": ["Computer Vision", "Object Detection & Tracking", "Full-Stack AI Systems"],
+    "featured": true,
+    "summary": "Final Year Project (BS Computer Science, NUML). A CCTV-based system that detects vehicles, NUML buses, pedestrians and traffic controllers at two Islamabad locations, tracks them with ByteTrack, and raises SMS and dashboard alerts when counts exceed a congestion threshold. Fine-tuned YOLOv8n reaches 89.5% mAP@0.5.",
+    "role": "Lead AI Engineer (Final Year Project). Responsible for the complete AI lifecycle: dataset annotation, YOLOv8 fine-tuning, ByteTrack integration, and connecting the AI pipeline with the full-stack web application.",
+    "period": "2025 – 2026",
+    "metrics": [
+      { "label": "mAP@0.5", "value": "89.5%" },
+      { "label": "mAP@0.5:0.95", "value": "59.3%" },
+      { "label": "Custom Dataset", "value": "1,630 images · 6,612 labelled objects" },
+      { "label": "Model Inference Time (YOLOv8n, 6.3 MB)", "value": "3.1 ms/frame" }
+    ],
+    "stack": ["Python", "YOLOv8 (Ultralytics/PyTorch)", "OpenCV", "ByteTrack", "Supervision", "FastAPI", "React", "SQLite", "JWT"],
+    "problem": "Traffic near the NUML campus, especially at 7-Up Chowk and the NUML gate, is monitored through manual observation, radio calls and phone calls, so interventions are slow. Existing CCTV cameras mostly act as passive recorders.",
+    "solution": "A fine-tuned YOLOv8n model detects four classes (vehicle, Numl_Bus, Human, Controller) on live CCTV frames. ByteTrack assigns persistent IDs to prevent double counting. Congestion is flagged when vehicle and bus counts exceed a threshold, crowd density is checked against a human-count limit, and the system checks whether a traffic controller is present before alerting.",
+    "architecture": "1. CCTV/IP stream capture (OpenCV, auto-reconnect) -> 2. YOLOv8n detection -> 3. ByteTrack + Supervision tracking -> 4. Threshold-based congestion, crowd and controller-presence logic -> 5. FastAPI backend (WebSocket) with SQLite logging -> 6. SMS/email and dashboard alerts on a React admin dashboard with JWT login and admin approval.",
+    "results": "89.5% mAP@0.5, 86.4% precision and 84.7% recall overall. Per-class mAP@0.5: Controller 96.6%, Numl_Bus 95.3%, vehicle 88.0%, Human 78.2%. Best epoch 232 of 282 (about 2.7 hours of training). Functional, integration and user-acceptance testing were done with NUML staff during the FYP demo.",
+    "challenges": "Early training gave low precision and recall because the data had noisy, blurred and duplicated frames. I cleaned 1,822 images down to 1,630 and ran four tuning cycles. Human detection is the weakest class (78.2% mAP@0.5).",
+    "limitations": "Two fixed locations only. Congestion is a count threshold, not a learned model. Accuracy drops in fog, glare and night conditions. User testing was small. No evaluation yet on unseen cameras.",
+    "nextSteps": "Re-evaluate with a split by video, error-analyse the Human class, benchmark ONNX/TensorRT latency, and evaluate congestion alerts against human-labelled states.",
+    "links": {
+      "github": "https://github.com/MuhammadAwais-32013",
+      "paperDraft": "/research#fyp-section"
+    }
+  },
   {
     "slug": "podcaster-crew",
     "title": "Podcaster Crew: Multi-Agent Automated Research-to-Podcast & Audio Engine",
@@ -99,32 +126,7 @@
       "github": "https://github.com/MuhammadAwais-32013/Sales-forecast-forecasting-model-XGBOOST/tree/main"
     }
   },
-  {
-    "slug": "traffic-choking-detection",
-    "title": "Intelligent Urban Traffic Choking Detection & Flow Optimization",
-    "shortTitle": "Traffic Choking Detection (FYP)",
-    "domains": ["Computer Vision", "Deep Learning", "Edge AI"],
-    "featured": true,
-    "summary": "Real-time edge computer vision pipeline detecting road bottlenecks, choke points, and congestion density on urban Islamabad roadways with 91.4% mAP at 42 FPS.",
-    "role": "Lead Computer Vision Researcher & Engineer (Final Year Project)",
-    "period": "2025 – 2026",
-    "metrics": [
-      { "label": "Mean Average Precision (mAP@0.5)", "value": "91.4%" },
-      { "label": "Edge Throughput", "value": "42 FPS" },
-      { "label": "Inference Latency", "value": "23.8 ms" },
-      { "label": "Custom Dataset", "value": "4,200+ Annotated Frames" }
-    ],
-    "stack": ["Python", "PyTorch", "YOLOv8", "OpenCV", "TensorRT", "FastAPI", "Next.js", "Docker"],
-    "problem": "Urban arterial roads in developing metropolitan areas face persistent unmonitored choke points caused by irregular lane discipline, sudden stops, and unregulated roadside friction. Standard loop detectors and fixed sensors cannot capture spatial congestion dynamics or distinguish moving vs stalled traffic clusters.",
-    "solution": "Developed an end-to-end computer vision framework utilizing a customized YOLOv8 model trained on a locally curated dataset of Islamabad intersections. The pipeline computes localized density vectors, tracks vehicle velocity clusters, and detects road choking within 2.5 seconds of onset.",
-    "architecture": "1. Multi-Camera Stream Capture -> 2. Adaptive Frame Preprocessing & ROI Masking -> 3. Edge YOLOv8 Inference with TensorRT Quantization -> 4. Choke Density Clustering & Velocity Vector Analysis -> 5. Real-Time Telemetry Dispatch & Operator Dashboard.",
-    "results": "Achieved 91.4% mAP@0.5 across 8 vehicle categories (cars, vans, rickshaws, motorcycles, heavy vehicles, pedestrians, bikes, buses). Optimized the network to run at 42 FPS with 23.8ms latency on edge hardware, enabling instant traffic bottleneck alarms.",
-    "challenges": "Extremely varied lighting, occlusions by heavy foliage, and heterogeneous vehicle compositions caused standard pre-trained models to collapse. Solved by curating a diverse 4,200-frame Pakistani road dataset and implementing Mosaic augmentation with focal loss re-weighting.",
-    "links": {
-      "github": "https://github.com/MuhammadAwais-32013",
-      "paperDraft": "/research#fyp-section"
-    }
-  },
+ 
   {
     "slug": "ai-smart-health-platform",
     "title": "Enterprise AI Smart Health Diagnostic & Triage Platform",

@@ -286,9 +286,7 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
               title="Toggle dark / light theme"
               aria-label="Toggle theme"
             >
-              {!mounted ? (
-                <span className="w-3.5 h-3.5 block" aria-hidden="true" />
-              ) : resolvedTheme === "dark" ? (
+              {resolvedTheme === "dark" ? (
                 <Sun className="w-3.5 h-3.5 text-amber-400" />
               ) : (
                 <Moon className="w-3.5 h-3.5 text-slate-800" />
