@@ -255,36 +255,36 @@ export function TrafficSimulationDemo() {
             </span>
           </div>
 
-          {/* Toggle Switches */}
+          {/* Toggle Switches with 44px touch targets per ui-ux-pro-max */}
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <button
               onClick={() => setShowBoxes(!showBoxes)}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md border transition-colors ${
+              className={`flex items-center gap-2 min-h-[44px] px-3.5 py-2 rounded-xl border transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none ${
                 showBoxes
-                  ? "bg-sky-500/15 border-sky-500/40 text-sky-400"
-                  : "bg-[var(--surface-2)] border-[var(--border-subtle)] text-[var(--text-dim)]"
+                  ? "bg-sky-500/15 border-sky-500/40 text-sky-400 font-semibold"
+                  : "bg-[var(--surface-2)] border-[var(--border-subtle)] text-[var(--text-dim)] hover:text-[var(--foreground)]"
               }`}
             >
-              <Eye className="w-3.5 h-3.5" />
+              <Eye className="w-4 h-4" />
               <span>YOLO Boxes</span>
             </button>
             <button
               onClick={() => setShowVectors(!showVectors)}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md border transition-colors ${
+              className={`flex items-center gap-2 min-h-[44px] px-3.5 py-2 rounded-xl border transition-colors focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:outline-none ${
                 showVectors
-                  ? "bg-purple-500/15 border-purple-500/40 text-purple-400"
-                  : "bg-[var(--surface-2)] border-[var(--border-subtle)] text-[var(--text-dim)]"
+                  ? "bg-purple-500/15 border-purple-500/40 text-purple-400 font-semibold"
+                  : "bg-[var(--surface-2)] border-[var(--border-subtle)] text-[var(--text-dim)] hover:text-[var(--foreground)]"
               }`}
             >
-              <Activity className="w-3.5 h-3.5" />
+              <Activity className="w-4 h-4" />
               <span>Flow Vectors</span>
             </button>
             <button
               onClick={() => setLowLightMode(!lowLightMode)}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md border transition-colors ${
+              className={`flex items-center gap-2 min-h-[44px] px-3.5 py-2 rounded-xl border transition-colors focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none ${
                 lowLightMode
-                  ? "bg-amber-500/15 border-amber-500/40 text-amber-400"
-                  : "bg-[var(--surface-2)] border-[var(--border-subtle)] text-[var(--text-dim)]"
+                  ? "bg-amber-500/15 border-amber-500/40 text-amber-400 font-semibold"
+                  : "bg-[var(--surface-2)] border-[var(--border-subtle)] text-[var(--text-dim)] hover:text-[var(--foreground)]"
               }`}
             >
               <span>Dusk Simulation</span>
