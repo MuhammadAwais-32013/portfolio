@@ -282,11 +282,14 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
+              suppressHydrationWarning
               className="p-2 rounded-full text-[var(--text-dim)] hover:text-[var(--foreground)] bg-[var(--surface-1)] hover:bg-[var(--surface-2)] border border-[var(--border-subtle)] transition-colors"
               title="Toggle dark / light theme"
               aria-label="Toggle theme"
             >
-              {resolvedTheme === "dark" ? (
+              {!mounted ? (
+                <Sun className="w-3.5 h-3.5 text-amber-400" />
+              ) : resolvedTheme === "dark" ? (
                 <Sun className="w-3.5 h-3.5 text-amber-400" />
               ) : (
                 <Moon className="w-3.5 h-3.5 text-slate-800" />

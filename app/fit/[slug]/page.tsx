@@ -15,6 +15,8 @@ import {
   BookOpen,
 } from "lucide-react";
 
+export const instant = false;
+
 export async function generateStaticParams() {
   const profs = getProfessors();
   return profs.map((p) => ({

@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import { Github } from "@/components/Icons";
 
+export const instant = false;
+
 export async function generateStaticParams() {
   const projects = getProjects();
   return projects.map((p) => ({
