@@ -193,7 +193,7 @@ export default async function ProfessorFitPage({
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <a
-            href={`mailto:awais.ai.eng@gmail.com?subject=${encodeURIComponent(`Graduate Research Inquiry - ${prof.name}`)}`}
+            href={`mailto:muhammad.awais.swe@gmail.com?subject=${encodeURIComponent(`Graduate Research Inquiry - ${prof.name}`)}`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg transition-colors"
           >
             <Mail className="w-4 h-4" />

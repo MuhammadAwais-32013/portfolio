@@ -25,7 +25,7 @@
     "category": "Full-Stack Web Engineering",
     "description": "Production-grade responsive web applications with TypeScript, modern component systems, and high performance.",
     "skills": [
-      { "name": "Next.js (App Router)", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Production SSR/SSG apps and server actions" },
+      { "name": "Next.js (App Router)", "level": "Advanced", "projectSlug": "dietplanner-web-app", "provenBy": "Full-stack medical RAG platform with WebSocket streaming & SSR" },
       { "name": "React 19 & TypeScript", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Type-safe component design and custom state hooks" },
       { "name": "Tailwind CSS & Design Tokens", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Accessible dark/light design systems" },
       { "name": "FastAPI & Python Backend", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Async inference endpoints and telemetry feeds" },

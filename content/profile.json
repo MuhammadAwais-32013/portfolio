@@ -1,18 +1,22 @@
 {
   "name": "Muhammad Awais",
   "title": "Full-Stack AI Engineer",
-  "subtitle": "Computer Vision • Agentic Systems • Secure Web Platforms",
-  "positioningStatement": "Full-stack AI engineer who builds computer vision, LLM and agentic systems end to end, from data collection to deployed product, and wants to deepen this through research in AI and secure AI systems.",
+  "subtitle": "Generative AI • LLMs • Agentic Systems • Computer Vision",
+  "positioningStatement": "Full-stack AI engineer specializing in Generative AI, Large Language Models, and Agentic Systems — building end-to-end solutions from research to deployed product.",
   "location": "Islamabad, Pakistan",
-  "email": "awais.ai.eng@gmail.com",
-  "github": "https://github.com/MuhammadAwais",
-  "linkedin": "https://linkedin.com/in/muhammad-awais-ai",
+  "email": "muhammad.awais.swe@gmail.com",
+  "phone": "+923464617329",
+  "whatsapp": "+923464617329",
+  "whatsappLink": "https://wa.me/923464617329",
+  "profileImage": "/P_Picture.jpeg",
+  "github": "https://github.com/MuhammadAwais-32013",
+  "linkedin": "https://www.linkedin.com/in/muhammad-awais32013",
+  "certificationsRepo": "https://github.com/MuhammadAwais-32013/Certifications",
   "education": {
     "degree": "BS Computer Science",
     "institution": "National University of Modern Languages (NUML)",
     "location": "Islamabad, Pakistan",
     "graduationYear": "2026",
-    "cgpa": "3.34 / 4.00",
     "highlightCourses": [
       "Deep Learning & Computer Vision",
       "Design & Analysis of Algorithms",
@@ -21,8 +25,14 @@
       "Object-Oriented Software Engineering"
     ]
   },
+  "researchInterests": [
+    "Core AI & Machine Learning",
+    "Agentic & Generative AI",
+    "Large Language Models (LLMs)",
+    "AI & Computer Vision"
+  ],
   "statusBadge": {
-    "text": "Open to AI Roles & MS Research Outreach (2026–2027)",
+    "text": "Open to AI Roles & Research Outreach (2026–2027)",
     "available": true
   },
   "audiences": {
@@ -35,7 +45,7 @@
     },
     "professors": {
       "label": "Professor Lens",
-      "tagline": "Exploring edge computer vision, multimodal reasoning, and secure AI systems.",
+      "tagline": "Exploring Generative AI, LLMs, agentic reasoning, and edge computer vision.",
       "primaryCta": "Read FYP & Research Statement",
       "secondaryCta": "Download Academic CV",
       "prioritySections": ["hero", "research", "fyp-spotlight", "roadmap", "projects", "contact"]
@@ -50,24 +60,24 @@
   },
   "metrics": [
     {
-      "label": "FYP Real-Time Inference",
-      "value": "42 FPS",
-      "subtext": "YOLOv8 Edge-Optimized on TensorRT"
+      "label": "Work Experience",
+      "value": "1+ Yrs",
+      "subtext": "NIC Islamabad (stayOvers.pk) & Freelance"
     },
     {
-      "label": "Traffic Choke Detection mAP@0.5",
+      "label": "Projects Delivered",
+      "value": "10+",
+      "subtext": "Agentic AI, Health Tech & Web Platforms"
+    },
+    {
+      "label": "FYP Model mAP@0.5",
       "value": "91.4%",
-      "subtext": "Trained on bespoke Islamabad road dataset"
+      "subtext": "Edge Urban Traffic Choke Detection"
     },
     {
-      "label": "Production Certifications",
-      "value": "14",
-      "subtext": "Deep Learning, Python, Web & Security"
-    },
-    {
-      "label": "NUML Academic CGPA",
-      "value": "3.34",
-      "subtext": "Consistent top quartile performance"
+      "label": "Full Stack AI Engineering & Research Assistantship",
+      "value": "Open",
+      "subtext": "Interested in AI Researcher / Assistantship Roles"
     }
   ]
 }

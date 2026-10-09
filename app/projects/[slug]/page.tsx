@@ -2,11 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { getProjects, getProjectBySlug } from "@/lib/content";
-import { TrafficSimulationDemo } from "@/components/TrafficSimulationDemo";
 import {
   ArrowLeft,
   ExternalLink,
-  Cpu,
   Layers,
   CheckCircle2,
   AlertTriangle,
@@ -58,12 +56,12 @@ export default async function ProjectCaseStudyPage({
   const otherProjects = allProjects.filter((p) => p.slug !== slug);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       {/* Back Link */}
       <div>
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-muted)] hover:text-sky-400 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to All Case Studies</span>
@@ -76,7 +74,7 @@ export default async function ProjectCaseStudyPage({
           {project.domains.map((dom) => (
             <span
               key={dom}
-              className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20"
+              className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[var(--accent-surface)] text-[var(--accent)] border border-[var(--accent-border)]"
             >
               {dom}
             </span>
@@ -90,18 +88,18 @@ export default async function ProjectCaseStudyPage({
           {project.title}
         </h1>
 
-        <p className="text-base sm:text-xl text-[var(--text-muted)] leading-relaxed font-medium">
+        <p className="text-base sm:text-lg text-[var(--text-muted)] leading-relaxed font-medium">
           {project.summary}
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center gap-3 pt-2">
+        <div className="flex flex-wrap items-center gap-3 pt-1">
           {project.links.github && (
             <a
               href={project.links.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs shadow-md transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--accent)] hover:brightness-110 text-slate-950 font-bold text-xs shadow-xs transition-all"
             >
               <Github className="w-4 h-4" />
               <span>Explore GitHub Repository</span>
@@ -112,16 +110,16 @@ export default async function ProjectCaseStudyPage({
               href={project.links.liveDemo}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--surface-2)] hover:bg-[var(--surface-3)] text-[var(--foreground)] font-semibold text-xs border border-[var(--border-subtle)] transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--surface-1)] hover:bg-[var(--surface-2)] text-[var(--foreground)] font-semibold text-xs border border-[var(--border-subtle)] transition-colors shadow-xs"
             >
-              <ExternalLink className="w-4 h-4 text-sky-400" />
+              <ExternalLink className="w-4 h-4 text-[var(--accent)]" />
               <span>Launch Live System</span>
             </a>
           )}
           {project.links.paperDraft && (
             <Link
               href={project.links.paperDraft}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 font-semibold text-xs border border-purple-500/30 transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--surface-2)] hover:bg-[var(--surface-3)] text-[var(--foreground)] font-semibold text-xs border border-[var(--border-subtle)] transition-colors"
             >
               <span>Read Paper Draft</span>
             </Link>
@@ -130,36 +128,23 @@ export default async function ProjectCaseStudyPage({
       </div>
 
       {/* Verified Metrics Strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl glass-panel-elevated border border-[var(--border-strong)]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
         {project.metrics.map((m, idx) => (
           <div key={idx} className="space-y-1">
             <div className="text-[10px] font-mono uppercase text-[var(--text-dim)]">
               {m.label}
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold font-mono text-sky-400">
+            <div className="text-xl sm:text-2xl font-extrabold font-mono text-[var(--accent)]">
               {m.value}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Special Interactive Demo slot if Traffic Choking FYP */}
-      {project.slug === "traffic-choking-detection" && (
-        <div className="space-y-3">
-          <div className="flex items-center justify-between text-xs text-[var(--text-dim)]">
-            <span className="font-semibold text-sky-400 flex items-center gap-1.5">
-              <Cpu className="w-4 h-4" /> Live Interactive Traffic Choking Simulation
-            </span>
-            <span>Simulated TensorRT Edge Pipeline</span>
-          </div>
-          <TrafficSimulationDemo />
-        </div>
-      )}
-
       {/* Section 2: Problem & Context */}
-      <section className="space-y-4 p-8 rounded-3xl glass-panel border border-[var(--border-subtle)]">
+      <section className="space-y-4 p-7 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
         <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] flex items-center gap-2.5">
-          <AlertTriangle className="w-5 h-5 text-amber-400" />
+          <AlertTriangle className="w-5 h-5 text-amber-500" />
           <span>The Problem & Engineering Context</span>
         </h2>
         <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
@@ -168,12 +153,12 @@ export default async function ProjectCaseStudyPage({
       </section>
 
       {/* Section 3: Personal Role & What I Personally Built */}
-      <section className="space-y-4 p-8 rounded-3xl glass-panel border border-[var(--border-subtle)]">
+      <section className="space-y-4 p-7 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
         <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] flex items-center gap-2.5">
-          <Layers className="w-5 h-5 text-sky-400" />
+          <Layers className="w-5 h-5 text-[var(--accent)]" />
           <span>Role & Personal Contributions</span>
         </h2>
-        <div className="text-xs font-mono font-bold text-sky-400">
+        <div className="text-xs font-mono font-bold text-[var(--accent)]">
           Position: {project.role}
         </div>
         <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
@@ -182,18 +167,18 @@ export default async function ProjectCaseStudyPage({
       </section>
 
       {/* Section 4: Architecture Diagram & Pipeline */}
-      <section className="space-y-5 p-8 rounded-3xl glass-panel-elevated border border-[var(--border-strong)]">
+      <section className="space-y-5 p-7 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
         <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] flex items-center gap-2.5">
-          <GitBranch className="w-5 h-5 text-purple-400" />
+          <GitBranch className="w-5 h-5 text-indigo-500" />
           <span>System Architecture & Pipeline Flow</span>
         </h2>
 
         {/* Visual Architecture Box */}
-        <div className="p-6 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] space-y-4 font-mono text-xs">
-          <div className="text-emerald-400 font-semibold tracking-wide">
+        <div className="p-5 rounded-2xl bg-[var(--surface-2)] border border-[var(--border-subtle)] space-y-3 font-mono text-xs">
+          <div className="text-emerald-600 dark:text-emerald-400 font-bold tracking-wide">
             DATA PIPELINE BREAKDOWN:
           </div>
-          <p className="text-slate-300 leading-loose bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+          <p className="text-[var(--text-muted)] leading-relaxed p-4 rounded-xl bg-[var(--surface-1)] border border-[var(--border-subtle)]">
             {project.architecture}
           </p>
         </div>
@@ -201,9 +186,9 @@ export default async function ProjectCaseStudyPage({
 
       {/* Section 5 & 6: Results, Benchmarks & Stack */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <section className="md:col-span-2 space-y-4 p-8 rounded-3xl glass-panel border border-[var(--border-subtle)]">
+        <section className="md:col-span-2 space-y-4 p-7 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
           <h2 className="text-xl font-bold text-[var(--foreground)] flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-500" />
             <span>Empirical Results & Benchmarks</span>
           </h2>
           <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
@@ -211,9 +196,9 @@ export default async function ProjectCaseStudyPage({
           </p>
         </section>
 
-        <section className="space-y-4 p-8 rounded-3xl glass-panel border border-[var(--border-subtle)]">
+        <section className="space-y-4 p-7 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
           <h2 className="text-xl font-bold text-[var(--foreground)] flex items-center gap-2">
-            <FileCode className="w-5 h-5 text-sky-400" />
+            <FileCode className="w-5 h-5 text-[var(--accent)]" />
             <span>Core Stack</span>
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -230,18 +215,18 @@ export default async function ProjectCaseStudyPage({
       </div>
 
       {/* Section 7: Challenges & What I Learned */}
-      <section className="space-y-4 p-8 rounded-3xl glass-panel border border-[var(--border-subtle)]">
+      <section className="space-y-4 p-7 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
         <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)] flex items-center gap-2.5">
-          <Lightbulb className="w-5 h-5 text-yellow-400" />
-          <span>Technical Challenges & Future Evolution</span>
+          <Lightbulb className="w-5 h-5 text-amber-500" />
+          <span>Technical Challenges & Resolution</span>
         </h2>
-        <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+        <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
           {project.challenges}
         </p>
       </section>
 
       {/* Other Projects */}
-      <div className="pt-10 border-t border-[var(--border-subtle)] space-y-6">
+      <div className="pt-8 border-t border-[var(--border-subtle)] space-y-6">
         <h3 className="text-lg font-bold text-[var(--foreground)]">
           Explore Other Projects
         </h3>
@@ -250,10 +235,10 @@ export default async function ProjectCaseStudyPage({
             <Link
               key={p.slug}
               href={`/projects/${p.slug}`}
-              className="p-5 rounded-2xl glass-panel border border-[var(--border-subtle)] hover:border-sky-500/50 transition-all space-y-2 group"
+              className="p-5 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] hover:border-[var(--border-focus)] transition-all space-y-2 group shadow-xs"
             >
-              <div className="text-xs font-mono text-sky-400">{p.domains[0]}</div>
-              <h4 className="text-sm font-bold text-[var(--foreground)] group-hover:text-sky-400 transition-colors">
+              <div className="text-xs font-mono text-[var(--accent)]">{p.domains[0]}</div>
+              <h4 className="text-sm font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
                 {p.shortTitle}
               </h4>
               <p className="text-xs text-[var(--text-muted)] line-clamp-2">

@@ -1,5 +1,105 @@
 [
   {
+    "slug": "podcaster-crew",
+    "title": "Podcaster Crew: Multi-Agent Automated Research-to-Podcast & Audio Engine",
+    "shortTitle": "Podcaster Crew (CrewAI)",
+    "domains": ["LLM/Agents", "Generative AI", "Audio/TTS"],
+    "featured": true,
+    "summary": "Autonomous multi-agent system built with CrewAI that automates the end-to-end research-to-podcast pipeline: research gathering, markdown reporting, two-host natural dialogue script generation, and Gemini TTS voice synthesis.",
+    "role": "Creator & Lead AI Engineer",
+    "period": "2024 – 2025",
+    "metrics": [
+      { "label": "Pipeline Automation", "value": "100% Autonomous" },
+      { "label": "Specialized Agents", "value": "3 Crew Agents" },
+      { "label": "Speech Synthesis", "value": "Gemini TTS" },
+      { "label": "Execution Tooling", "value": "uv & Python 3.12" }
+    ],
+    "stack": ["Python", "CrewAI", "Google Gemini API", "Gemini TTS", "OpenAI API", "Serper API", "uv"],
+    "problem": "Creating high-quality topical podcasts or technical audio digests requires hours of manual literature review, syntheses of recent developments, scripting entertaining two-host conversational banter with audio cues, and manual voiceover recording.",
+    "solution": "Built Podcaster Crew, a sequential multi-agent architecture where a 'Researcher' agent conducts real-time web retrieval on any topic, a 'Reporting Analyst' synthesizes insights into structured markdown, a 'Scriptwriter' crafts an engaging two-host dialogue with humor and narration pauses, and a voice synthesis module produces ready-to-publish MP3 audio with Gemini TTS.",
+    "architecture": "Topic Input -> Researcher Agent (Serper Search & News Ingestion) -> Reporting Analyst (Synthesis & Markdown Structuring) -> Scriptwriter Agent (Natural Two-Host Dialogue & Audio FX Cues) -> Gemini TTS Pipeline -> Generated MP3 Audio Output.",
+    "results": "Automates complete podcast production from topic prompt to multi-voice audio within minutes. Modular design allows dynamic topic switching (AI trends, healthcare, space tech) without altering agent topologies.",
+    "challenges": "Generating realistic conversational rhythm and avoiding sterile monologues. Solved by designing explicit conversational persona prompts with turn-taking logic, natural pauses, and TTS voice persona mapping.",
+    "links": {
+      "github": "https://github.com/MuhammadAwais-32013/podcaster_crew"
+    }
+  },
+  {
+    "slug": "diabp-diet-consultant",
+    "title": "DiaBp Diet Consultant: AI-Powered RAG Health Assistant & Medical OCR App",
+    "shortTitle": "DiaBp Diet Consultant (RAG & OCR)",
+    "domains": ["Full-Stack", "Healthcare AI", "RAG & OCR"],
+    "featured": true,
+    "summary": "Full-stack mobile and web application providing personalized nutrition plans and clinical recommendations for diabetes and hypertension management using RAG and OCR-based medical report parsing.",
+    "role": "Full-Stack AI Engineer & Mobile Developer",
+    "period": "2024 – 2025",
+    "metrics": [
+      { "label": "Clinical Modality", "value": "Diabetes & Hypertension" },
+      { "label": "Architecture", "value": "RAG + OCR Pipeline" },
+      { "label": "Codebase Split", "value": "56.6% Py / 43% Dart" },
+      { "label": "Document Parsing", "value": "Automated OCR" }
+    ],
+    "stack": ["Python", "Dart", "Flutter", "FastAPI", "RAG (LangChain / Vector DB)", "OCR Engine", "Tailwind CSS", "Docker"],
+    "problem": "Patients with chronic conditions (Type 2 Diabetes and Hypertension) struggle to decipher clinical lab reports and translate medical dietary guidelines into daily, personalized meal plans tailored to their specific biometrics and medications.",
+    "solution": "Engineered DiaBp Diet Consultant, combining Flutter cross-platform mobile frontend with a high-performance Python backend. Integrates OCR to scan physical medical lab reports, extracts clinical biomarkers (HbA1c, blood pressure, fasting glucose), and feeds them into a Retrieval-Augmented Generation (RAG) assistant for clinically grounded dietary plans.",
+    "architecture": "Flutter Mobile Client -> Camera / Document Ingestion -> OCR Text Extraction -> Biomarker Entity Recognition -> Dense Vector RAG Knowledge Retrieval (Clinical Nutrition Guidelines) -> Guardrailed LLM Synthesis -> Structured Meal Schedules & Alerts.",
+    "results": "Enables instant conversion of unstructured lab test photos into clinically safe, personalized diet charts. Validated against medical dietary standards with strict hallucination guardrails.",
+    "challenges": "Handling poor-quality mobile camera photos and noisy medical abbreviations. Implemented adaptive image pre-processing filters before OCR and clinical entity fuzzy matching.",
+    "links": {
+      "github": "https://github.com/MuhammadAwais-32013/DietPlanner_mobile-app"
+    }
+  },
+  {
+    "slug": "dietplanner-web-app",
+    "title": "DiaBP Diet Consultant: AI-Powered Full-Stack Web Platform (RAG & FastAPI)",
+    "shortTitle": "DiaBP Web Platform (RAG & Next.js)",
+    "domains": ["Full-Stack", "Healthcare AI", "RAG & LLM"],
+    "featured": true,
+    "summary": "Full-stack Next.js & FastAPI web platform generating personalized medical diet plans (1 week to 1 month) for diabetes and hypertension patients using Google Gemini, FAISS vector RAG, Tesseract OCR document parsing, and real-time WebSockets.",
+    "role": "Full-Stack AI Engineer & System Architect",
+    "period": "2024 – 2025",
+    "metrics": [
+      { "label": "Vector Retrieval", "value": "FAISS & MiniLM" },
+      { "label": "Document OCR", "value": "Tesseract & PyMuPDF" },
+      { "label": "LLM Backbone", "value": "Google Gemini" },
+      { "label": "Full-Stack Architecture", "value": "Next.js + FastAPI" }
+    ],
+    "stack": ["Next.js", "React", "FastAPI", "Python", "Google Gemini", "FAISS", "Sentence Transformers", "Tesseract OCR", "PyMuPDF", "SQLAlchemy", "Tailwind CSS", "WebSocket", "jsPDF"],
+    "problem": "Patients managing chronic diabetes and hypertension require continuous, personalized dietary guidance grounded in verified medical literature, along with the ability to ingest physical lab reports and export structured multi-week meal plans in professional formats.",
+    "solution": "Engineered DiaBP Diet Consultant Web App, a complete production web platform combining Next.js with FastAPI. Integrates an AI RAG pipeline with FAISS vector search over medical guidelines, Google Gemini for context-aware diet generation, Tesseract OCR for physical document parsing, real-time WebSocket communication, and client-side jsPDF diet plan downloads.",
+    "architecture": "Next.js Web Client -> WebSocket / REST API -> FastAPI Backend (SQLAlchemy / SQLite) -> Tesseract OCR & PyMuPDF (Lab Report Extraction) -> FAISS Vector Store (Medical Guidelines via Sentence Transformers) -> Google Gemini LLM (Context-Aware Synthesis) -> jsPDF Meal Plan Export & Admin Analytics.",
+    "results": "Delivered end-to-end multi-duration diet plans (1 week, 10 days, 2 weeks, 3 weeks, 1 month) customized to patient biometrics, blood pressure, glucose, and HbA1c. Features comprehensive patient tracking, BMI classification, and admin health analytics dashboards.",
+    "challenges": "Ensuring zero medical hallucinations while maintaining sub-second semantic retrieval across diverse medical literature. Solved by implementing batch ingestion with Sentence Transformers, strict prompt guardrails with clinical constraints, and verified citation formatting.",
+    "links": {
+      "github": "https://github.com/MuhammadAwais-32013/Dietplanner_Web_APP"
+    }
+  },
+  {
+    "slug": "sales-forecast-xgboost",
+    "title": "Enterprise Sales Demand Forecasting with XGBoost & Time-Series Engineering",
+    "shortTitle": "Sales Forecasting (XGBoost)",
+    "domains": ["Machine Learning", "Time-Series", "Predictive Analytics"],
+    "featured": true,
+    "summary": "End-to-end predictive analytics pipeline utilizing XGBoost gradient boosting and advanced time-series feature engineering to forecast retail product demand and optimize supply chain inventory.",
+    "role": "Machine Learning Engineer",
+    "period": "2024",
+    "metrics": [
+      { "label": "Model Family", "value": "XGBoost Regressor" },
+      { "label": "Feature Space", "value": "Time-Lag & Rolling Windows" },
+      { "label": "Evaluation", "value": "MAE, RMSE, R² Metrics" },
+      { "label": "Deployment", "value": "Interactive Python App" }
+    ],
+    "stack": ["Python", "XGBoost", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Streamlit"],
+    "problem": "Retail supply chains suffer substantial losses from stockouts during demand spikes or capital lockup from excess inventory due to traditional moving-average forecasts failing to capture nonlinear seasonal trends and lagged effects.",
+    "solution": "Developed a time-series forecasting pipeline using XGBoost. Engineered comprehensive temporal features (cyclical day-of-week, month encoding, holiday flags) and autoregressive lag indicators (t-1, t-7, rolling 14-day window statistics) to accurately model complex demand fluctuations.",
+    "architecture": "Historical Sales Ingestion -> Data Cleaning & Outlier Imputation -> Temporal & Autoregressive Feature Engineering -> Train/Test Split (Time-Ordered) -> XGBoost Regressor Hyperparameter Tuning -> Residual Diagnostics & Accuracy Evaluation -> Interactive Prediction UI.",
+    "results": "Significantly outperformed baseline linear models across MAE and RMSE metrics. Delivered an intuitive interactive application (`app.py` / `demo.py`) enabling supply planners to forecast multi-week inventory horizons.",
+    "challenges": "Avoiding data leakage across temporal splits while engineering rolling statistical aggregates. Enforced strict causal lag windows calculated solely on historical observations.",
+    "links": {
+      "github": "https://github.com/MuhammadAwais-32013/Sales-forecast-forecasting-model-XGBOOST/tree/main"
+    }
+  },
+  {
     "slug": "traffic-choking-detection",
     "title": "Intelligent Urban Traffic Choking Detection & Flow Optimization",
     "shortTitle": "Traffic Choking Detection (FYP)",
@@ -19,10 +119,9 @@
     "solution": "Developed an end-to-end computer vision framework utilizing a customized YOLOv8 model trained on a locally curated dataset of Islamabad intersections. The pipeline computes localized density vectors, tracks vehicle velocity clusters, and detects road choking within 2.5 seconds of onset.",
     "architecture": "1. Multi-Camera Stream Capture -> 2. Adaptive Frame Preprocessing & ROI Masking -> 3. Edge YOLOv8 Inference with TensorRT Quantization -> 4. Choke Density Clustering & Velocity Vector Analysis -> 5. Real-Time Telemetry Dispatch & Operator Dashboard.",
     "results": "Achieved 91.4% mAP@0.5 across 8 vehicle categories (cars, vans, rickshaws, motorcycles, heavy vehicles, pedestrians, bikes, buses). Optimized the network to run at 42 FPS with 23.8ms latency on edge hardware, enabling instant traffic bottleneck alarms.",
-    "challenges": "Extremely varied lighting, occlusions by heavy foliage, and heterogeneous vehicle compositions (rickshaws and two-wheelers) caused standard pre-trained models to collapse. Solved by curating a diverse 4,200-frame Pakistani road dataset and implementing Mosaic augmentation with focal loss re-weighting.",
+    "challenges": "Extremely varied lighting, occlusions by heavy foliage, and heterogeneous vehicle compositions caused standard pre-trained models to collapse. Solved by curating a diverse 4,200-frame Pakistani road dataset and implementing Mosaic augmentation with focal loss re-weighting.",
     "links": {
-      "github": "https://github.com/MuhammadAwais/traffic-choking-detection-fyp",
-      "liveDemo": "#demo-simulator",
+      "github": "https://github.com/MuhammadAwais-32013",
       "paperDraft": "/research#fyp-section"
     }
   },
@@ -31,7 +130,7 @@
     "title": "Enterprise AI Smart Health Diagnostic & Triage Platform",
     "shortTitle": "AI Smart Health Platform",
     "domains": ["Full-Stack", "AI/ML", "Security"],
-    "featured": true,
+    "featured": false,
     "summary": "HIPAA-conscious multi-tenant medical diagnostic assistance platform featuring RBAC, secure API gateways, and automated symptom triaging.",
     "role": "Full-Stack AI Engineer",
     "period": "2024 – 2025",
@@ -45,45 +144,18 @@
     "problem": "Clinical queues are frequently choked by inefficient preliminary paperwork and manual triage classification, leading to delayed medical attention for high-acuity patients and potential human oversight.",
     "solution": "Built a production-grade diagnostic assistance portal that collects standardized symptom streams, applies structured differential triage recommendations, and strictly separates clinician vs patient access via fine-grained RBAC.",
     "architecture": "Next.js Frontend Client -> HTTPS Gateway / Rate Limiter -> FastAPI Service with JWT RBAC Middleware -> PostgreSQL Database with AES-256 field encryption -> LLM Triage Reasoning Module with deterministic guardrails.",
-    "results": "Cut clinical front-desk intake latency by 65%. Successfully passed 4 rounds of automated vulnerability audits (OWASP Top 10 compliance) with zero credential leaks or unauthorized privilege escalations.",
+    "results": "Cut clinical front-desk intake latency by 65%. Successfully passed 4 rounds of automated vulnerability audits with zero credential leaks or unauthorized privilege escalations.",
     "challenges": "Ensuring strict patient privacy while maintaining snappy LLM response times. Implemented local cryptographic anonymization before sending de-identified clinical tokens to the inference engine.",
     "links": {
-      "github": "https://github.com/MuhammadAwais/ai-smart-health-platform",
-      "liveDemo": "https://smarthealth-demo.vercel.app"
-    }
-  },
-  {
-    "slug": "articlesift",
-    "title": "ArticleSift: Intelligent Academic Literature Search & Citation Synthesis",
-    "shortTitle": "ArticleSift",
-    "domains": ["LLM/Agents", "Information Retrieval", "Full-Stack"],
-    "featured": true,
-    "summary": "Semantic paper exploration tool combining dense vector embeddings, citation graph traversals, and automated comparative literature synthesis.",
-    "role": "Lead Architect & Developer",
-    "period": "2024",
-    "metrics": [
-      { "label": "Review Time Acceleration", "value": "4x Faster" },
-      { "label": "Vector Search Latency", "value": "780 ms" },
-      { "label": "Indexed Papers", "value": "50,000+" },
-      { "label": "Synthesis Accuracy", "value": "93.8%" }
-    ],
-    "stack": ["Next.js", "TypeScript", "Python", "LangChain", "Qdrant", "Tailwind CSS", "ArXiv API"],
-    "problem": "Researchers spend excessive time manually combing through hundreds of PDF preprints to identify conflicting methodologies, benchmark results, and seminal citations.",
-    "solution": "Developed ArticleSift, an intelligent assistant that ingests academic PDFs, parses math formulas and tables, indexes chunks in dense vector space, and generates comparative synthesis matrices with direct paragraph citations.",
-    "architecture": "PDF Ingestion & Layout Analysis -> Text & Table Chunking -> Embedding Model -> Vector Store Index -> Query Engine with Hybrid RRF Re-ranking -> Markdown Citation Matrix Generator.",
-    "results": "Accelerated literature survey phases by 400% for participating student researchers. Indexed 50,000+ open-access preprints with sub-800ms semantic search response time.",
-    "challenges": "Handling two-column academic layouts and complex mathematical formulas without chunk corruption. Built custom heuristic PDF extraction filters.",
-    "links": {
-      "github": "https://github.com/MuhammadAwais/ArticleSift",
-      "liveDemo": "https://articlesift.vercel.app"
+      "github": "https://github.com/MuhammadAwais-32013"
     }
   },
   {
     "slug": "multi-agent-research-system",
     "title": "Multi-Agent Autonomous Research & Systematic Synthesis Pipeline",
-    "shortTitle": "Multi-Agent Research System",
+    "shortTitle": "Multi-Agent Research Pipeline",
     "domains": ["LLM/Agents", "Autonomous Systems", "Security"],
-    "featured": true,
+    "featured": false,
     "summary": "Hierarchical agentic network where specialist agents collaborate to conduct literature surveys, critique methodology claims, and generate verified synthesis reports.",
     "role": "AI Engineer & System Architect",
     "period": "2025",
@@ -100,8 +172,7 @@
     "results": "Achieved a 94.2% verified citation rate by cross-checking DOI identifiers via live scholarly APIs. Cut hallucinated assertions by 89% compared to standalone model prompting.",
     "challenges": "Preventing circular deadlock debates between the Synthesizer and the Devil's Advocate. Designed an explicit finite-state iteration ceiling and confidence score convergence gate.",
     "links": {
-      "github": "https://github.com/MuhammadAwais/multi-agent-research-system",
-      "liveDemo": "https://multi-agent-research.vercel.app"
+      "github": "https://github.com/MuhammadAwais-32013"
     }
   }
 ]

@@ -24,7 +24,7 @@ export default function ExperiencePage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--accent-surface)] text-[var(--accent)] border border-[var(--accent-border)]">
           <Briefcase className="w-3.5 h-3.5" />
           <span>Professional & Academic Trajectory</span>
         </div>
@@ -39,7 +39,7 @@ export default function ExperiencePage() {
       {/* WORK EXPERIENCE SECTION */}
       <section className="space-y-8">
         <div className="flex items-center gap-3 border-b border-[var(--border-subtle)] pb-4">
-          <Briefcase className="w-5 h-5 text-emerald-400" />
+          <Briefcase className="w-5 h-5 text-[var(--accent)]" />
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)]">
             Industry Experience
           </h2>
@@ -49,15 +49,15 @@ export default function ExperiencePage() {
           {experience.workExperience.map((exp) => (
             <div key={exp.id} className="relative pl-8 sm:pl-12 space-y-4">
               {/* Timeline marker node */}
-              <div className="absolute left-1.5 sm:left-2.5 top-2 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-4 ring-[var(--background)] shadow-md" />
+              <div className="absolute left-1.5 sm:left-2.5 top-2 w-3.5 h-3.5 rounded-full bg-[var(--accent)] ring-4 ring-[var(--background)] shadow-xs" />
 
-              <div className="p-6 sm:p-8 rounded-3xl glass-panel-elevated border border-[var(--border-subtle)] space-y-5">
+              <div className="p-6 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-[var(--foreground)]">
                       {exp.role}
                     </h3>
-                    <div className="text-sm font-semibold text-sky-400 mt-0.5">
+                    <div className="text-sm font-semibold text-[var(--accent)] mt-0.5">
                       {exp.company}
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export default function ExperiencePage() {
                   <ul className="space-y-2">
                     {exp.achievements.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[var(--text-muted)]">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -96,7 +96,7 @@ export default function ExperiencePage() {
                   {exp.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-md text-xs font-mono bg-[var(--surface-1)] text-[var(--text-muted)] border border-[var(--border-subtle)]"
+                      className="px-2.5 py-1 rounded-md text-xs font-mono bg-[var(--surface-2)] text-[var(--text-dim)] border border-[var(--border-subtle)]"
                     >
                       {t}
                     </span>
@@ -111,7 +111,7 @@ export default function ExperiencePage() {
       {/* EDUCATION SECTION */}
       <section className="space-y-8">
         <div className="flex items-center gap-3 border-b border-[var(--border-subtle)] pb-4">
-          <GraduationCap className="w-5 h-5 text-sky-400" />
+          <GraduationCap className="w-5 h-5 text-[var(--accent)]" />
           <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)]">
             Academic Background
           </h2>
@@ -121,14 +121,14 @@ export default function ExperiencePage() {
           {experience.education.map((edu) => (
             <div
               key={edu.id}
-              className="p-6 sm:p-8 rounded-3xl glass-panel-elevated border border-[var(--border-strong)] space-y-6"
+              className="p-6 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-6"
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                 <div className="space-y-1">
                   <h3 className="text-xl font-bold text-[var(--foreground)]">
                     {edu.degree}
                   </h3>
-                  <div className="text-sm font-semibold text-sky-400">
+                  <div className="text-sm font-semibold text-[var(--accent)]">
                     {edu.institution}
                   </div>
                   <div className="text-xs text-[var(--text-dim)] flex items-center gap-2">
@@ -138,20 +138,12 @@ export default function ExperiencePage() {
                   </div>
                 </div>
 
-                <div className="p-3 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-center sm:text-right">
-                  <div className="text-[10px] font-mono uppercase text-sky-400 font-bold">
-                    Cumulative CGPA
-                  </div>
-                  <div className="text-2xl font-extrabold font-mono text-sky-400">
-                    {edu.cgpa}
-                  </div>
-                  <div className="text-[10px] text-[var(--text-dim)]">Top Quartile Cohort</div>
-                </div>
+
               </div>
 
               {/* Thesis Spotlight */}
-              <div className="p-4 rounded-xl bg-[var(--surface-1)] border border-[var(--border-subtle)] space-y-1">
-                <span className="text-xs font-mono uppercase text-purple-400 font-bold">
+              <div className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border-subtle)] space-y-1">
+                <span className="text-xs font-mono uppercase text-[var(--accent)] font-bold">
                   Final Year Thesis Project:
                 </span>
                 <p className="text-xs sm:text-sm font-semibold text-[var(--foreground)]">
@@ -162,7 +154,7 @@ export default function ExperiencePage() {
               {/* Coursework list */}
               <div className="space-y-3">
                 <div className="text-xs font-semibold uppercase tracking-wider text-[var(--text-dim)] flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-sky-400" />
+                  <BookOpen className="w-4 h-4 text-[var(--accent)]" />
                   <span>Key Completed Coursework:</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -179,13 +171,14 @@ export default function ExperiencePage() {
 
               {/* Academic Highlights */}
               <div className="space-y-2 pt-2 border-t border-[var(--border-subtle)]">
-                <div className="text-xs font-semibold uppercase tracking-wider text-[var(--text-dim)]">
-                  Academic Milestones:
+                <div className="text-xs font-semibold uppercase tracking-wider text-[var(--text-dim)] flex items-center gap-2">
+                  <Award className="w-4 h-4 text-[var(--accent)]" />
+                  <span>Recognitions & Roles:</span>
                 </div>
-                <ul className="space-y-1.5">
-                  {edu.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-[var(--text-muted)]">
-                      <Award className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[var(--text-muted)]">
+                  {edu.highlights.map((h, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
                       <span>{h}</span>
                     </li>
                   ))}

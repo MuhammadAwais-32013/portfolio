@@ -18,19 +18,18 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Awais",
   },
   description:
-    "Full-stack AI engineer who builds computer vision, LLM and agentic systems end to end, from data collection to deployed product. BS CS NUML (CGPA 3.34).",
+    "Full-stack AI engineer specializing in Generative AI, Large Language Models, agentic systems, and edge computer vision. BS in Computer Science from NUML.",
   keywords: [
     "Muhammad Awais",
     "Full-Stack AI Engineer",
+    "Generative AI",
+    "Large Language Models",
+    "Agentic AI",
     "Computer Vision",
     "YOLOv8",
     "TensorRT",
     "Islamabad",
     "NUML",
-    "Agentic Systems",
-    "CSC Scholarship",
-    "ANSO Scholarship",
-    "NIC Islamabad",
     "Next.js",
     "PyTorch",
   ],
@@ -42,14 +41,14 @@ export const metadata: Metadata = {
     url: "https://muhammadawais.dev",
     title: "Muhammad Awais | Full-Stack AI Engineer & Researcher",
     description:
-      "End-to-end Computer Vision & Agentic AI Systems. Real-world deployed products with verified metrics.",
+      "Generative AI, Large Language Models, Agentic Systems & Edge Computer Vision.",
     siteName: "Muhammad Awais Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Awais | Full-Stack AI Engineer",
     description:
-      "Building real-world Computer Vision & Agentic AI with verified metrics.",
+      "Generative AI, Large Language Models, Agentic Systems & Edge Computer Vision.",
     creator: "@MuhammadAwaisAI",
   },
   robots: {
@@ -78,17 +77,17 @@ export default function RootLayout({
       },
     },
     knowsAbout: [
-      "Computer Vision",
-      "YOLOv8 / YOLOv11",
-      "Edge Deep Learning",
-      "Full-Stack Web Development",
-      "Multi-Agent Systems",
-      "Role-Based Access Control",
+      "Generative AI",
+      "Large Language Models (LLMs)",
+      "Agentic AI & Multi-Agent Systems",
+      "Computer Vision & Edge Deep Learning",
+      "YOLOv8 / TensorRT",
+      "Full-Stack Web & Mobile Development",
     ],
     url: "https://muhammadawais.dev",
     sameAs: [
-      "https://github.com/MuhammadAwais",
-      "https://linkedin.com/in/muhammad-awais-ai",
+      "https://github.com/MuhammadAwais-32013",
+      "https://www.linkedin.com/in/muhammad-awais32013",
     ],
   };
 
