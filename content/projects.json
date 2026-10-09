@@ -128,31 +128,6 @@
   },
  
   {
-    "slug": "ai-smart-health-platform",
-    "title": "Enterprise AI Smart Health Diagnostic & Triage Platform",
-    "shortTitle": "AI Smart Health Platform",
-    "domains": ["Full-Stack", "AI/ML", "Security"],
-    "featured": false,
-    "summary": "HIPAA-conscious multi-tenant medical diagnostic assistance platform featuring RBAC, secure API gateways, and automated symptom triaging.",
-    "role": "Full-Stack AI Engineer",
-    "period": "2024 – 2025",
-    "metrics": [
-      { "label": "Triage Time Reduction", "value": "65%" },
-      { "label": "Auth Vulnerabilities", "value": "0 Detected" },
-      { "label": "Encrypted Query Latency", "value": "<120 ms" },
-      { "label": "Patient Test Encounters", "value": "1,200+" }
-    ],
-    "stack": ["React", "Next.js", "FastAPI", "PostgreSQL", "Tailwind CSS", "JWT / RBAC", "Docker"],
-    "problem": "Clinical queues are frequently choked by inefficient preliminary paperwork and manual triage classification, leading to delayed medical attention for high-acuity patients and potential human oversight.",
-    "solution": "Built a production-grade diagnostic assistance portal that collects standardized symptom streams, applies structured differential triage recommendations, and strictly separates clinician vs patient access via fine-grained RBAC.",
-    "architecture": "Next.js Frontend Client -> HTTPS Gateway / Rate Limiter -> FastAPI Service with JWT RBAC Middleware -> PostgreSQL Database with AES-256 field encryption -> LLM Triage Reasoning Module with deterministic guardrails.",
-    "results": "Cut clinical front-desk intake latency by 65%. Successfully passed 4 rounds of automated vulnerability audits with zero credential leaks or unauthorized privilege escalations.",
-    "challenges": "Ensuring strict patient privacy while maintaining snappy LLM response times. Implemented local cryptographic anonymization before sending de-identified clinical tokens to the inference engine.",
-    "links": {
-      "github": "https://github.com/MuhammadAwais-32013"
-    }
-  },
-  {
     "slug": "multi-agent-research-system",
     "title": "Multi-Agent Autonomous Research & Systematic Synthesis Pipeline",
     "shortTitle": "Multi-Agent Research Pipeline",
