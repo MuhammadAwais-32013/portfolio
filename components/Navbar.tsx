@@ -284,7 +284,7 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
               onClick={toggleTheme}
               suppressHydrationWarning
               className="p-2 rounded-full text-[var(--text-dim)] hover:text-[var(--foreground)] bg-[var(--surface-1)] hover:bg-[var(--surface-2)] border border-[var(--border-subtle)] transition-colors"
-              title="Toggle dark / light theme"
+              title="Toggle dark / light theme" 
               aria-label="Toggle theme"
             >
               {!mounted ? (
