@@ -12,7 +12,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar onOpenCommandPalette={() => setCommandPaletteOpen(true)} />
-      <main id="main-content" className="flex-1 w-full bg-grid-pattern">
+      <main id="main-content" className="flex-1 w-full max-w-full overflow-x-clip min-w-0 bg-grid-pattern">
         {children}
       </main>
       <Footer />

@@ -106,7 +106,7 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-200 ${
+      className={`sticky top-0 z-40 w-full max-w-full overflow-x-clip transition-all duration-200 ${
         scrolled
           ? "border-b border-[var(--border-subtle)] bg-[var(--background)]/95 backdrop-blur-md shadow-sm py-2.5"
           : "bg-transparent py-3.5"
@@ -293,10 +293,10 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
               )}
             </button>
 
-            {/* TOP RIGHT: Profile Pic Logo & Status Indicator */}
+            {/* TOP RIGHT: Profile Pic Logo & Status Indicator (desktop/tablet) */}
             <Link
               href="/contact"
-              className="relative flex items-center justify-center p-0.5 rounded-full ring-2 ring-[var(--border-subtle)] hover:ring-[var(--accent)] transition-all group shrink-0 focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              className="relative hidden sm:flex items-center justify-center p-0.5 rounded-full ring-2 ring-[var(--border-subtle)] hover:ring-[var(--accent)] transition-all group shrink-0 focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
               title="Muhammad Awais — Full-Stack AI Engineer (Available for Roles)"
               aria-label="Muhammad Awais Profile and Contact"
             >

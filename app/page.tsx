@@ -148,7 +148,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="relative pb-24">
+    <div className="relative pb-24 overflow-x-clip">
       {/* Ambient Top Glow */}
       <div className="ambient-glow-top" />
 

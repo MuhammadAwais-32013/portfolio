@@ -447,7 +447,7 @@ export function AssistantDrawer() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-4 py-3 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-medium text-xs shadow-xl hover:shadow-sky-500/25 hover:scale-105 active:scale-95 transition-all duration-200 border border-sky-400/30"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-medium text-xs shadow-xl hover:shadow-sky-500/25 hover:scale-105 active:scale-95 transition-all duration-200 border border-sky-400/30"
           aria-label="Open portfolio assistant"
         >
           <div className="relative">
