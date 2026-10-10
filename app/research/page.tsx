@@ -6,22 +6,42 @@ import {
   GraduationCap,
   BookOpen,
   Cpu,
-  Layers,
   ArrowRight,
   Download,
   HelpCircle,
-  CheckCircle2,
-  FileText,
+  BarChart3,
+  AlertTriangle,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Academic Research & FYP Paper | Muhammad Awais",
+  title: "Research Profile & FYP | Muhammad Awais",
   description:
-    "Research profile of Muhammad Awais. Edge computer vision, urban traffic choke detection, 4,200-frame Islamabad dataset, and research statement.",
+    "Research profile of Muhammad Awais: real-time traffic perception, reliability of LLM agents and RAG systems, a deployed final-year project, and links to code.",
+};
+
+// Optional fields that live in research.json. Declared here so the page still
+// type-checks even if lib/content.ts has not been updated with them yet.
+type FypExtras = {
+  results?: {
+    split?: string;
+    overall?: Record<string, string>;
+    perClassMAP50?: Record<string, string>;
+    efficiency?: string;
+    training?: string;
+  };
+  limitations?: string[];
+};
+
+const METRIC_LABELS: Record<string, string> = {
+  mAP50: "mAP@50",
+  "mAP50-95": "mAP@50-95",
+  precision: "Precision",
+  recall: "Recall",
 };
 
 export default function ResearchPage() {
   const research = getResearch();
+  const fyp = research.fypDetails as typeof research.fypDetails & FypExtras;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
@@ -35,14 +55,15 @@ export default function ResearchPage() {
           Research Statement & Interests
         </h1>
         <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed">
-          Bridging high-capacity perceptual vision and agentic systems with the constraints of edge execution, physical robustness, and verifiable deployment.
+          Building and evaluating reliable AI systems, from real-time perception
+          to LLM agents and retrieval-augmented generation.
         </p>
       </div>
 
       {/* RESEARCH STATEMENT HIGHLIGHT */}
       <section className="p-8 sm:p-10 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs relative overflow-hidden space-y-4">
         <div className="text-xs font-mono font-bold text-[var(--accent)] uppercase tracking-wider">
-          Overarching Research Philosophy
+          Research Statement
         </div>
         <blockquote className="text-base sm:text-lg font-medium text-[var(--foreground)] leading-relaxed italic border-l-4 border-[var(--accent)] pl-4 py-1">
           &ldquo;{research.statementSummary}&rdquo;
@@ -57,10 +78,10 @@ export default function ResearchPage() {
           </Link>
           <span className="text-[var(--text-dim)]">•</span>
           <Link
-            href="/roadmap"
-            className="inline-flex items-center gap-1 text-[var(--text-muted)] hover:text-[var(--foreground)]"
+            href="/projects"
+            className="inline-flex items-center gap-1 font-bold text-[var(--accent)] hover:underline"
           >
-            <span>View Scholarship Roadmap</span>
+            <span>Verify the projects (code, demos, reports)</span>
             <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
@@ -76,7 +97,7 @@ export default function ResearchPage() {
           {research.researchInterests.map((interest, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-3"
+              className="p-6 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-3 flex flex-col"
             >
               <div className="w-8 h-8 rounded-lg bg-[var(--accent-surface)] border border-[var(--accent-border)] flex items-center justify-center font-mono font-bold text-xs text-[var(--accent)]">
                 0{idx + 1}
@@ -84,9 +105,16 @@ export default function ResearchPage() {
               <h3 className="text-base font-bold text-[var(--foreground)]">
                 {interest.topic}
               </h3>
-              <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed flex-1">
                 {interest.summary}
               </p>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-1 text-xs font-bold text-[var(--accent)] hover:underline pt-1"
+              >
+                <span>See the projects behind this</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
           ))}
         </div>
@@ -96,14 +124,21 @@ export default function ResearchPage() {
       <section id="fyp-section" className="space-y-8 scroll-mt-20">
         <div className="space-y-3 border-b border-[var(--border-subtle)] pb-6">
           <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[var(--accent)] uppercase">
-            <Cpu className="w-4 h-4" /> Final Year Project (FYP) Manuscript
+            <Cpu className="w-4 h-4" /> Final Year Project (FYP)
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[var(--foreground)]">
-            {research.fypDetails.title}
+            {fyp.title}
           </h2>
           <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
-            Status: {research.fypDetails.status}
+            Status: {fyp.status}
           </div>
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-1 text-xs font-bold text-[var(--accent)] hover:underline"
+          >
+            <span>View code, demo and report on the Projects page</span>
+            <ArrowRight className="w-3 h-3" />
+          </Link>
         </div>
 
         {/* Abstract */}
@@ -112,28 +147,83 @@ export default function ResearchPage() {
             Abstract
           </h3>
           <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-            {research.fypDetails.abstract}
+            {fyp.abstract}
           </p>
         </div>
+
+        {/* Results (rendered only if present in research.json) */}
+        {fyp.results && (
+          <div className="p-6 sm:p-8 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-5">
+            <h3 className="text-lg font-bold text-[var(--foreground)] flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-[var(--accent)]" />
+              <span>Results</span>
+            </h3>
+            {fyp.results.split && (
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                {fyp.results.split}
+              </p>
+            )}
+            {fyp.results.overall && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {Object.entries(fyp.results.overall).map(([key, value]) => (
+                  <div
+                    key={key}
+                    className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border-subtle)] text-center"
+                  >
+                    <div className="text-lg font-extrabold text-[var(--foreground)]">
+                      {value}
+                    </div>
+                    <div className="text-[11px] font-mono text-[var(--text-muted)]">
+                      {METRIC_LABELS[key] ?? key}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            {fyp.results.perClassMAP50 && (
+              <div className="space-y-2">
+                <span className="text-xs font-semibold text-[var(--accent)] block">
+                  Per-class mAP@50
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {Object.entries(fyp.results.perClassMAP50).map(
+                    ([cls, value]) => (
+                      <span
+                        key={cls}
+                        className="px-2.5 py-1 rounded bg-[var(--surface-2)] text-[11px] font-mono text-[var(--text-muted)] border border-[var(--border-subtle)]"
+                      >
+                        {cls}: {value}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+            )}
+            <ul className="space-y-1 text-xs text-[var(--text-muted)]">
+              {fyp.results.efficiency && <li>• Efficiency: {fyp.results.efficiency}</li>}
+              {fyp.results.training && <li>• Training: {fyp.results.training}</li>}
+            </ul>
+          </div>
+        )}
 
         {/* Dataset breakdown */}
         <div className="p-6 sm:p-8 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-4">
           <h3 className="text-lg font-bold text-[var(--foreground)]">
-            Empirical Corpus: {research.fypDetails.dataset.name}
+            Dataset: {fyp.dataset.name}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div className="p-4 rounded-xl bg-[var(--surface-2)] space-y-2 border border-[var(--border-subtle)]">
               <span className="font-semibold text-[var(--accent)] block">Dataset Specifications:</span>
               <ul className="space-y-1 text-[var(--text-muted)]">
-                <li>• Size: {research.fypDetails.dataset.size}</li>
-                <li>• Format: Normalized YOLO bounding boxes + polygonal lane ROI</li>
-                <li>• Annotations: Double-pass verified manually in CVAT</li>
+                <li>• Size: {fyp.dataset.size}</li>
+                <li>• Format: YOLO-format bounding-box labels</li>
+                <li>• Annotation: labeled from scratch; blurred and duplicate frames removed</li>
               </ul>
             </div>
             <div className="p-4 rounded-xl bg-[var(--surface-2)] space-y-2 border border-[var(--border-subtle)]">
               <span className="font-semibold text-[var(--accent)] block">Annotated Classes:</span>
               <div className="flex flex-wrap gap-1.5">
-                {research.fypDetails.dataset.classes.map((cls) => (
+                {fyp.dataset.classes.map((cls) => (
                   <span
                     key={cls}
                     className="px-2 py-0.5 rounded bg-[var(--surface-1)] text-[11px] font-mono text-[var(--text-muted)] border border-[var(--border-subtle)]"
@@ -149,10 +239,10 @@ export default function ResearchPage() {
         {/* Methodology Steps */}
         <div className="space-y-4">
           <h3 className="text-lg font-bold text-[var(--foreground)]">
-            Methodology & Technical Formulation
+            Methodology
           </h3>
           <div className="space-y-3">
-            {research.fypDetails.methodology.map((m, idx) => (
+            {fyp.methodology.map((m, idx) => (
               <div
                 key={idx}
                 className="p-5 rounded-xl bg-[var(--surface-1)] border border-[var(--border-subtle)] flex items-start gap-4 shadow-xs"
@@ -173,6 +263,21 @@ export default function ResearchPage() {
           </div>
         </div>
 
+        {/* Limitations (rendered only if present in research.json) */}
+        {fyp.limitations && fyp.limitations.length > 0 && (
+          <div className="p-6 sm:p-8 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-4">
+            <h3 className="text-lg font-bold text-[var(--foreground)] flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-amber-500" />
+              <span>Limitations</span>
+            </h3>
+            <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+              {fyp.limitations.map((item, idx) => (
+                <li key={idx}>• {item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Open Research Questions */}
         <div className="p-6 sm:p-8 rounded-2xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-4">
           <h3 className="text-lg font-bold text-[var(--foreground)] flex items-center gap-2">
@@ -180,7 +285,7 @@ export default function ResearchPage() {
             <span>Open Questions for Graduate Inquiry</span>
           </h3>
           <div className="space-y-3">
-            {research.fypDetails.openQuestions.map((q, idx) => (
+            {fyp.openQuestions.map((q, idx) => (
               <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-[var(--text-muted)]">
                 <span className="font-mono text-amber-500 font-bold">Q{idx + 1}:</span>
                 <p className="leading-relaxed">{q}</p>

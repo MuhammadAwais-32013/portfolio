@@ -1,58 +1,91 @@
 {
-  "statementSummary": "My research objective is to advance Generative AI, Large Language Models, and Agentic AI systems while bridging the gap between high-capacity perceptual neural networks and resource-constrained real-world deployment. In particular, I investigate how real-time computer vision models, generative pipelines, and autonomous agentic workflows can operate robustly, securely, and efficiently under unstructured conditions.",
+  "statementSummary": "I build and evaluate AI systems that must work reliably outside the lab. My work spans a deployed real-time traffic perception system (YOLOv8 with multi-object tracking), LLM-based applications and multi-agent pipelines. I am interested in how to measure whether such systems can be trusted: how detection errors propagate into decisions, how efficiently models can run on modest hardware, and when LLM agents and vision-language models can replace or complement purpose-built pipelines in low-resource, heterogeneous settings.",
   "researchInterests": [
     {
-      "topic": "Generative AI & Multimodal Systems",
-      "summary": "Building creative generative architectures, audio synthesis with text-to-speech models (Gemini TTS), prompt engineering, and multimodal comprehension."
-    },
-    {
-      "topic": "Large Language Models (LLMs) & Reasoning",
-      "summary": "Fine-tuning open weights, designing domain-specific Retrieval-Augmented Generation (RAG) pipelines, and enforcing guardrails against hallucinations."
+      "topic": "Real-Time Computer Vision & Efficient Deployment",
+      "summary": "Detection and tracking for heterogeneous traffic, and running such models efficiently on modest hardware (model size, latency, FPS). Evidence: deployed final-year project (YOLOv8n + ByteTrack; validation mAP@50 89.5%, 3.1 ms/frame inference); YOLO custom object detection certificate. [VERIFY: quantization or TensorRT work with benchmark logs; if none exists, delete any quantization/TensorRT wording from the site.]"
     },
     {
       "topic": "Agentic AI & Multi-Agent Collaboration",
-      "summary": "Orchestrating stateful multi-agent systems (CrewAI, LangGraph) with role delegation, reflection loops, dynamic tool calling, and verifiable output synthesis."
+      "summary": "Role-specialized multi-agent LLM pipelines with tool calling, and how to measure their reliability against single-agent baselines. Evidence: Podcaster Crew, a CrewAI pipeline with researcher, reporting-analyst and scriptwriter agents using web search and Gemini speech synthesis (https://github.com/MuhammadAwais-32013/podcaster_crew); LangChain and Model Context Protocol research-report generator; LangGraph project; Hugging Face MCP certificate."
     },
     {
-      "topic": "Edge AI & Real-Time Computer Vision",
-      "summary": "Quantization (INT8/FP16), TensorRT optimization, custom YOLOv8 detection architectures, and low-latency spatial congestion analytics on embedded hardware."
+      "topic": "Large Language Models & Retrieval-Augmented Generation",
+      "summary": "Domain-specific question answering with retrieval-augmented generation, and measuring groundedness and hallucination. Evidence: DiaBP Diet Consultant, a Flutter mobile app with a FastAPI RAG backend (Gemini, FAISS, Sentence Transformers) and OCR of medical documents, with a GitHub Actions workflow for Azure deployment (https://github.com/MuhammadAwais-32013/DietPlanner_mobile-app); ArticleSift (LLaMA 3.1 with Google Custom Search); DeepLearning.AI Machine Learning Specialization. No formal RAG evaluation yet. [VERIFY: link to any fine-tuning project, otherwise do not claim fine-tuning.]"
+    },
+    {
+      "topic": "Generative AI & Multimodal Systems",
+      "summary": "Speech synthesis, prompt engineering and multimodal comprehension in working applications. Evidence: Gemini text-to-speech podcast generation in Podcaster Crew; ArticleSift audio narration and four-language translation (English, Urdu, Spanish, French); voice-to-voice Hugging Face Space; 8th place at a national Gen AI hackathon ([VERIFY: number of teams]); Generative AI certificates (IBM, Pak Angels)."
     }
   ],
   "fypDetails": {
-    "title": "Intelligent Urban Traffic Choking Detection & Flow Optimization",
-    "status": "Final Year Thesis Manuscript (Under Review for Conference Submission)",
-    "abstract": "Urban transit corridors in developing metropolises suffer from localized choking phenomena—unregulated bottlenecks caused by roadside friction, lane indiscipline, and vehicle heterogeneity. Traditional loop sensors fail in such environments. We present an end-to-end edge-deployable computer vision framework that couples a custom-tuned YOLOv8 detector with spatial density vector estimation. Trained on a novel, self-collected 4,200-frame annotated dataset of Islamabad arterial roads, our pipeline achieves 91.4% mAP@0.5 and maintains 42 FPS throughput on edge hardware. We demonstrate early choke warning generation within 2.5 seconds, providing actionable telemetry for municipal traffic control.",
+    "title": "Real-Time Traffic Choking Point Detector",
+    "status": "Final Year Project, NUML Islamabad (completed 2026). Held-out evaluation and a vision-language-model comparison are in progress.",
+    "abstract": "We present a real-time congestion monitoring system deployed at two junctions in Islamabad (NUML Gate and 7-Up Chowk). A YOLOv8n detector, fine-tuned from COCO-pretrained weights on a self-collected four-class dataset (vehicle, bus, human, traffic controller), is combined with ByteTrack tracking and count-based congestion rules. Alerts are delivered through a FastAPI backend, a React dashboard and SMS. On the validation split the detector reaches mAP@50 of 89.5% and mAP@50-95 of 59.3%, with precision 86.4% and recall 84.7%, and runs at 3.1 ms per frame inference on [VERIFY: GPU model and image size]. End-to-end throughput is [VERIFY: 20-25 FPS as stated in the report, with hardware]. Error analysis shows that the vehicle class is over-counted at the default confidence threshold and that the human class has low precision, so we treat the current thresholds as a baseline for learned, better-calibrated congestion estimation.",
+    "results": {
+      "split": "Validation split (also used to select the best epoch). An independent held-out test set is in preparation.",
+      "overall": {
+        "mAP50": "89.5%",
+        "mAP50-95": "59.3%",
+        "precision": "86.4%",
+        "recall": "84.7%"
+      },
+      "perClassMAP50": {
+        "Controller": "96.6%",
+        "Numl_Bus": "95.3%",
+        "vehicle": "88.0%",
+        "Human": "78.2%"
+      },
+      "efficiency": "3.1 ms/frame inference, 6.3 MB model. [VERIFY: GPU model, image size, and what the 3.1 ms includes.]",
+      "training": "282 epochs (best epoch 232), about 2.7 hours, COCO-pretrained initialization."
+    },
+    "limitations": [
+      "Metrics are from the validation split; an independent test set from different days or viewpoints is still needed.",
+      "At the confusion-matrix threshold, vehicle predictions exceed ground truth by roughly 23%, and the human class has low precision (many false positives, possibly unlabeled objects).",
+      "Congestion is decided by a fixed vehicle-count threshold rather than learned from speed, occupancy or stop duration.",
+      "Data come from two junctions, so cross-site generalization is untested.",
+      "All vehicle types are merged into a single class."
+    ],
     "dataset": {
-      "name": "Islamabad Urban Road Congestion (IURC) Dataset",
-      "size": "4,200 annotated frames (1080p / 30fps sources)",
-      "classes": ["Car", "Motorcycle", "Auto-Rickshaw", "Van / Pickup", "Bus", "Truck / Heavy", "Bicycle", "Pedestrian"],
-      "conditions": ["Daylight clear", "Overcast rain", "Dusk / Low-light", "Heavy shadow / Foliage occlusions"]
+      "name": "NUML Junction Traffic Dataset (working name)",
+      "size": "[VERIFY: total images; the report states 1,822 collected and 1,630 after cleaning] images, about 6.6k annotated instances [VERIFY: training split or full dataset]",
+      "classes": [
+        "vehicle",
+        "Numl_Bus",
+        "Human",
+        "Controller"
+      ],
+      "conditions": [
+        "[VERIFY: list only the lighting and weather conditions actually present in the data]"
+      ]
     },
     "methodology": [
       {
-        "step": "Corpus Acquisition & Multi-Corridor Sampling",
-        "detail": "Collected video feeds across key Islamabad choke points (Zero Point, I-8 Interchange, Kashmir Highway) capturing diverse traffic densities."
+        "step": "Data Collection at Two Junctions",
+        "detail": "Recorded traffic video at NUML Gate and 7-Up Chowk, Islamabad, and extracted frames for annotation."
       },
       {
-        "step": "Spatial Polygon Masking & Preprocessing",
-        "detail": "Constructed dynamic Regions of Interest (ROI) ignoring stationary roadside artifacts while preserving multi-lane transit zones."
+        "step": "Annotation and Cleaning",
+        "detail": "Annotated four classes with [VERIFY: annotation tool]. Removed blurred and duplicate frames, reducing the image set from 1,822 to 1,630 [VERIFY]."
       },
       {
-        "step": "Model Adaptation & Loss Tuning",
-        "detail": "Tuned YOLOv8 with Mosaic and Mixup augmentations, utilizing Focal Loss to counteract extreme class imbalance in two-wheeler and rickshaw classes."
+        "step": "Detector Fine-Tuning",
+        "detail": "Fine-tuned YOLOv8n from COCO-pretrained weights over four training iterations; final run of 282 epochs with the best checkpoint at epoch 232. [VERIFY: image size, augmentations, and any hyperparameters actually changed from the defaults.]"
       },
       {
-        "step": "Quantization & TensorRT Edge Deployment",
-        "detail": "Engineered FP16 TensorRT inference pipeline reducing per-frame latency from 58ms to 23.8ms, achieving sustained 42 FPS."
+        "step": "Tracking and Congestion Rules",
+        "detail": "Added ByteTrack for persistent vehicle IDs and applied count-based thresholds to raise congestion alerts. Threshold values: [VERIFY]."
       },
       {
-        "step": "Choke Vector Metric Formulation",
-        "detail": "Formulated a spatial choke-density coefficient C_d triggering alerts when threshold persists beyond 2.0s."
+        "step": "System Integration and Deployment",
+        "detail": "Served detections through a FastAPI backend to a React dashboard with SMS alerts; deployed at two junctions and tested with administrators and wardens [VERIFY: wording from the user-acceptance testing section of the report]."
       }
     ],
     "openQuestions": [
-      "Can cross-camera re-identification (ReID) be computed on edge nodes without transmitting uncompressed video to a centralized coordinator?",
-      "How can self-supervised foundation vision models (e.g., DINOv2) be distilled efficiently for sub-10W edge inference chips?"
+      "How do per-frame detection errors, such as the observed vehicle over-counting, propagate into congestion-state decisions, and can tracker-derived features (occupancy, speed, stop duration) replace fixed count thresholds?",
+      "When can open-weight vision-language models complement or replace a fine-tuned detector for congestion-state classification in heterogeneous traffic, and at what latency and cost?",
+      "How do multi-agent LLM pipelines compare with single-prompt baselines on citation correctness and unsupported claims?",
+      "How can the groundedness of retrieval-augmented health and nutrition assistants be measured, and how often do they produce unsupported claims compared with a no-retrieval baseline?"
     ]
   }
 }
