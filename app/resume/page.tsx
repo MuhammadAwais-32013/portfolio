@@ -40,7 +40,8 @@ const email = "dev.muhammadowais@gmail.com";
 const phone = "+92 346 4617329";
 const whatsapp = "https://wa.me/923464617329";
 const github = "https://github.com/MuhammadAwais-32013";
-const linkedin = "https://www.linkedin.com/in/muhammad-awais32013";
+const linkedin = "https://linkedin.com/in/muhammad-awais32013";
+const portfolio = "https://muhammad-awais-swe.vercel.app";
 
 // PDFs placed in /public. Rename here if your filenames differ.
 const PDF_FILES: Record<Track, { href: string; download: string; title: string }> = {
@@ -58,11 +59,20 @@ const PDF_FILES: Record<Track, { href: string; download: string; title: string }
 
 /* -------------------------------------------------------------------------- */
 /*  Shared data                                                               */
-/*  NOTE: every empty href ("") hides that link until you fill in the URL.    */
+/*  NOTE: an empty href ("") hides that link. All links below come from the  */
+/*  hyperlinks embedded in your two CV PDFs.                                  */
 /* -------------------------------------------------------------------------- */
 
-const diabpLinks: LinkItem[] = [{ label: "GitHub", href: "" }];
-const articleSiftLinks: LinkItem[] = [{ label: "GitHub", href: "" }];
+// The two CVs link to different DiaBP repos (web app vs. mobile app).
+const diabpWebLinks: LinkItem[] = [
+  { label: "GitHub", href: "https://github.com/MuhammadAwais-32013/Dietplanner_Web_APP" },
+];
+const diabpMobileLinks: LinkItem[] = [
+  { label: "GitHub", href: "https://github.com/MuhammadAwais-32013/DietPlanner_mobile-app" },
+];
+const articleSiftLinks: LinkItem[] = [
+  { label: "GitHub", href: "https://github.com/MuhammadAwais-32013/Article-Generator_Hackathon_Project" },
+];
 
 /* -------------------------------------------------------------------------- */
 /*  INDUSTRY CV DATA                                                          */
@@ -100,7 +110,7 @@ const industry = {
   ],
   experience: [
     {
-      title: "Software Engineering Intern — Full Stack",
+      title: "AI Engineer  — Full Stack",
       subtitle: "National Incubation Center (NIC), Islamabad",
       date: "Jan 2026 – Mar 2026",
       bullets: [
@@ -133,7 +143,7 @@ const industry = {
     {
       title: "DiaBP Diet Consultant — RAG-Powered Health Assistant",
       tech: "Next.js · FastAPI · Gemini · FAISS · RAG",
-      links: diabpLinks,
+      links: diabpWebLinks,
       bullets: [
         "Built a full-stack AI health assistant for diabetes and hypertension patients (Next.js frontend, FastAPI backend) with secure authentication, health tracking, an admin dashboard and Docker deployment.",
         "Implemented a Retrieval-Augmented Generation pipeline (Gemini, FAISS, Sentence Transformers) that grounds a WebSocket chatbot and personalized multi-week diet plans in medical literature; added OCR to extract data from uploaded medical documents.",
@@ -142,7 +152,12 @@ const industry = {
     {
       title: "Multi-Agent Content Generation System",
       tech: "CrewAI · Gemini · LiteLLM · Python",
-      links: [{ label: "GitHub", href: "" }],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/MuhammadAwais-32013/Crewai_Agents/blob/main/Researcher_Writer_Editor_Agent.ipynb",
+        },
+      ],
       bullets: [
         "Built a multi-agent pipeline using CrewAI in which Planner, Writer and Editor agents collaborate to turn a topic into a polished, SEO-optimized blog article.",
         "Defined agent roles, goals and task-level expected outputs (content plan, structured draft, edited final copy), powered by Google Gemini through LiteLLM.",
@@ -211,8 +226,8 @@ const academic = {
       date: "June 2025 – Dec 2026",
       tech: "Team of three | YOLOv8, ByteTrack, OpenCV, FastAPI, React",
       links: [
-        { label: "Dataset", href: "" },
-        { label: "Training notebook", href: "" },
+        { label: "Dataset", href: "https://www.kaggle.com/datasets/muhammadawaisqrni/yolo-numl-dataset-1-0" },
+        { label: "Training notebook", href: "https://github.com/MuhammadAwais-32013/FYP_Yolo_Fine-Tuning" },
       ],
       bullets: [
         "Role: AI engineer in a team of three, responsible for the full pipeline from data collection and annotation through model training and evaluation to integration with the web application.",
@@ -226,7 +241,7 @@ const academic = {
     {
       title: "DiaBP Diet Consultant: RAG-Powered Health Assistant",
       tech: "FastAPI, Gemini, FAISS, Sentence Transformers, Next.js, Flutter, Docker",
-      links: diabpLinks,
+      links: diabpMobileLinks,
       bullets: [
         "Retrieval-augmented pipeline (Gemini, FAISS, Sentence Transformers) that grounds a WebSocket chatbot and personalised multi-week diet plans for diabetes and hypertension patients in medical literature; OCR extracts data from uploaded medical documents; authentication, health tracking and admin dashboard; GitHub Actions workflow for Azure deployment.",
         "In progress: formal groundedness and hallucination evaluation against a no-retrieval baseline.",
@@ -235,7 +250,7 @@ const academic = {
     {
       title: "Podcaster Crew: Multi-Agent LLM Pipeline",
       tech: "CrewAI, Gemini, tool calling, speech synthesis",
-      links: [{ label: "GitHub", href: "" }],
+      links: [{ label: "GitHub", href: "https://github.com/MuhammadAwais-32013/podcaster_crew" }],
       bullets: [
         "Role-specialised agents (researcher, reporting analyst, scriptwriter) with web-search tool use turn a topic into a scripted audio podcast via Gemini speech synthesis; planned comparison with a single-prompt baseline on citation correctness and unsupported claims.",
       ],
@@ -251,7 +266,9 @@ const academic = {
     {
       title: "Sales Demand Forecasting with XGBoost",
       tech: "Matplotlib, Seaborn, Xgboost, Scikit-learn, Numpy, Pandas",
-      links: [{ label: "GitHub", href: "" }],
+      links: [
+        { label: "GitHub", href: "https://github.com/MuhammadAwais-32013/Sales-forecast-forecasting-model-XGBOOST/" },
+      ],
       bullets: [
         "Built an end-to-end forecasting pipeline using XGBoost with lag, rolling-window (4-period mean and standard deviation) and calendar features; R² = 0.92 on a held-out test set (training R² = 0.97).",
       ],
@@ -272,7 +289,7 @@ const academic = {
     },
   ],
   teaching: {
-    title: "A-Level Tutor (Hybrid)",
+    title: "A-Level Tutor (Hybrid) Part Time",
     subtitle: "Private tutoring, online and in person",
     date: "May 2024 – Apr 2026",
     bullets: [
@@ -281,11 +298,11 @@ const academic = {
   } as EntryData,
   experience: [
     {
-      title: "Software Engineering Intern (Full Stack)",
+      title: "AI Engineer (Full Stack)",
       subtitle: "National Incubation Center (NIC), Islamabad",
       date: "Jan 2026 – Mar 2026",
       bullets: [
-        "Contributed to a tourism platform (stayOvers.pk) with AI-assisted booking workflows and role-based access control for guest, host and admin users; modular object-oriented backend, Git branching and Postman API test suites; Agile sprints and daily stand-ups.",
+        "Contributed to a tourism platform (stayOvers.pk) with AI-assisted booking RAG and role-based access control for guest, host and admin users; modular object-oriented backend, Git branching and Postman API test suites; Agile sprints and daily stand-ups.",
       ],
     },
     {
@@ -302,14 +319,18 @@ const academic = {
     "Participant in three international online hackathons.",
   ],
   certifications: [
-    { name: "Machine Learning Specialization", issuer: "Stanford Online and Coursera", href: "" },
-    { name: "Computer Vision: YOLO Custom Object Detection", issuer: "Coursera", href: "" },
-    { name: "Agentic AI Level 2 Engineer", issuer: "Panaversity", href: "" },
-    { name: "Generative AI Application Developer", issuer: "Pak Angels, Silicon Valley, CA, USA", href: "" },
+    { name: "Machine Learning Specialization", issuer: "Stanford Online and Coursera", href: "https://www.coursera.org/account/accomplishments/specialization/81JLU4VSH0H2" },
+    { name: "Computer Vision: YOLO Custom Object Detection", issuer: "Coursera", href: "https://www.coursera.org/account/accomplishments/verify/78L3IAYCH35L" },
+    { name: "Agentic AI Level 2 Engineer", issuer: "Panaversity", href: "https://www.panaversity.org/p/owaisq2019-c0rc" },
+    { name: "Generative AI Application Developer", issuer: "Pak Angels, Silicon Valley, CA, USA", href: "https://credsverse.com/credentials/38554b23-a822-4f83-b56a-a60d6768d540?preview=1" },
   ] as Cert[],
   events: [
     { text: "Attendee, 4th Intl. Conf. on Engineering & Computing Tech. (ICECT 2025), NUML Islamabad." },
-    { text: "Attendee, AI Summit 2023, Islamabad.", href: "" },
+    {
+      text: "Attendee, AI Summit 2023, Islamabad.",
+      // Note: this URL uses the account name "MuhammadAwais-2013" (not -32013) exactly as in your PDF.
+      href: "https://github.com/MuhammadAwais-2013/Certifications/blob/main/Ai%20summit%202023.pdf",
+    },
     { text: "Team member (Job Fair pavilion), Indus AI Week 2026, Pakistan’s national AI event, Islamabad." },
     {
       text: "Campus Outreach Deputy Head and Technology/AI Lead, CareCascade: led the technology and AI side and delivered three in-person AI and technology sessions reaching about 250–300 students.",
@@ -461,9 +482,9 @@ function CVHeader({
         <a href={linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-[var(--accent)]">
           <Linkedin className="w-3 h-3" /> linkedin.com/in/muhammad-awais32013
         </a>
-        <Link href="/" className="flex items-center gap-1 hover:text-[var(--accent)]">
+        <a href={portfolio} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-[var(--accent)]">
           <ExternalLink className="w-3 h-3" /> Portfolio
-        </Link>
+        </a>
       </div>
     </header>
   );

@@ -5,12 +5,13 @@
       "role": "Full-Stack AI  Engineer ",
       "company": "National Incubation Center (NIC) — stayOvers.pk",
       "location": "Islamabad, Pakistan",
-      "period": "2024",
+      "period": "Jan 2026 – Mar 2026",
       "type": "Internship",
-      "description": "Contributed to stayOvers.pk, a tourism platform incubated at NIC Islamabad, building full-stack features including AI-assisted booking, RAG, and role-based access for guests, hosts, and administrators.",
+      "description": "Engineered a production-grade tourism platform (stayOvers.pk) incubated at NIC Islamabad, building full-stack features including AI-assisted booking, RAG, and role-based access for guests, hosts, and administrators.",
       "achievements": [
         "Built modular, object-oriented backend services and role-based access controls for guest, host, and administrator accounts.",
         "Created Postman API test suites and worked with Git branching in an Agile team."
+      
       ],
       "technologies": ["Python", "FastAPI", "RAG", "Postman", "Git", "Agile / Scrum"]
     },
