@@ -67,7 +67,7 @@ export default async function ProfessorFitPage({
       recentPaper: "Next-Generation Machine Learning & Autonomous Systems",
       alignmentTheme: "Computer Vision, Edge Inference & Reliable Agentic Systems",
       keyConnections: [
-        "My Final Year Project on real-time traffic choke detection demonstrates end-to-end vision modeling (YOLOv8, 42 FPS, 91.4% mAP) tailored for edge constraints.",
+        "My Final Year Project on real-time traffic congestion detection combines YOLOv8n with ByteTrack and reports 89.5% validation and 89.1% held-out test mAP@50.",
         "I have engineered production software platforms with strict security boundaries, bridging machine learning modeling with resilient full-stack deployment.",
         "I am actively seeking an MS thesis supervision opportunity with your research group.",
       ],

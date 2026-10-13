@@ -100,7 +100,7 @@ export default function HomePage() {
     {
       icon: <Cpu className="w-5 h-5" />,
       title: "AI & Computer Vision",
-      desc: "Real-time edge neural inference with custom YOLOv8 pipelines, TensorRT FP16 quantization, and spatial congestion analytics.",
+      desc: "Real-time vehicle detection and tracking with a fine-tuned YOLOv8n model, ByteTrack, and count-based congestion alerts.",
       color: "text-emerald-700 dark:text-emerald-400",
       bg: "bg-emerald-50 dark:bg-emerald-950/40",
       border: "border-emerald-200 dark:border-emerald-800/40",
@@ -140,9 +140,9 @@ export default function HomePage() {
       id: "ai-vision",
       title: "Edge Computer Vision & Deep Learning",
       icon: <Cpu className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />,
-      desc: "Training deep neural networks on custom annotated roadway datasets and deploying low-latency edge inference with TensorRT quantization at 42 FPS.",
-      proof: "FYP Urban Traffic Choking Detection (91.4% mAP@0.5)",
-      stack: ["PyTorch", "YOLOv8", "OpenCV", "TensorRT", "CUDA"],
+      desc: "Fine-tuning YOLOv8n on a self-collected traffic dataset and integrating ByteTrack with a FastAPI service and React dashboard.",
+      proof: "FYP Traffic Choking Point Detector (89.5% validation / 89.1% held-out test mAP@50)",
+      stack: ["Python", "YOLOv8n", "OpenCV", "ByteTrack", "FastAPI", "React"],
       link: "/projects/traffic-choking-detection",
     },
   ];

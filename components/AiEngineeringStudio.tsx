@@ -78,7 +78,7 @@ export function AiEngineeringStudio() {
     {
       id: "vision",
       label: "Edge Computer Vision",
-      tag: "YOLOv8 • 42 FPS • 91.4% mAP",
+      tag: "YOLOv8n • ByteTrack • 89.1% test mAP@50",
       icon: <Cpu className="w-4 h-4 text-sky-400" />,
       pillar: "AI Researcher & Vision Engineer",
     },
@@ -172,7 +172,7 @@ export function AiEngineeringStudio() {
                   <strong className="text-[var(--foreground)]">Pillar Focus:</strong> Real-time Object Detection & Spatial Choke Vector Estimation
                 </div>
                 <div className="font-mono text-sky-400 font-bold">
-                  Bespoke 4,200-Frame Islamabad Dataset
+                  Self-Collected Dataset · 1,642 Images
                 </div>
               </div>
               <TrafficSimulationDemo />
@@ -267,7 +267,7 @@ export function AiEngineeringStudio() {
                   <span>Deterministic Tool Sandbox Active</span>
                 </div>
                 <div className="space-y-1.5 text-slate-300">
-                  <p className="text-emerald-400">&gt; Query: &quot;Quantization loss mitigation in YOLOv8 & TensorRT edge pipelines&quot;</p>
+                  <p className="text-emerald-400">&gt; Query: &quot;Comparing validation and held-out test results for traffic detection&quot;</p>
                   <p className="text-slate-400">&gt; Active Agent: <strong className="text-purple-300">{agentSteps[agentStep]?.agent}</strong></p>
                   <p className="text-sky-300">&gt; Output: {agentSteps[agentStep]?.output}</p>
                 </div>
@@ -331,7 +331,7 @@ export function AiEngineeringStudio() {
                     <span>3. AI Runtime & Persistence</span>
                   </div>
                   <ul className="text-xs space-y-2 text-[var(--text-muted)] leading-relaxed">
-                    <li>&bull; TensorRT FP16 Edge Inference (42 FPS)</li>
+                    <li>&bull; YOLOv8n + ByteTrack traffic detection</li>
                     <li>&bull; LangGraph state machine & agent loop</li>
                     <li>&bull; PostgreSQL with AES-256 field encryption</li>
                     <li>&bull; Qdrant Vector Store for sub-800ms dense RAG</li>

@@ -69,6 +69,7 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
 
   const secondaryNavLinks = [
     { href: "/achievements", label: "18+ Certifications", desc: "DeepLearning.AI, GenAI, MCP & Cisco" },
+    { href: "/community", label: "Conferences & Volunteering", desc: "Events, competitions & campus outreach" },
     { href: "/resume", label: "Dual CV", desc: "Industry & Academic CV" },
   ];
 
@@ -164,7 +165,7 @@ export function Navbar({ onOpenCommandPalette }: { onOpenCommandPalette?: () => 
               <button
                 onClick={() => setMoreMenuOpen(!moreMenuOpen)}
                 className={`flex items-center gap-1 px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
-                  moreMenuOpen || pathname === "/skills" || pathname === "/achievements" || pathname === "/resume"
+                  moreMenuOpen || pathname === "/skills" || pathname === "/achievements" || pathname === "/community" || pathname === "/resume"
                     ? "text-[var(--accent)] bg-[var(--accent-surface)]"
                     : "text-[var(--text-muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-2)]"
                 }`}

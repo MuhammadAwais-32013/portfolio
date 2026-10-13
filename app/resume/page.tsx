@@ -140,8 +140,8 @@ export default function ResumePage() {
           </h3>
           <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
             {activeTab === "industry"
-              ? "Full-stack AI engineer with demonstrated expertise in building autonomous multi-agent pipelines (CrewAI, LangGraph), predictive machine learning forecasting (XGBoost), health RAG & OCR architectures, and real-time edge computer vision (YOLOv8, TensorRT at 42 FPS). Proven background shipping production microservices at National Incubation Center (NIC) Islamabad and delivering 20+ freelance contracts."
-              : "Graduating senior in Computer Science at NUML specializing in Generative AI, Large Language Models, agentic reasoning loops, and edge computer vision. Authored a 4,200-frame annotated Pakistani roadway dataset and engineered low-latency choke detection architectures. Preparing for Fall 2026 / Spring 2027 MS in Artificial Intelligence / Cybersecurity."}
+              ? "Full-stack AI engineer with project experience in real-time computer vision, LLM applications, RAG, and multi-agent systems. Contributed to a tourism platform at NIC Islamabad and delivered full-stack applications for international freelance clients."
+              : "Computer Science graduate from NUML interested in reliable AI systems, computer vision, LLM agents, and retrieval-augmented generation. Final-year research combined a self-collected traffic dataset, YOLOv8n, ByteTrack, and a web-based monitoring system."}
           </p>
         </div>
 
@@ -162,11 +162,14 @@ export default function ResumePage() {
                   </div>
                 </div>
                 <div className="text-right font-mono text-xs text-[var(--text-dim)]">
-                  <span>2022 – 2026</span>
+                  <span>Feb 2022 – Feb 2026</span>
                 </div>
               </div>
               <p className="text-xs text-[var(--text-muted)]">
-                <strong>Thesis:</strong> Intelligent Urban Traffic Choking Detection & Flow Optimization (Lead Researcher)
+                <strong>CGPA:</strong> 3.34 / 4.00
+              </p>
+              <p className="text-xs text-[var(--text-muted)]">
+                <strong>Thesis:</strong> Real-Time Traffic Choking Point Detector
               </p>
             </div>
           </div>
@@ -192,9 +195,9 @@ export default function ResumePage() {
                 <span className="font-mono text-xs text-[var(--text-dim)]">2024</span>
               </div>
               <ul className="list-disc list-inside space-y-1 text-xs text-[var(--text-muted)]">
-                <li>Architected clean OOP backend microservices and implemented Role-Based Access Control (RBAC).</li>
-                <li>Designed and verified 35+ RESTful API endpoints in Postman with automated assertion collections.</li>
-                <li>Participated in bi-weekly Agile sprints, daily scrums, and GitHub PR review cycles.</li>
+                <li>Contributed to a tourism platform with AI-assisted booking, RAG, and role-based access for guests, hosts, and administrators.</li>
+                <li>Built modular, object-oriented backend services and Postman API test suites.</li>
+                <li>Worked with Git branching as part of an Agile team.</li>
               </ul>
             </div>
 
@@ -208,11 +211,11 @@ export default function ResumePage() {
                     Fiverr & International Direct Clients
                   </div>
                 </div>
-                <span className="font-mono text-xs text-[var(--text-dim)]">2023 – Present</span>
+                <span className="font-mono text-xs text-[var(--text-dim)]">May 2024 – Aug 2025</span>
               </div>
               <ul className="list-disc list-inside space-y-1 text-xs text-[var(--text-muted)]">
-                <li>Shipped 20+ production web applications and custom AI workflows with Next.js, React, and Python.</li>
-                <li>Built automated data extraction pipelines, vector search integrations, and CI/CD deployments.</li>
+                <li>Delivered full-stack web applications with React, Next.js, and Python for international clients.</li>
+                <li>Integrated payment and authentication APIs and deployed applications to Vercel and Netlify.</li>
               </ul>
             </div>
           </div>
@@ -245,7 +248,7 @@ export default function ResumePage() {
                 <span className="font-mono text-xs text-[var(--accent)]">RAG + OCR Medical Pipeline</span>
               </div>
               <p className="text-xs text-[var(--text-muted)]">
-                Personalized diabetes and hypertension nutrition consultant with OCR medical document parsing and guardrailed clinical guideline retrieval.
+                RAG-powered nutrition assistant with medical-document OCR, personalized plans, and formal groundedness evaluation in progress.
               </p>
             </div>
 
@@ -257,7 +260,7 @@ export default function ResumePage() {
                 <span className="font-mono text-xs text-[var(--accent)]">XGBoost Regressor & Lags</span>
               </div>
               <p className="text-xs text-[var(--text-muted)]">
-                End-to-end retail demand forecasting pipeline with temporal lag features, rolling windows, and Streamlit interactive deployment.
+                XGBoost forecasting pipeline with lag and rolling-window features; R² = 0.92 on a held-out test set.
               </p>
             </div>
 
@@ -266,10 +269,19 @@ export default function ResumePage() {
                 <strong className="text-[var(--foreground)]">
                   Traffic Choking Detection (FYP) — YOLOv8 & Edge Vision
                 </strong>
-                <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400">42 FPS | 91.4% mAP</span>
+                <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400">89.5% val. | 89.1% test mAP@50</span>
               </div>
               <p className="text-xs text-[var(--text-muted)]">
-                Annotated 4,200 Islamabad road frames. Deployed FP16 TensorRT inference reducing frame latency to 23.8ms on edge hardware.
+                Fine-tuned YOLOv8n on a four-class traffic dataset and integrated ByteTrack, FastAPI, a React dashboard, and SMS alerts. Held-out test precision: 82.2%; recall: 86.8%.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <div className="flex justify-between items-start">
+                <strong className="text-[var(--foreground)]">ArticleSift — LLM News Question-Answering</strong>
+                <span className="font-mono text-xs text-[var(--accent)]">LLaMA 3.1 · Streamlit</span>
+              </div>
+              <p className="text-xs text-[var(--text-muted)]">
+                Retrieves live news for question answering and summarization, with audio narration and translation across English, Urdu, Spanish, and French.
               </p>
             </div>
           </div>
@@ -291,11 +303,20 @@ export default function ResumePage() {
                 </div>
               </div>
               <div className="text-right font-mono text-xs text-[var(--text-dim)]">
-                <span>2022 – 2026</span>
+                <span>Feb 2022 – Feb 2026</span>
               </div>
             </div>
+            <p className="text-xs text-[var(--text-muted)]">CGPA: 3.34 / 4.00</p>
           </div>
         )}
+
+        <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--surface-2)] p-4 text-xs text-[var(--text-muted)]">
+          Hackathons, conferences, events, and campus outreach are listed on the{" "}
+          <Link href="/community" className="font-semibold text-[var(--accent)] hover:underline">
+            Conferences & Volunteering page
+          </Link>
+          .
+        </div>
 
         {/* Technical Skills & Certifications */}
         <div className="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
@@ -304,7 +325,7 @@ export default function ResumePage() {
           </h3>
           <div className="text-xs text-[var(--text-muted)] space-y-1.5">
             <p>
-              <strong className="text-[var(--foreground)]">AI/ML & GenAI:</strong> Python, PyTorch, YOLOv8/v11, TensorRT, CrewAI, LangGraph, Gemini API & TTS, Hugging Face, XGBoost, Scikit-Learn, OpenCV, RAG, Qdrant.
+              <strong className="text-[var(--foreground)]">AI/ML & GenAI:</strong> Python, PyTorch, YOLOv8, ByteTrack, CrewAI, LangGraph, Gemini API & TTS, XGBoost, scikit-learn, OpenCV, FAISS, Sentence Transformers.
             </p>
             <p>
               <strong className="text-[var(--foreground)]">Full-Stack & Systems:</strong> Next.js 16, React 19, TypeScript, Tailwind CSS, FastAPI, Node.js, Flutter / Dart, PostgreSQL, Docker, Git.

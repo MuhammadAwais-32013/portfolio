@@ -10,7 +10,7 @@ This repository contains the source code for a modern, responsive, and dynamic p
 
 ### Key Features
 - **Interactive UI**: Includes an advanced `Command Palette` and an `Assistant Drawer` for quick navigation and AI-driven assistance.
-- **Dynamic Content**: Displays up-to-date experiences, research, projects, certifications, and skills.
+- **Dynamic Content**: Displays up-to-date experiences, research, projects, certifications, skills, teaching, competitions, conferences, and community outreach.
 - **Optimized Performance**: Built with modern web development standards leveraging Next.js static and dynamic rendering capabilities.
 
 ## Getting Started

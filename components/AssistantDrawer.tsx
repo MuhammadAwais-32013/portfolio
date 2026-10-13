@@ -89,7 +89,7 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
     category: "fyp-traffic",
     keywords: ["fyp", "choking", "traffic", "yolo", "map", "fps", "tensorrt", "vision", "islamabad", "road"],
     reply:
-      "🚗 **FYP: Intelligent Urban Traffic Choking Detection & Flow Optimization**:\n\n• **Dataset**: Muhammad Awais self-curated and annotated a custom 4,200+ frame roadway dataset of Islamabad intersections under heterogeneous driving conditions.\n• **Architecture**: YOLOv8 customized with spatial density vector clustering and TensorRT FP16 quantization.\n• **Performance**: Achieves **91.4% mAP@0.5** across 8 vehicle categories at **42 FPS throughput** (23.8ms per-frame latency) on edge hardware.",
+      "🚗 **FYP: Real-Time Traffic Choking Point Detector**:\n\n• **Dataset**: Self-collected four-class traffic dataset with 1,642 images and 6,612 labeled objects.\n• **Architecture**: Fine-tuned YOLOv8n with ByteTrack, count-based congestion rules, a FastAPI backend, React dashboard, and SMS alerts.\n• **Performance**: **89.5% validation mAP@50** and **89.1% held-out test mAP@50**. Test precision: 82.2%; recall: 86.8%.",
     sources: [
       { label: "FYP Case Study", href: "/projects/traffic-choking-detection" },
       { label: "Research Paper Write-Up", href: "/research#fyp-section" },
@@ -144,7 +144,7 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
     category: "skills",
     keywords: ["skills", "stack", "technology", "tools", "python", "nextjs", "react", "fastapi", "docker", "langgraph", "pytorch"],
     reply:
-      "🛠️ **Comprehensive Technical Stack**:\n\n• **AI & GenAI**: Python, PyTorch, YOLOv8/v11, TensorRT, CrewAI, LangGraph, LangChain, Google Gemini API, OpenAI API, Hugging Face, XGBoost, Scikit-Learn, OpenCV.\n• **Full-Stack & Systems**: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, FastAPI, Node.js, PostgreSQL, Qdrant Vector Store, Docker, Git, Postman.\n• **Mobile & Cross-Platform**: Flutter & Dart (medical OCR & health assistant).",
+      "🛠️ **Technical Stack**:\n\n• **AI & GenAI**: Python, PyTorch, YOLOv8n, ByteTrack, CrewAI, LangGraph, Google Gemini, XGBoost, Scikit-learn, OpenCV.\n• **LLM applications**: FAISS, Sentence Transformers, LLaMA 3.1, Google Custom Search, gTTS.\n• **Full-Stack & Systems**: Next.js, React, TypeScript, FastAPI, Node.js, PostgreSQL, Docker, Git, Postman, Flutter.",
     sources: [
       { label: "Skills Matrix & Evidence", href: "/skills" },
       { label: "All Projects", href: "/projects" },
@@ -161,6 +161,17 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
       { label: "Download Resume", href: "/resume" },
     ],
     suggestions: ["Review all projects", "Contact on WhatsApp"],
+  },
+  {
+    category: "community",
+    keywords: ["teaching", "tutor", "volunteer", "volunteering", "conference", "event", "hackathon", "competition", "carecascade"],
+    reply:
+      "🤝 **Teaching & Community**:\n\n• A-Level tutor in hybrid sessions from May 2024 to April 2026.\n• Eighth place in a national Generative AI hackathon; participant in three international online hackathons.\n• CareCascade Campus Outreach Deputy Head and Technology/AI Lead; delivered three in-person sessions reaching about 250–300 students.\n• Attended ICECT 2025 and AI Summit 2023; supported the Indus AI Week 2026 Job Fair pavilion.",
+    sources: [
+      { label: "Teaching, Competitions & Events", href: "/community" },
+      { label: "Experience & Education", href: "/experience" },
+    ],
+    suggestions: ["What projects has he built?", "How can I contact him?"],
   },
 ];
 
@@ -411,7 +422,7 @@ export function AssistantDrawer() {
       } else {
         // Fallback for irrelevant / off-topic queries
         replyText =
-          "I am an AI assistant specifically dedicated to **Muhammad Awais's portfolio, engineering projects, research, and background**.\n\nI cannot assist with general off-topic questions, but I'd be glad to share information about Awais's:\n• 🎙️ **Podcaster Crew** (CrewAI & Gemini TTS)\n• 🩺 **DiaBp Diet Consultant** (RAG & Medical OCR)\n• 📈 **Sales Forecasting** (XGBoost)\n• 🚗 **FYP Traffic Choking Detection** (YOLOv8 & TensorRT)\n• 📜 **18+ Verified Certifications** (DeepLearning.AI, MCP, Cisco)\n• 💼 **Availability & Direct Contact** (Email & WhatsApp)";
+          "I am an AI assistant specifically dedicated to **Muhammad Awais's portfolio, engineering projects, research, and background**.\n\nI cannot assist with general off-topic questions, but I can share information about his:\n• 🎙️ **Podcaster Crew** (CrewAI & Gemini TTS)\n• 🩺 **DiaBP Diet Consultant** (RAG & medical-document OCR)\n• 📰 **ArticleSift** (news Q&A, audio narration, and translation)\n• 🚗 **FYP Traffic Choking Point Detector** (YOLOv8n & ByteTrack)\n• 🤝 **Teaching and campus outreach**\n• 💼 **Availability and contact details**";
 
         sources = [
           { label: "Explore Projects", href: "/projects" },

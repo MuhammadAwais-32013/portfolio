@@ -3,7 +3,7 @@
   "researchInterests": [
     {
       "topic": "Real-Time Computer Vision & Efficient Deployment",
-      "summary": "Detection and tracking for heterogeneous traffic, and running such models efficiently on modest hardware (model size, latency, FPS). Evidence: deployed final-year project (YOLOv8n + ByteTrack; validation mAP@50 89.5%, 3.1 ms/frame inference); YOLO custom object detection certificate. [VERIFY: quantization or TensorRT work with benchmark logs; if none exists, delete any quantization/TensorRT wording from the site.]"
+      "summary": "Detection and tracking for heterogeneous traffic, with attention to model size, inference latency, and how detection errors affect downstream congestion decisions. Evidence: final-year project using YOLOv8n and ByteTrack, with 89.5% validation and 89.1% held-out test mAP@50."
     },
     {
       "topic": "Agentic AI & Multi-Agent Collaboration",
@@ -11,32 +11,38 @@
     },
     {
       "topic": "Large Language Models & Retrieval-Augmented Generation",
-      "summary": "Domain-specific question answering with retrieval-augmented generation, and measuring groundedness and hallucination. Evidence: DiaBP Diet Consultant, a Flutter mobile app with a FastAPI RAG backend (Gemini, FAISS, Sentence Transformers) and OCR of medical documents, with a GitHub Actions workflow for Azure deployment (https://github.com/MuhammadAwais-32013/DietPlanner_mobile-app); ArticleSift (LLaMA 3.1 with Google Custom Search); DeepLearning.AI Machine Learning Specialization. No formal RAG evaluation yet. [VERIFY: link to any fine-tuning project, otherwise do not claim fine-tuning.]"
+      "summary": "Domain-specific question answering with retrieval-augmented generation, and measuring groundedness and hallucination. Evidence: DiaBP Diet Consultant, a mobile and web health assistant with a FastAPI RAG backend (Gemini, FAISS, Sentence Transformers) and OCR for medical documents; ArticleSift uses LLaMA 3.1 and Google Custom Search for live-news question answering. Formal RAG evaluation is in progress."
     },
     {
       "topic": "Generative AI & Multimodal Systems",
-      "summary": "Speech synthesis, prompt engineering and multimodal comprehension in working applications. Evidence: Gemini text-to-speech podcast generation in Podcaster Crew; ArticleSift audio narration and four-language translation (English, Urdu, Spanish, French); voice-to-voice Hugging Face Space; 8th place at a national Gen AI hackathon ([VERIFY: number of teams]); Generative AI certificates (IBM, Pak Angels)."
+      "summary": "Speech synthesis, prompt engineering, and multilingual applications. Evidence: Gemini text-to-speech podcast generation in Podcaster Crew; ArticleSift audio narration and translation into English, Urdu, Spanish, and French; and eighth place at a national Generative AI hackathon."
     }
   ],
   "fypDetails": {
     "title": "Real-Time Traffic Choking Point Detector",
-    "status": "Final Year Project, NUML Islamabad (completed 2026). Held-out evaluation and a vision-language-model comparison are in progress.",
-    "abstract": "We present a real-time congestion monitoring system deployed at two junctions in Islamabad (NUML Gate and 7-Up Chowk). A YOLOv8n detector, fine-tuned from COCO-pretrained weights on a self-collected four-class dataset (vehicle, bus, human, traffic controller), is combined with ByteTrack tracking and count-based congestion rules. Alerts are delivered through a FastAPI backend, a React dashboard and SMS. On the validation split the detector reaches mAP@50 of 89.5% and mAP@50-95 of 59.3%, with precision 86.4% and recall 84.7%, and runs at 3.1 ms per frame inference on [VERIFY: GPU model and image size]. End-to-end throughput is [VERIFY: 20-25 FPS as stated in the report, with hardware]. Error analysis shows that the vehicle class is over-counted at the default confidence threshold and that the human class has low precision, so we treat the current thresholds as a baseline for learned, better-calibrated congestion estimation.",
+    "status": "Final Year Project, NUML Islamabad (completed 2026). Held-out evaluation is complete; a vision-language-model comparison is in progress.",
+    "abstract": "This project develops a real-time congestion monitoring system for two Islamabad junctions (NUML Gate and 7-Up Chowk). A YOLOv8n detector, fine-tuned on a self-collected four-class traffic dataset, is combined with ByteTrack and count-based congestion rules. Alerts are served through a FastAPI backend to a React dashboard and SMS. Validation results are 89.5% mAP@50, 59.3% mAP@50-95, 86.4% precision, and 84.7% recall. On a held-out test set of 162 images and 799 instances, the detector reaches 89.1% mAP@50, 54.8% mAP@50-95, 82.2% precision, and 86.8% recall. Inference was measured at 3.1–5.7 ms per image on a Tesla T4.",
     "results": {
-      "split": "Validation split (also used to select the best epoch). An independent held-out test set is in preparation.",
+      "split": "Validation split (used to select the best epoch); separate held-out test split contains 162 images and 799 instances.",
       "overall": {
         "mAP50": "89.5%",
         "mAP50-95": "59.3%",
         "precision": "86.4%",
         "recall": "84.7%"
       },
-      "perClassMAP50": {
-        "Controller": "96.6%",
-        "Numl_Bus": "95.3%",
-        "vehicle": "88.0%",
-        "Human": "78.2%"
+      "testOverall": {
+        "mAP50": "89.1%",
+        "mAP50-95": "54.8%",
+        "precision": "82.2%",
+        "recall": "86.8%"
       },
-      "efficiency": "3.1 ms/frame inference, 6.3 MB model. [VERIFY: GPU model, image size, and what the 3.1 ms includes.]",
+      "perClassMAP50": {
+        "Numl_Bus": "95.9%",
+        "Controller": "94.2%",
+        "vehicle": "89.7%",
+        "Human": "76.6%"
+      },
+      "efficiency": "3.1–5.7 ms per image on a Tesla T4; model size 6.3 MB.",
       "training": "282 epochs (best epoch 232), about 2.7 hours, COCO-pretrained initialization."
     },
     "limitations": [
@@ -48,37 +54,35 @@
     ],
     "dataset": {
       "name": "NUML Junction Traffic Dataset (working name)",
-      "size": "[VERIFY: total images; the report states 1,822 collected and 1,630 after cleaning] images, about 6.6k annotated instances [VERIFY: training split or full dataset]",
+      "size": "1,642 images and 6,612 labeled objects; 80/10/10 train/validation/test split.",
       "classes": [
         "vehicle",
         "Numl_Bus",
         "Human",
         "Controller"
       ],
-      "conditions": [
-        "[VERIFY: list only the lighting and weather conditions actually present in the data]"
-      ]
+      "conditions": []
     },
     "methodology": [
       {
         "step": "Data Collection at Two Junctions",
-        "detail": "Recorded traffic video at NUML Gate and 7-Up Chowk, Islamabad, and extracted frames for annotation."
+        "detail": "Collected traffic data at NUML Gate and 7-Up Chowk in Islamabad."
       },
       {
         "step": "Annotation and Cleaning",
-        "detail": "Annotated four classes with [VERIFY: annotation tool]. Removed blurred and duplicate frames, reducing the image set from 1,822 to 1,630 [VERIFY]."
+        "detail": "Annotated 1,642 images and 6,612 objects across vehicle, bus, human, and traffic-controller classes."
       },
       {
         "step": "Detector Fine-Tuning",
-        "detail": "Fine-tuned YOLOv8n from COCO-pretrained weights over four training iterations; final run of 282 epochs with the best checkpoint at epoch 232. [VERIFY: image size, augmentations, and any hyperparameters actually changed from the defaults.]"
+        "detail": "Fine-tuned YOLOv8n for 282 epochs, with the best checkpoint at epoch 232; training took about 2.7 hours on a cloud GPU."
       },
       {
         "step": "Tracking and Congestion Rules",
-        "detail": "Added ByteTrack for persistent vehicle IDs and applied count-based thresholds to raise congestion alerts. Threshold values: [VERIFY]."
+        "detail": "Added ByteTrack for persistent IDs and applied count-based rules to raise congestion alerts."
       },
       {
         "step": "System Integration and Deployment",
-        "detail": "Served detections through a FastAPI backend to a React dashboard with SMS alerts; deployed at two junctions and tested with administrators and wardens [VERIFY: wording from the user-acceptance testing section of the report]."
+        "detail": "Served alerts through a FastAPI backend to a React dashboard and SMS."
       }
     ],
     "openQuestions": [

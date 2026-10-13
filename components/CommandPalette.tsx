@@ -15,6 +15,7 @@ import {
   Mail,
   ExternalLink,
   Sparkles,
+  Users,
 } from "lucide-react";
 
 type CommandItem = {
@@ -82,7 +83,7 @@ export function CommandPalette({
     {
       id: "nav-projects",
       title: "Projects & Case Studies",
-      subtitle: "Browse all 4 full-stack & AI case studies",
+      subtitle: "Browse AI, computer vision, and full-stack project case studies",
       category: "Navigation",
       icon: <Layers className="w-4 h-4 text-sky-400" />,
       action: () => {
@@ -137,11 +138,22 @@ export function CommandPalette({
     {
       id: "nav-achievements",
       title: "Certifications & Achievements",
-      subtitle: "14 verified professional credentials and honors",
+      subtitle: "Technical credentials and verified certificates",
       category: "Navigation",
       icon: <Award className="w-4 h-4 text-yellow-400" />,
       action: () => {
         router.push("/achievements");
+        onClose();
+      },
+    },
+    {
+      id: "nav-community",
+      title: "Conferences & Volunteering",
+      subtitle: "Conferences, hackathons, events, and campus outreach",
+      category: "Navigation",
+      icon: <Users className="w-4 h-4 text-emerald-400" />,
+      action: () => {
+        router.push("/community");
         onClose();
       },
     },
@@ -172,7 +184,7 @@ export function CommandPalette({
     {
       id: "proj-traffic",
       title: "Traffic Choking Detection (FYP)",
-      subtitle: "YOLOv8 Edge model on Islamabad roads, 42 FPS, 91.4% mAP",
+      subtitle: "YOLOv8n and ByteTrack; 89.5% validation and 89.1% held-out test mAP@50",
       category: "Projects",
       icon: <Layers className="w-4 h-4 text-emerald-400" />,
       action: () => {
@@ -182,19 +194,19 @@ export function CommandPalette({
     },
     {
       id: "proj-health",
-      title: "AI Smart Health Platform",
-      subtitle: "HIPAA-conscious multi-tenant triage portal with RBAC",
+      title: "DiaBP Diet Consultant",
+      subtitle: "RAG-powered health assistant with medical-document OCR",
       category: "Projects",
       icon: <Layers className="w-4 h-4 text-sky-400" />,
       action: () => {
-        router.push("/projects/ai-smart-health-platform");
+        router.push("/projects/diabp-diet-consultant");
         onClose();
       },
     },
     {
       id: "proj-articlesift",
       title: "ArticleSift",
-      subtitle: "Dense semantic paper exploration and comparative matrix",
+      subtitle: "Live-news question answering, audio narration, and translation",
       category: "Projects",
       icon: <Layers className="w-4 h-4 text-indigo-400" />,
       action: () => {

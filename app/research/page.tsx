@@ -25,6 +25,7 @@ type FypExtras = {
   results?: {
     split?: string;
     overall?: Record<string, string>;
+    testOverall?: Record<string, string>;
     perClassMAP50?: Record<string, string>;
     efficiency?: string;
     training?: string;
@@ -180,10 +181,32 @@ export default function ResearchPage() {
                 ))}
               </div>
             )}
+            {fyp.results.testOverall && (
+              <div className="space-y-3">
+                <h4 className="text-xs font-semibold text-[var(--accent)]">
+                  Held-out test results
+                </h4>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {Object.entries(fyp.results.testOverall).map(([key, value]) => (
+                    <div
+                      key={key}
+                      className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border-subtle)] text-center"
+                    >
+                      <div className="text-lg font-extrabold text-[var(--foreground)]">
+                        {value}
+                      </div>
+                      <div className="text-[11px] font-mono text-[var(--text-muted)]">
+                        {METRIC_LABELS[key] ?? key}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {fyp.results.perClassMAP50 && (
               <div className="space-y-2">
                 <span className="text-xs font-semibold text-[var(--accent)] block">
-                  Per-class mAP@50
+                  Held-out test mAP@50 by class
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(fyp.results.perClassMAP50).map(

@@ -95,6 +95,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/community" className="hover:text-[var(--accent)] transition-colors">
+                  Conferences & Volunteering
+                </Link>
+              </li>
+              <li>
                 <Link href="/skills" className="hover:text-[var(--accent)] transition-colors">
                   Skills & Evidence Matrix
                 </Link>

@@ -46,13 +46,13 @@ export default function RoadmapPage() {
           <div className="space-y-2 p-4 rounded-2xl bg-[var(--surface-2)] border border-[var(--border-subtle)]">
             <div className="text-[var(--accent)] font-bold font-mono">01. Research Fit</div>
             <p className="text-[var(--text-muted)] leading-relaxed">
-              Aligning FYP dataset engineering and model quantization with labs leading in edge intelligence, multi-agent frameworks, and trustworthy autonomous systems.
+              Aligning FYP dataset engineering and real-time detection and tracking with labs leading in edge intelligence, multi-agent frameworks, and trustworthy autonomous systems.
             </p>
           </div>
           <div className="space-y-2 p-4 rounded-2xl bg-[var(--surface-2)] border border-[var(--border-subtle)]">
             <div className="text-[var(--accent)] font-bold font-mono">02. Verified Metrics</div>
             <p className="text-[var(--text-muted)] leading-relaxed">
-              Leading with tangible empirical evidence: 42 FPS on edge GPUs, 91.4% mAP@0.5, and transparent reproducible git repositories.
+              Leading with reproducible results: 89.5% validation mAP@50 and 89.1% held-out test mAP@50 for the traffic detector.
             </p>
           </div>
           <div className="space-y-2 p-4 rounded-2xl bg-[var(--surface-2)] border border-[var(--border-subtle)]">

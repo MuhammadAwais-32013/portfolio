@@ -86,12 +86,12 @@ export function TrafficSimulationDemo() {
           <div className="flex items-center gap-2">
             <Camera className="w-4 h-4 text-sky-400" />
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--foreground)]">
-              Islamabad CAM-04: I-8 Interchange Arterial
+              NUML Gate & 7-Up Chowk · Traffic Simulation
             </span>
           </div>
           <span className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 status-pulse-dot" />
-            STREAM ACTIVE
+            SIMULATED FEED
           </span>
         </div>
 
@@ -99,16 +99,16 @@ export function TrafficSimulationDemo() {
         <div className="flex items-center gap-3 font-mono text-xs">
           <div className="flex items-center gap-1.5 text-[var(--text-muted)]">
             <Cpu className="w-3.5 h-3.5 text-sky-400" />
-            <span>TensorRT FP16:</span>
+            <span>Demo rate:</span>
             <span className="text-sky-400 font-bold">{fps} FPS</span>
           </div>
           <div className="hidden md:flex items-center gap-1.5 text-[var(--text-muted)] border-l border-[var(--border-subtle)] pl-3">
-            <span>Latency:</span>
-            <span className="text-emerald-400 font-bold">23.8ms</span>
+            <span>Model:</span>
+            <span className="text-emerald-400 font-bold">YOLOv8n</span>
           </div>
           <div className="hidden md:flex items-center gap-1.5 text-[var(--text-muted)] border-l border-[var(--border-subtle)] pl-3">
-            <span>mAP@0.5:</span>
-            <span className="text-purple-400 font-bold">91.4%</span>
+            <span>Test mAP@50:</span>
+            <span className="text-purple-400 font-bold">89.1%</span>
           </div>
         </div>
       </div>

@@ -8,8 +8,8 @@
     "recentPaper": "Efficient Real-Time Object Detection on Resource-Constrained Autonomous Platforms (CVPR 2024)",
     "alignmentTheme": "Edge Quantization & Real-Time Choke Point Perception",
     "keyConnections": [
-      "Your paper on model pruning matches my hands-on experience in converting YOLOv8 to FP16 TensorRT engines, achieving 42 FPS on edge hardware.",
-      "My self-curated 4,200-frame dataset directly addresses non-standard traffic and extreme occlusion challenges discussed in Section 4 of your recent publication.",
+      "My final-year project combines YOLOv8n with ByteTrack and evaluates traffic detection on separate validation and held-out test splits.",
+      "I collected and annotated a four-class traffic dataset of 1,642 images and 6,612 labeled objects from two Islamabad junctions.",
       "I am eager to contribute to your lab's next phase on multi-camera cooperative perception under the CSC Scholarship framework."
     ],
     "relevantProjects": ["traffic-choking-detection", "multi-agent-research-system"]
@@ -27,7 +27,7 @@
       "Having engineered production web platforms with strict RBAC and secure API boundaries, I combine AI modeling skills with production software engineering.",
       "I am applying for the Italian DSU Scholarship and PoliMi MSc Computer Science & Engineering program for Fall 2027."
     ],
-    "relevantProjects": ["traffic-choking-detection", "ai-smart-health-platform"]
+    "relevantProjects": ["traffic-choking-detection", "dietplanner-web-app"]
   },
   {
     "slug": "dr-wang",
@@ -38,7 +38,7 @@
     "recentPaper": "Collaborative Multi-Agent Networks with Reflection Verification for Scientific Hypothesis Generation (NeurIPS 2024)",
     "alignmentTheme": "Multi-Agent State Networks & Reflection Sandboxes",
     "keyConnections": [
-      "My project on Multi-Agent Autonomous Research implemented a 3-agent supervisor reflection loop that reduced hallucination rates by 89%, closely aligning with your team's verification frameworks.",
+      "My project work includes a role-specialized, multi-agent research-to-podcast pipeline; I am interested in evaluating its reliability against simpler baselines.",
       "I have combined LangGraph state graphs with Docker sandboxing to ensure verifiable, deterministic tool use.",
       "I am targeting the ANSO Fellowship under CAS supervision to deepen theoretical foundations in multi-agent game theory and cooperative reasoning."
     ],

@@ -19,7 +19,7 @@
         "Shanghai Jiao Tong University (SJTU) - School of Electronic Info & EE",
         "University of Science and Technology of China (USTC)"
       ],
-      "whatIBring": "Empirical dataset curation experience, custom YOLO edge quantization (42 FPS), published codebases, and strong mathematical foundation.",
+      "whatIBring": "Empirical dataset curation, YOLOv8n detection and ByteTrack tracking, held-out evaluation results, and reproducible code.",
       "milestones": [
         { "step": "Target Professor Mapping & Paper Analysis", "completed": true, "date": "Q3 2026" },
         { "step": "Initial Research Outreach & Fit Page Dispatch", "completed": true, "date": "Oct 2026" },

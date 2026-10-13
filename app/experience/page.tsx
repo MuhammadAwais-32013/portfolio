@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { getExperience } from "@/lib/content";
+import { getCommunity, getExperience } from "@/lib/content";
 import {
   Briefcase,
   GraduationCap,
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   const experience = getExperience();
+  const teachingExperience = getCommunity().teaching;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
@@ -108,6 +109,47 @@ export default function ExperiencePage() {
         </div>
       </section>
 
+      {/* TEACHING EXPERIENCE SECTION */}
+      <section className="space-y-8">
+        <div className="flex items-center gap-3 border-b border-[var(--border-subtle)] pb-4">
+          <BookOpen className="w-5 h-5 text-[var(--accent)]" />
+          <h2 className="text-xl sm:text-2xl font-bold text-[var(--foreground)]">
+            Teaching Experience
+          </h2>
+        </div>
+
+        <div className="space-y-4">
+          {teachingExperience.map((teaching) => (
+            <article
+              key={teaching.title}
+              className="p-6 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs space-y-4"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                <div className="space-y-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-[var(--foreground)]">
+                    {teaching.title}
+                  </h3>
+                  {teaching.role && (
+                    <p className="text-sm font-semibold text-[var(--accent)]">
+                      {teaching.role}
+                    </p>
+                  )}
+                </div>
+                {teaching.period && (
+                  <span className="flex items-center gap-1.5 text-xs font-mono text-[var(--text-dim)]">
+                    <Calendar className="w-3.5 h-3.5" />
+                    {teaching.period}
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
+                {teaching.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* EDUCATION SECTION */}
       <section className="space-y-8">
         <div className="flex items-center gap-3 border-b border-[var(--border-subtle)] pb-4">
@@ -136,6 +178,11 @@ export default function ExperiencePage() {
                     <span>•</span>
                     <span>{edu.period}</span>
                   </div>
+                  {edu.cgpa && (
+                    <div className="text-xs font-semibold text-[var(--text-muted)] mt-1">
+                      CGPA: {edu.cgpa}
+                    </div>
+                  )}
                 </div>
 
 
@@ -144,10 +191,10 @@ export default function ExperiencePage() {
               {/* Thesis Spotlight */}
               <div className="p-4 rounded-xl bg-[var(--surface-2)] border border-[var(--border-subtle)] space-y-1">
                 <span className="text-xs font-mono uppercase text-[var(--accent)] font-bold">
-                  Final Year Thesis Project:
+                  Final Year Project:
                 </span>
                 <p className="text-xs sm:text-sm font-semibold text-[var(--foreground)]">
-                  {edu.thesis}
+                  {edu.FYP}
                 </p>
               </div>
 

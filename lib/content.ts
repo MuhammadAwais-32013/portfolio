@@ -6,6 +6,7 @@ import certificationsData from "@/content/certifications.json";
 import roadmapData from "@/content/roadmap.json";
 import researchData from "@/content/research.json";
 import professorsData from "@/content/professors.json";
+import communityData from "@/content/community.json";
 
 export type Project = {
   slug: string;
@@ -100,6 +101,14 @@ export type ProfessorFit = {
   relevantProjects: string[];
 };
 
+export type CommunityActivity = {
+  title: string;
+  role?: string;
+  period?: string;
+  location?: string;
+  description: string;
+};
+
 export function getProfile() {
   return profileData;
 }
@@ -138,6 +147,15 @@ export function getResearch() {
 
 export function getProfessors(): ProfessorFit[] {
   return professorsData as ProfessorFit[];
+}
+
+export function getCommunity() {
+  return communityData as {
+    teaching: CommunityActivity[];
+    honors: CommunityActivity[];
+    events: CommunityActivity[];
+    volunteering: CommunityActivity[];
+  };
 }
 
 export function getProfessorBySlug(slug: string): ProfessorFit | undefined {

@@ -1,0 +1,50 @@
+{
+  "teaching": [
+    {
+      "title": "A-Level Tutor",
+      "role": "Hybrid private tutor",
+      "period": "May 2024 – Apr 2026",
+      "description": "Taught A-Level programming and computer science through online and in-person sessions. Explained theoretical concepts, connected them to practical programming applications, and guided students through structured problem-solving techniques for breaking complex questions into manageable steps."
+    }
+  ],
+  "honors": [
+    {
+      "title": "8th Place — National Generative AI Hackathon",
+      "role": "Participant",
+      "location": "Pakistan · Remote",
+      "description": "Placed eighth in a national-level Generative AI hackathon."
+    },
+    {
+      "title": "International Online Hackathons",
+      "role": "Participant",
+      "description": "Participated in three international online hackathons."
+    }
+  ],
+  "events": [
+    {
+      "title": "4th International Conference on Engineering & Computing Technology (ICECT 2025)",
+      "role": "Attendee",
+      "location": "NUML, Islamabad",
+      "description": "Attended the fourth ICECT conference."
+    },
+    {
+      "title": "AI Summit 2023",
+      "role": "Attendee",
+      "location": "Islamabad",
+      "description": "Attended the AI Summit in Islamabad."
+    },
+    {
+      "title": "Indus AI Week 2026",
+      "role": "Job Fair Pavilion Team Member",
+      "location": "Islamabad",
+      "description": "Supported the Job Fair pavilion at Pakistan's national AI event."
+    }
+  ],
+  "volunteering": [
+    {
+      "title": "CareCascade Campus Outreach",
+      "role": "Deputy Head of Campus Outreach · Technology/AI Lead",
+      "description": "Led the technology and AI side of campus outreach and delivered three in-person AI and technology sessions, reaching approximately 250–300 students."
+    }
+  ]
+}

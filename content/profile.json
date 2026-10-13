@@ -70,9 +70,9 @@
       "subtext": "Agentic AI, Health Tech & Web Platforms"
     },
     {
-      "label": "FYP Model mAP@0.5",
-      "value": "91.4%",
-      "subtext": "Edge Urban Traffic Choke Detection"
+      "label": "FYP Held-Out Test mAP@50",
+      "value": "89.1%",
+      "subtext": "YOLOv8n traffic detector"
     },
     {
       "label": "Full Stack AI Engineering & Research Assistantship",

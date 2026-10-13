@@ -4,23 +4,25 @@
     "shortTitle": "FYP: Traffic Choking Point Detector",
     "domains": ["Computer Vision", "Object Detection & Tracking", "Full-Stack AI Systems"],
     "featured": true,
-    "summary": "Final Year Project (BS Computer Science, NUML). A CCTV-based system that detects vehicles, NUML buses, pedestrians and traffic controllers at two Islamabad locations, tracks them with ByteTrack, and raises SMS and dashboard alerts when counts exceed a congestion threshold. Fine-tuned YOLOv8n reaches 89.5% mAP@0.5.",
+    "summary": "Final Year Project (BS Computer Science, NUML). A CCTV-based system that detects vehicles, NUML buses, pedestrians and traffic controllers at two Islamabad locations, tracks them with ByteTrack, and raises SMS and dashboard alerts when counts exceed a congestion threshold. YOLOv8n reached 89.5% validation and 89.1% held-out test mAP@50.",
     "role": "Lead AI Engineer (Final Year Project). Responsible for the complete AI lifecycle: dataset annotation, YOLOv8 fine-tuning, ByteTrack integration, and connecting the AI pipeline with the full-stack web application.",
     "period": "2025 – 2026",
     "metrics": [
-      { "label": "mAP@0.5", "value": "89.5%" },
-      { "label": "mAP@0.5:0.95", "value": "59.3%" },
-      { "label": "Custom Dataset", "value": "1,630 images · 6,612 labelled objects" },
-      { "label": "Model Inference Time (YOLOv8n, 6.3 MB)", "value": "3.1 ms/frame" }
+      { "label": "Validation mAP@50", "value": "89.5%" },
+      { "label": "Held-out test mAP@50", "value": "89.1%" },
+      { "label": "Test precision / recall", "value": "82.2% / 86.8%" },
+      { "label": "Test set", "value": "162 images · 799 instances" },
+      { "label": "Dataset", "value": "1,642 images · 6,612 objects" },
+      { "label": "Inference (Tesla T4)", "value": "3.1–5.7 ms/frame" }
     ],
     "stack": ["Python", "YOLOv8 (Ultralytics/PyTorch)", "OpenCV", "ByteTrack", "Supervision", "FastAPI", "React", "SQLite", "JWT"],
     "problem": "Traffic near the NUML campus, especially at 7-Up Chowk and the NUML gate, is monitored through manual observation, radio calls and phone calls, so interventions are slow. Existing CCTV cameras mostly act as passive recorders.",
     "solution": "A fine-tuned YOLOv8n model detects four classes (vehicle, Numl_Bus, Human, Controller) on live CCTV frames. ByteTrack assigns persistent IDs to prevent double counting. Congestion is flagged when vehicle and bus counts exceed a threshold, crowd density is checked against a human-count limit, and the system checks whether a traffic controller is present before alerting.",
     "architecture": "1. CCTV/IP stream capture (OpenCV, auto-reconnect) -> 2. YOLOv8n detection -> 3. ByteTrack + Supervision tracking -> 4. Threshold-based congestion, crowd and controller-presence logic -> 5. FastAPI backend (WebSocket) with SQLite logging -> 6. SMS/email and dashboard alerts on a React admin dashboard with JWT login and admin approval.",
-    "results": "89.5% mAP@0.5, 86.4% precision and 84.7% recall overall. Per-class mAP@0.5: Controller 96.6%, Numl_Bus 95.3%, vehicle 88.0%, Human 78.2%. Best epoch 232 of 282 (about 2.7 hours of training). Functional, integration and user-acceptance testing were done with NUML staff during the FYP demo.",
-    "challenges": "Early training gave low precision and recall because the data had noisy, blurred and duplicated frames. I cleaned 1,822 images down to 1,630 and ran four tuning cycles. Human detection is the weakest class (78.2% mAP@0.5).",
+    "results": "Validation results: 89.5% mAP@50, 59.3% mAP@50–95, 86.4% precision, and 84.7% recall. On a held-out test split of 162 images and 799 instances: 89.1% mAP@50, 54.8% mAP@50–95, 82.2% precision, and 86.8% recall. Test mAP@50 by class: NUML bus 95.9%, controller 94.2%, vehicle 89.7%, and human 76.6%. Inference measured 3.1–5.7 ms per image on a Tesla T4. The model was trained for 282 epochs; the best checkpoint was epoch 232.",
+    "challenges": "Error analysis showed background false positives, particularly for the human and vehicle classes. Human detection was the weakest class on the held-out test set at 76.6% mAP@50.",
     "limitations": "Two fixed locations only. Congestion is a count threshold, not a learned model. Accuracy drops in fog, glare and night conditions. User testing was small. No evaluation yet on unseen cameras.",
-    "nextSteps": "Re-evaluate with a split by video, error-analyse the Human class, benchmark ONNX/TensorRT latency, and evaluate congestion alerts against human-labelled states.",
+    "nextSteps": "Re-evaluate with a split by video, error-analyse the Human class, benchmark optimized inference latency, and evaluate congestion alerts against human-labelled states.",
     "links": {
       "github": "https://github.com/MuhammadAwais-32013",
       "paperDraft": "/research#fyp-section"
@@ -57,21 +59,22 @@
     "shortTitle": "DiaBp Diet Consultant (RAG & OCR)",
     "domains": ["Full-Stack", "Healthcare AI", "RAG & OCR"],
     "featured": true,
-    "summary": "Full-stack mobile and web application providing personalized nutrition plans and clinical recommendations for diabetes and hypertension management using RAG and OCR-based medical report parsing.",
-    "role": "Full-Stack AI Engineer & Mobile Developer",
+    "summary": "RAG-powered health assistant for diabetes and hypertension that provides personalized diet plans grounded in medical literature and extracts information from uploaded medical documents with OCR.",
+    "role": "Full-Stack AI & Mobile Developer",
     "period": "2024 – 2025",
     "metrics": [
       { "label": "Clinical Modality", "value": "Diabetes & Hypertension" },
       { "label": "Architecture", "value": "RAG + OCR Pipeline" },
-      { "label": "Codebase Split", "value": "56.6% Py / 43% Dart" },
-      { "label": "Document Parsing", "value": "Automated OCR" }
+      { "label": "RAG", "value": "Gemini · FAISS" },
+      { "label": "Document Parsing", "value": "Medical OCR" },
+      { "label": "Evaluation", "value": "In progress" }
     ],
-    "stack": ["Python", "Dart", "Flutter", "FastAPI", "RAG (LangChain / Vector DB)", "OCR Engine", "Tailwind CSS", "Docker"],
+    "stack": ["Python", "Dart", "Flutter", "Next.js", "FastAPI", "Gemini", "FAISS", "Sentence Transformers", "OCR", "Docker"],
     "problem": "Patients with chronic conditions (Type 2 Diabetes and Hypertension) struggle to decipher clinical lab reports and translate medical dietary guidelines into daily, personalized meal plans tailored to their specific biometrics and medications.",
-    "solution": "Engineered DiaBp Diet Consultant, combining Flutter cross-platform mobile frontend with a high-performance Python backend. Integrates OCR to scan physical medical lab reports, extracts clinical biomarkers (HbA1c, blood pressure, fasting glucose), and feeds them into a Retrieval-Augmented Generation (RAG) assistant for clinically grounded dietary plans.",
-    "architecture": "Flutter Mobile Client -> Camera / Document Ingestion -> OCR Text Extraction -> Biomarker Entity Recognition -> Dense Vector RAG Knowledge Retrieval (Clinical Nutrition Guidelines) -> Guardrailed LLM Synthesis -> Structured Meal Schedules & Alerts.",
-    "results": "Enables instant conversion of unstructured lab test photos into clinically safe, personalized diet charts. Validated against medical dietary standards with strict hallucination guardrails.",
-    "challenges": "Handling poor-quality mobile camera photos and noisy medical abbreviations. Implemented adaptive image pre-processing filters before OCR and clinical entity fuzzy matching.",
+    "solution": "Built a RAG-powered assistant for diabetes and hypertension with personalized multi-week diet plans, medical-document OCR, authentication, health tracking, and an admin dashboard. The project includes a Flutter mobile app and a Next.js web application with a FastAPI backend.",
+    "architecture": "Flutter and Next.js clients -> FastAPI -> Sentence Transformers and FAISS retrieval over medical literature -> Gemini response generation; OCR extracts information from uploaded medical documents.",
+    "results": "Grounds diet-plan generation in medical literature. Formal groundedness and hallucination evaluation against a no-retrieval baseline is in progress.",
+    "challenges": "Evaluating how reliably retrieval grounds generated nutrition recommendations is an open task; a formal comparison against a no-retrieval baseline is in progress.",
     "links": {
       "github": "https://github.com/MuhammadAwais-32013/DietPlanner_mobile-app"
     }
@@ -81,7 +84,7 @@
     "title": "DiaBP Diet Consultant: AI-Powered Full-Stack Web Platform (RAG & FastAPI)",
     "shortTitle": "DiaBP Web Platform (RAG & Next.js)",
     "domains": ["Full-Stack", "Healthcare AI", "RAG & LLM"],
-    "featured": true,
+    "featured": false,
     "summary": "Full-stack Next.js & FastAPI web platform generating personalized medical diet plans (1 week to 1 month) for diabetes and hypertension patients using Google Gemini, FAISS vector RAG, Tesseract OCR document parsing, and real-time WebSockets.",
     "role": "Full-Stack AI Engineer & System Architect",
     "period": "2024 – 2025",
@@ -96,14 +99,14 @@
     "solution": "Engineered DiaBP Diet Consultant Web App, a complete production web platform combining Next.js with FastAPI. Integrates an AI RAG pipeline with FAISS vector search over medical guidelines, Google Gemini for context-aware diet generation, Tesseract OCR for physical document parsing, real-time WebSocket communication, and client-side jsPDF diet plan downloads.",
     "architecture": "Next.js Web Client -> WebSocket / REST API -> FastAPI Backend (SQLAlchemy / SQLite) -> Tesseract OCR & PyMuPDF (Lab Report Extraction) -> FAISS Vector Store (Medical Guidelines via Sentence Transformers) -> Google Gemini LLM (Context-Aware Synthesis) -> jsPDF Meal Plan Export & Admin Analytics.",
     "results": "Delivered end-to-end multi-duration diet plans (1 week, 10 days, 2 weeks, 3 weeks, 1 month) customized to patient biometrics, blood pressure, glucose, and HbA1c. Features comprehensive patient tracking, BMI classification, and admin health analytics dashboards.",
-    "challenges": "Ensuring zero medical hallucinations while maintaining sub-second semantic retrieval across diverse medical literature. Solved by implementing batch ingestion with Sentence Transformers, strict prompt guardrails with clinical constraints, and verified citation formatting.",
+    "challenges": "Grounding personalized diet guidance in medical literature while processing uploaded documents. Formal groundedness and hallucination evaluation against a no-retrieval baseline is in progress.",
     "links": {
       "github": "https://github.com/MuhammadAwais-32013/Dietplanner_Web_APP"
     }
   },
   {
     "slug": "sales-forecast-xgboost",
-    "title": "Enterprise Sales Demand Forecasting with XGBoost & Time-Series Engineering",
+    "title": "Sales Demand Forecasting with XGBoost & Time-Series Engineering",
     "shortTitle": "Sales Forecasting (XGBoost)",
     "domains": ["Machine Learning", "Time-Series", "Predictive Analytics"],
     "featured": true,
@@ -113,43 +116,44 @@
     "metrics": [
       { "label": "Model Family", "value": "XGBoost Regressor" },
       { "label": "Feature Space", "value": "Time-Lag & Rolling Windows" },
-      { "label": "Evaluation", "value": "MAE, RMSE, R² Metrics" },
+      { "label": "Held-out test R²", "value": "0.92" },
       { "label": "Deployment", "value": "Interactive Python App" }
     ],
     "stack": ["Python", "XGBoost", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Streamlit"],
     "problem": "Retail supply chains suffer substantial losses from stockouts during demand spikes or capital lockup from excess inventory due to traditional moving-average forecasts failing to capture nonlinear seasonal trends and lagged effects.",
     "solution": "Developed a time-series forecasting pipeline using XGBoost. Engineered comprehensive temporal features (cyclical day-of-week, month encoding, holiday flags) and autoregressive lag indicators (t-1, t-7, rolling 14-day window statistics) to accurately model complex demand fluctuations.",
     "architecture": "Historical Sales Ingestion -> Data Cleaning & Outlier Imputation -> Temporal & Autoregressive Feature Engineering -> Train/Test Split (Time-Ordered) -> XGBoost Regressor Hyperparameter Tuning -> Residual Diagnostics & Accuracy Evaluation -> Interactive Prediction UI.",
-    "results": "Significantly outperformed baseline linear models across MAE and RMSE metrics. Delivered an intuitive interactive application (`app.py` / `demo.py`) enabling supply planners to forecast multi-week inventory horizons.",
+    "results": "Achieved R² = 0.92 on a held-out test set (training R² = 0.97).",
     "challenges": "Avoiding data leakage across temporal splits while engineering rolling statistical aggregates. Enforced strict causal lag windows calculated solely on historical observations.",
     "links": {
       "github": "https://github.com/MuhammadAwais-32013/Sales-forecast-forecasting-model-XGBOOST/tree/main"
     }
   },
- 
   {
-    "slug": "multi-agent-research-system",
-    "title": "Multi-Agent Autonomous Research & Systematic Synthesis Pipeline",
-    "shortTitle": "Multi-Agent Research Pipeline",
-    "domains": ["LLM/Agents", "Autonomous Systems", "Security"],
-    "featured": false,
-    "summary": "Hierarchical agentic network where specialist agents collaborate to conduct literature surveys, critique methodology claims, and generate verified synthesis reports.",
-    "role": "AI Engineer & System Architect",
-    "period": "2025",
+    "slug": "articlesift",
+    "title": "ArticleSift: LLM News Question-Answering",
+    "shortTitle": "ArticleSift",
+    "domains": ["Generative AI", "News Research", "Multilingual Applications"],
+    "featured": true,
+    "summary": "A news question-answering and summarization app that retrieves current reporting with Google Custom Search and adds audio narration and multilingual translation.",
+    "role": "Project contributor",
+    "period": "Date not listed",
     "metrics": [
-      { "label": "Citation Verification Rate", "value": "94.2%" },
-      { "label": "Specialized Agent Personas", "value": "3 Roles" },
-      { "label": "Hallucination Reduction", "value": "89%" },
-      { "label": "Automated Report Gen", "value": "3.5 mins" }
+      { "label": "API endpoints", "value": "5" },
+      { "label": "Languages", "value": "4" },
+      { "label": "LLM", "value": "LLaMA 3.1" },
+      { "label": "Audio narration", "value": "gTTS" }
     ],
-    "stack": ["Python", "LangGraph", "FastAPI", "Gemini API", "Docker Sandbox", "Next.js"],
-    "problem": "Single-prompt LLM workflows suffer from severe hallucinations, shallow critical critique, and unverified bibliography citations when assigned extensive research synthesis tasks.",
-    "solution": "Architected a multi-agent state machine utilizing LangGraph. A Supervisor agent orchestrates three specialist personas: the Literature Surveyor (breadth retrieval), the Devil's Advocate (critique & edge-case stress testing), and the Synthesizer (balanced report authoring).",
-    "architecture": "User Research Query -> Supervisor Agent -> Parallel Tasks (Surveyor Agent & Retrieval Tools) -> Devil's Advocate Peer Review Loop -> Fact-Checking Verification Tool -> Synthesizer Master Report -> Output Markdown.",
-    "results": "Achieved a 94.2% verified citation rate by cross-checking DOI identifiers via live scholarly APIs. Cut hallucinated assertions by 89% compared to standalone model prompting.",
-    "challenges": "Preventing circular deadlock debates between the Synthesizer and the Devil's Advocate. Designed an explicit finite-state iteration ceiling and confidence score convergence gate.",
+    "stack": ["LLaMA 3.1", "Google Custom Search API", "Streamlit", "gTTS"],
+    "problem": "Answering questions about current events requires finding relevant, up-to-date news and making the information accessible in different languages and formats.",
+    "solution": "Built a question-answering and summarization app that retrieves live news using Google Custom Search and uses LLaMA 3.1 to analyze the results. The app includes five API endpoints, audio narration, and translation into English, Urdu, Spanish, and French.",
+    "architecture": "Question -> Google Custom Search API retrieval -> LLaMA 3.1 analysis and response -> Streamlit interface, with optional gTTS narration and multilingual translation.",
+    "results": "The app supports live-news question answering and summarization, five API endpoints, audio narration, and four-language translation.",
+    "challenges": "Working with current news requires retrieving relevant reporting for each query and presenting the response in accessible formats.",
     "links": {
-      "github": "https://github.com/MuhammadAwais-32013"
+      "github": "https://github.com/MuhammadAwais-32013/Article-Generator_Hackathon_Project"
     }
   }
+ 
+
 ]

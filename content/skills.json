@@ -3,11 +3,11 @@
     "category": "Computer Vision & Edge AI",
     "description": "Deep learning architectures for real-time video inference, object detection, and spatial edge analytics.",
     "skills": [
-      { "name": "YOLOv8 / YOLOv11", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Custom 4.2k frame dataset training & tuning" },
-      { "name": "PyTorch", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Custom model training & loss formulation" },
-      { "name": "OpenCV", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Frame preprocessing, optical flow & ROI masking" },
-      { "name": "TensorRT & Quantization", "level": "Proficient", "projectSlug": "traffic-choking-detection", "provenBy": "Edge FP16 engine conversion for 42 FPS throughput" },
-      { "name": "Dataset Annotation & Curation", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Self-collected multi-weather Pakistani roadway corpus" }
+      { "name": "YOLOv8n", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Fine-tuned traffic detector; 89.5% validation mAP@50" },
+      { "name": "PyTorch", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Fine-tuned YOLOv8n on a custom traffic dataset" },
+      { "name": "OpenCV", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Traffic video processing pipeline" },
+      { "name": "ByteTrack", "level": "Proficient", "projectSlug": "traffic-choking-detection", "provenBy": "Persistent IDs for traffic tracking and count-based alerts" },
+      { "name": "Dataset Annotation & Curation", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Self-collected dataset: 1,642 images and 6,612 labeled objects" }
     ]
   },
   {
@@ -15,10 +15,10 @@
     "description": "Multi-agent orchestration, retrieval-augmented generation (RAG), and deterministic tool use.",
     "skills": [
       { "name": "LangGraph & Multi-Agent State", "level": "Advanced", "projectSlug": "multi-agent-research-system", "provenBy": "3-agent supervisor reflection loop" },
-      { "name": "Dense Retrieval & RAG", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Hybrid BM25 + dense vector indexing over 50k papers" },
+      { "name": "Dense Retrieval & RAG", "level": "Advanced", "projectSlug": "diabp-diet-consultant", "provenBy": "Medical-literature retrieval using FAISS and Sentence Transformers" },
       { "name": "Google Gemini API & SDKs", "level": "Advanced", "projectSlug": "multi-agent-research-system", "provenBy": "Structured outputs, function calling & reasoning pipelines" },
-      { "name": "Vector Databases (Qdrant/Chroma)", "level": "Proficient", "projectSlug": "articlesift", "provenBy": "Sub-800ms cosine similarity clustering" },
-      { "name": "Prompt Engineering & Guardrails", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Zero hallucination medical triage constraints" }
+      { "name": "Vector Search (FAISS)", "level": "Proficient", "projectSlug": "diabp-diet-consultant", "provenBy": "Medical-literature retrieval using FAISS and Sentence Transformers" },
+      { "name": "Prompt Engineering & Guardrails", "level": "Advanced", "projectSlug": "diabp-diet-consultant", "provenBy": "RAG-powered health assistant; groundedness evaluation in progress" }
     ]
   },
   {
@@ -26,21 +26,21 @@
     "description": "Production-grade responsive web applications with TypeScript, modern component systems, and high performance.",
     "skills": [
       { "name": "Next.js (App Router)", "level": "Advanced", "projectSlug": "dietplanner-web-app", "provenBy": "Full-stack medical RAG platform with WebSocket streaming & SSR" },
-      { "name": "React 19 & TypeScript", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Type-safe component design and custom state hooks" },
-      { "name": "Tailwind CSS & Design Tokens", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Accessible dark/light design systems" },
-      { "name": "FastAPI & Python Backend", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Async inference endpoints and telemetry feeds" },
-      { "name": "Node.js & Express", "level": "Proficient", "projectSlug": "ai-smart-health-platform", "provenBy": "Microservice routing and middleware pipelines" }
+      { "name": "React & Next.js", "level": "Advanced", "projectSlug": "dietplanner-web-app", "provenBy": "Web interface integrated with the FastAPI health-assistant backend" },
+      { "name": "Tailwind CSS & Design Tokens", "level": "Advanced", "projectSlug": "dietplanner-web-app", "provenBy": "Tailwind CSS used in the health-assistant web platform" },
+      { "name": "FastAPI & Python Backend", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Traffic-detection alerts served to the dashboard and SMS" },
+      { "name": "JavaScript & TypeScript", "level": "Proficient", "projectSlug": "dietplanner-web-app", "provenBy": "Used in Next.js and React application development" }
     ]
   },
   {
     "category": "Security & Cloud Infrastructure",
     "description": "Security-first engineering: RBAC, cryptographic data protection, containerization, and automated deployments.",
     "skills": [
-      { "name": "RBAC & Authorization", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Multi-tenant role boundaries at stayOvers.pk & Smart Health" },
-      { "name": "JWT & OAuth2 Security", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "OWASP-compliant token verification and refresh mechanics" },
-      { "name": "PostgreSQL & Database Design", "level": "Proficient", "projectSlug": "ai-smart-health-platform", "provenBy": "Normalized schemas, indexed queries, encrypted fields" },
-      { "name": "Docker & Containerization", "level": "Proficient", "projectSlug": "multi-agent-research-system", "provenBy": "Reproducible inference sandboxes and local testing" },
-      { "name": "Postman API Contract Testing", "level": "Advanced", "projectSlug": "ai-smart-health-platform", "provenBy": "Automated regression suites at NIC Islamabad" }
+      { "name": "RBAC & Authorization", "level": "Advanced", "provenBy": "Role-based access for guest, host, and administrator accounts at stayOvers.pk" },
+      { "name": "Authentication API Integration", "level": "Proficient", "provenBy": "Integrated authentication APIs for freelance web applications" },
+      { "name": "PostgreSQL & Database Design", "level": "Proficient", "projectSlug": "traffic-choking-detection", "provenBy": "Database-backed traffic alert and dashboard application" },
+      { "name": "Docker & Containerization", "level": "Proficient", "projectSlug": "diabp-diet-consultant", "provenBy": "Docker included in the health assistant project stack" },
+      { "name": "Postman API Testing", "level": "Advanced", "provenBy": "Created API test suites at NIC Islamabad" }
     ]
   },
   {
@@ -49,8 +49,8 @@
     "skills": [
       { "name": "Empirical Model Evaluation", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "mAP@0.5:0.95, PR curves, and confusion matrix auditing" },
       { "name": "LaTeX & Technical Writing", "level": "Advanced", "projectSlug": "traffic-choking-detection", "provenBy": "Comprehensive FYP thesis and Overleaf academic CV" },
-      { "name": "Statistical Analysis (NumPy/Pandas)", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Benchmarking inference throughput and latency distributions" },
-      { "name": "Literature Review & Synthesis", "level": "Advanced", "projectSlug": "articlesift", "provenBy": "Systematic survey of edge vision and real-time congestion models" }
+      { "name": "Statistical Analysis (NumPy/Pandas)", "level": "Advanced", "projectSlug": "sales-forecast-xgboost", "provenBy": "Held-out test-set R² = 0.92 for sales forecasting" },
+      { "name": "News Retrieval & Summarization", "level": "Proficient", "projectSlug": "articlesift", "provenBy": "LLaMA 3.1 and Google Custom Search for live-news Q&A" }
     ]
   }
 ]
