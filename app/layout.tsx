@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Awais",
   },
   description:
-    "Full-stack AI engineer specializing in Generative AI, Large Language Models, agentic systems, and edge computer vision. BS in Computer Science from NUML.",
+    "Full-stack AI engineer specializing in Computer Vision , Generative AI, Large Language Models, agentic systems, and edge computer vision. BS in Computer Science from NUML.",
   keywords: [
     "Muhammad Awais",
     "Full-Stack AI Engineer",
