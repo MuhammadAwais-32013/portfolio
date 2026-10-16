@@ -133,8 +133,14 @@ const industry = {
   projects: [
     {
       title: "Real-Time Traffic Choking Detection (Final Year Project)",
-      tech: "YOLOv8 · OpenCV · Python · Computer Vision",
+      tech: "YOLOv8 · OpenCV · Python · Computer Vision · FastAPI · React",
+      links: [
+        { label: "Dataset", href: "https://www.kaggle.com/datasets/muhammadawaisqrni/yolo-numl-dataset-1-0" },
+        { label: "Training notebook", href: "https://github.com/MuhammadAwais-32013/FYP_Yolo_Fine-Tuning" },
+        { label: "GitHub", href: "https://github.com/MuhammadAwais-32013/podcaster_crew" },
+      ],
       bullets: [
+         "Role:  AI engineer in a team of three, responsible for the full pipeline from data collection and annotation through model training and evaluation to integration with the web application.",
         "Built a real-time congestion detection system on a custom YOLOv8 model trained on a self-collected, self-annotated dataset of local traffic videos and images.",
         "Fine-tuned the detector to classify roads as free-flow or choked and optimized the OpenCV inference pipeline for FPS using data augmentation and threshold tuning.",
         "Integrated the model into a web application with an interactive dashboard for real-time traffic monitoring and status alerts.",
@@ -223,19 +229,19 @@ const academic = {
   projects: [
     {
       title: "Real-Time Traffic Choking Point Detector (Final Year Project)",
-      date: "June 2025 – Dec 2026",
       tech: "Team of three | YOLOv8, ByteTrack, OpenCV, FastAPI, React",
       links: [
         { label: "Dataset", href: "https://www.kaggle.com/datasets/muhammadawaisqrni/yolo-numl-dataset-1-0" },
         { label: "Training notebook", href: "https://github.com/MuhammadAwais-32013/FYP_Yolo_Fine-Tuning" },
+        { label: "GitHub", href: "https://github.com/MuhammadAwais-32013/podcaster_crew" },
       ],
       bullets: [
-        "Role: AI engineer in a team of three, responsible for the full pipeline from data collection and annotation through model training and evaluation to integration with the web application.",
-        "Built a real-time congestion monitoring system for two Islamabad junctions (NUML Gate, 7-Up Chowk). A self-collected four-class traffic dataset (1,642 images, 6,612 labelled objects; classes: Controller, Human, NUML bus, vehicle; 80/10/10 train/val/test split) and fine-tuned YOLOv8n (3.0M parameters, 6.3 MB) for 282 epochs (best epoch 232, about 2.7 h on a cloud GPU), combined with ByteTrack for multi-object tracking.",
-        "Results (validation split): mAP@50 89.5%, mAP@50–95 59.3%, precision 86.4%, recall 84.7%; 3.1 ms per image, 6.3 MB model. Per-class mAP@50: controller 96.6%, bus 95.3%, vehicle 88.0%, human 78.2%.",
-        "Results (test split): held-out test set (162 images, 799 instances): mAP@50 89.1%, mAP@50–95 54.8%, precision 82.2%, recall 86.8% (validation split: 89.5%, 59.3%, 86.4%, 84.7%). Test mAP@50 per class: NUML bus 95.9%, Controller 94.2%, vehicle 89.7%, Human 76.6%.",
-        "Inference: 3.1–5.7 ms per image on a Tesla T4 (Kaggle/Colab sessions). Confusion matrix shows errors are mostly background false positives (Human, vehicle) rather than class mix-ups; Human is the weakest class.",
-        "Combined the detector with ByteTrack for persistent IDs and count-based congestion rules; alerts are served through a FastAPI backend to a React monitoring dashboard and SMS.",
+        "Role:  AI engineer in a team of three, responsible for the full pipeline from data collection and annotation through model training and evaluation to integration with the web application.",
+        " Built a real-time congestion monitoring system for two Islamabad junctions (NUML Gate, 7-Up Chowk). Collected and annotated a four-class traffic dataset (1,642 images, 6,612 labelled objects; classes: Controller, Human, NUML bus, vehicle; 80/10/10 train/val/test split) and fine-tuned YOLOv8n (3.0M parameters, 6.3 MB) for 282 epochs (best epoch 232, about 2.7 h on a cloud GPU), combined with ByteTrack for multi-object tracking.",
+        "Validation results: mAP@50 89.5%, mAP@50–95 59.3%, precision 86.4%, recall 84.7%. Per-class mAP@50: Controller 96.6%, NUML bus 95.3%, vehicle 88.0%, Human 78.2%.",
+        "Held-out test results (162 images, 799 instances): mAP@50 89.1%, mAP@50–95 54.8%, precision 82.2%, recall 86.8%. Per-class mAP@50: NUML bus 95.9%, Controller 94.2%, vehicle 89.7%, Human 76.6%.",
+        "Inference and error analysis: 3.1–5.7 ms per image on a Tesla T4 (Kaggle/Colab sessions). The confusion  matrix shows errors are mostly background false positives (Human, vehicle) rather than class mix-ups; Human is the weakest class.",
+        "Integrated with Application Combined the detector with ByteTrack for persistent IDs and count-based congestion rules; alerts are served through a FastAPI backend to a React monitoring dashboard and SMS.",
       ],
     },
     {
@@ -701,11 +707,10 @@ export default function ResumePage() {
                 key={track}
                 onClick={() => setActiveTab(track)}
                 aria-pressed={activeTab === track}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                  activeTab === track
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${activeTab === track
                     ? "bg-[var(--accent)] text-slate-950 font-bold shadow-xs"
                     : "text-[var(--text-muted)] hover:text-[var(--foreground)]"
-                }`}
+                  }`}
               >
                 {track === "industry" ? "Industry Track" : "Academic Track"}
               </button>
