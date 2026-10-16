@@ -176,9 +176,9 @@ export default function HomePage() {
             {/* Headline */}
             <motion.div variants={fadeUp} custom={0.1} className="space-y-4">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.12]">
-                Engineering Intelligent{" "}
+                Full Stack AI Engineer {" "}
                 <span className="text-[var(--accent)]">
-                  AI & Agentic Systems
+                  Computer Vision & Intelligent Systems
                 </span>
               </h1>
 
