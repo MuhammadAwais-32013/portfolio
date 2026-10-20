@@ -183,7 +183,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed max-w-xl">
-                Hi, I&apos;m <strong className="text-[var(--foreground)]">Muhammad Awais</strong> — a Full-Stack AI Engineer specializing in Computer Vision , Generative AI, LLMs, and multi-agent systems. From training custom computer vision models to shipping production web & mobile architectures. I am also Exploring Vision language models (VLM) and their applications in real-world scenarios. I a passionate about building intelligent systems that can learn, adapt, and make decisions autonomously.
+                Hi, I&apos;m <strong className="text-[var(--foreground)]">Muhammad Awais</strong> a Full-Stack AI Engineer specializing in Computer Vision , Generative AI, LLMs, and multi-agent systems. From training custom computer vision models to shipping production web & mobile architectures. I am also Exploring Vision language models (VLM) and their applications in real-world scenarios. I a passionate about building intelligent systems that can learn, adapt, and make decisions autonomously.
               </p>
             </motion.div>
 
