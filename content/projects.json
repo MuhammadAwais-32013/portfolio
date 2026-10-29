@@ -24,7 +24,7 @@
     "limitations": "Two fixed locations only. Congestion is a count threshold, not a learned model. Accuracy drops in fog, glare and night conditions. User testing was small. No evaluation yet on unseen cameras.",
     "nextSteps": "Re-evaluate with a split by video, error-analyse the Human class, benchmark optimized inference latency, and evaluate congestion alerts against human-labelled states.",
     "links": {
-      "github": "https://github.com/MuhammadAwais-32013",
+      "github": "https://github.com/MuhammadAwais-32013/FYP_Yolo_Fine-Tuning",
       "paperDraft": "/research#fyp-section"
     }
   },
