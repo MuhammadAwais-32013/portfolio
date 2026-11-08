@@ -104,6 +104,13 @@
         "youtubeId": "lblDO-4C-2w",
         "badge": "Mobile & OCR Walkthrough",
         "description": "Full walkthrough of the Flutter mobile client: patient biometric tracking, camera-based lab report OCR scanning, and personalized AI diet plan generation for diabetes and hypertension management."
+      },
+      {
+        "title": "DiaBP Backend Azure Cloud Deployment Demo",
+        "youtubeId": "1WPbrGgXNrQ",
+        "badge": "Azure Cloud Deployment",
+        "isShort": true,
+        "description": "Production demonstration of the DiaBP backend and AI RAG services deployed on Microsoft Azure cloud infrastructure with live API endpoints and cloud container execution."
       }
     ]
   },
@@ -135,8 +142,15 @@
       {
         "title": "DiaBp Mobile App & Medical OCR Demo",
         "youtubeId": "lblDO-4C-2w",
-        "badge": "Ecosystem Demo",
+        "badge": "Mobile & OCR Walkthrough",
         "description": "Demonstration of the DiaBp client application with medical lab report document OCR, biometric logging, and AI dietary consulting."
+      },
+      {
+        "title": "DiaBP Backend Azure Cloud Deployment Demo",
+        "youtubeId": "1WPbrGgXNrQ",
+        "badge": "Azure Cloud Deployment",
+        "isShort": true,
+        "description": "Live cloud deployment demonstration of the DiaBP FastAPI backend and AI microservices on Microsoft Azure infrastructure."
       }
     ]
   },

@@ -13,6 +13,7 @@ export type DemoVideo = {
   youtubeId: string;
   badge?: string;
   description?: string;
+  isShort?: boolean;
 };
 
 export type Project = {
