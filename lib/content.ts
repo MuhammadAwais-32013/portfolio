@@ -8,6 +8,13 @@ import researchData from "@/content/research.json";
 import professorsData from "@/content/professors.json";
 import communityData from "@/content/community.json";
 
+export type DemoVideo = {
+  title: string;
+  youtubeId: string;
+  badge?: string;
+  description?: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -24,6 +31,7 @@ export type Project = {
   architecture: string;
   results: string;
   challenges: string;
+  demoVideos?: DemoVideo[];
   links: {
     github?: string;
     liveDemo?: string;

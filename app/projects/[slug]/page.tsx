@@ -11,8 +11,10 @@ import {
   Lightbulb,
   FileCode,
   GitBranch,
+  Play,
 } from "lucide-react";
 import { Github } from "@/components/Icons";
+import { ProjectVideoDemo } from "@/components/ProjectVideoDemo";
 
 export const instant = false;
 
@@ -118,6 +120,15 @@ export default async function ProjectCaseStudyPage({
               <span>Launch Live System</span>
             </a>
           )}
+          {project.demoVideos && project.demoVideos.length > 0 && (
+            <a
+              href="#demo-videos"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600/15 hover:bg-rose-600/25 text-rose-500 font-bold text-xs border border-rose-500/30 transition-all shadow-xs"
+            >
+              <Play className="w-3.5 h-3.5 fill-rose-500" />
+              <span>Watch Video Demo ({project.demoVideos.length})</span>
+            </a>
+          )}
           {project.links.paperDraft && (
             <Link
               href={project.links.paperDraft}
@@ -142,6 +153,13 @@ export default async function ProjectCaseStudyPage({
           </div>
         ))}
       </div>
+
+      {/* Section: Video Demo Player */}
+      {project.demoVideos && project.demoVideos.length > 0 && (
+        <div id="demo-videos" className="scroll-mt-24">
+          <ProjectVideoDemo videos={project.demoVideos} projectTitle={project.title} />
+        </div>
+      )}
 
       {/* Section 2: Problem & Context */}
       <section className="space-y-4 p-7 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">

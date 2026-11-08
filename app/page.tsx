@@ -38,6 +38,7 @@ import {
   Globe,
   MessageCircle,
   TrendingUp,
+  Play,
 } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 
@@ -497,6 +498,12 @@ export default function HomePage() {
                         {dom}
                       </span>
                     ))}
+                    {project.demoVideos && project.demoVideos.length > 0 && (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-500/10 text-rose-500 border border-rose-500/20">
+                        <Play className="w-2.5 h-2.5 fill-rose-500" />
+                        <span>{project.demoVideos.length} Video{project.demoVideos.length > 1 ? "s" : ""}</span>
+                      </span>
+                    )}
                   </div>
                   <span className="text-[11px] font-mono text-[var(--text-dim)]">
                     {project.period}

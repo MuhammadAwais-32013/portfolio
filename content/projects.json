@@ -24,9 +24,29 @@
     "limitations": "Two fixed locations only. Congestion is a count threshold, not a learned model. Accuracy drops in fog, glare and night conditions. User testing was small. No evaluation yet on unseen cameras.",
     "nextSteps": "Re-evaluate with a split by video, error-analyse the Human class, benchmark optimized inference latency, and evaluate congestion alerts against human-labelled states.",
     "links": {
-      "github": "https://github.com/MuhammadAwais-32013/FYP_Yolo_Fine-Tuning",
-      "paperDraft": "/research#fyp-section"
-    }
+      "github": "https://github.com/MuhammadAwais-32013/FYP_Yolo_Fine-Tuning"
+      
+    },
+    "demoVideos": [
+      {
+        "title": "Full FYP  System Demo",
+        "youtubeId": "FGMf5kEqIz4",
+        "badge": "Full Project Demo",
+        "description": "Complete end-to-end demonstration of the CCTV Traffic Choking Point Detector with fine-tuned YOLOv8 neural inference, ByteTrack ID persistence, congestion alerts, and the full-stack management dashboard."
+      },
+      {
+        "title": "7-Up Chowk Traffic & Choke Detection",
+        "youtubeId": "TsC7JYyxvS4",
+        "badge": "Location 1: 7-Up Chowk",
+        "description": "Live CCTV footage at 7-Up Chowk intersection (Islamabad), classifying vehicles, NUML buses, and traffic controllers with persistent ByteTrack tracking and spatial congestion analytics."
+      },
+      {
+        "title": "NUML Main Gate Traffic Detection",
+        "youtubeId": "MYopYHzpaWk",
+        "badge": "Location 2: NUML Gate",
+        "description": "Live multi-class object detection and tracking at the NUML campus entrance gate, monitoring pedestrian density and vehicle flow."
+      }
+    ]
   },
   {
     "slug": "podcaster-crew",
@@ -77,7 +97,15 @@
     "challenges": "Evaluating how reliably retrieval grounds generated nutrition recommendations is an open task; a formal comparison against a no-retrieval baseline is in progress.",
     "links": {
       "github": "https://github.com/MuhammadAwais-32013/DietPlanner_mobile-app"
-    }
+    },
+    "demoVideos": [
+      {
+        "title": "DiaBp Mobile App & Medical OCR Demo",
+        "youtubeId": "lblDO-4C-2w",
+        "badge": "Mobile & OCR Walkthrough",
+        "description": "Full walkthrough of the Flutter mobile client: patient biometric tracking, camera-based lab report OCR scanning, and personalized AI diet plan generation for diabetes and hypertension management."
+      }
+    ]
   },
   {
     "slug": "dietplanner-web-app",
@@ -102,7 +130,15 @@
     "challenges": "Grounding personalized diet guidance in medical literature while processing uploaded documents. Formal groundedness and hallucination evaluation against a no-retrieval baseline is in progress.",
     "links": {
       "github": "https://github.com/MuhammadAwais-32013/Dietplanner_Web_APP"
-    }
+    },
+    "demoVideos": [
+      {
+        "title": "DiaBp Mobile App & Medical OCR Demo",
+        "youtubeId": "lblDO-4C-2w",
+        "badge": "Ecosystem Demo",
+        "description": "Demonstration of the DiaBp client application with medical lab report document OCR, biometric logging, and AI dietary consulting."
+      }
+    ]
   },
   {
     "slug": "sales-forecast-xgboost",
