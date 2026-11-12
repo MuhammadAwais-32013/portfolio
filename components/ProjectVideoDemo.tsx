@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Play, ExternalLink, MonitorPlay, Film, Smartphone, Cloud } from "lucide-react";
+import { Play, ExternalLink, MonitorPlay, Film, Cloud, HardDrive, Smartphone } from "lucide-react";
 import type { DemoVideo } from "@/lib/content";
 
 interface ProjectVideoDemoProps {
@@ -15,10 +15,28 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
   if (!videos || videos.length === 0) return null;
 
   const activeVideo = videos[activeIndex] || videos[0];
+  const isDrive = Boolean(activeVideo.driveId);
   const isShort = Boolean(activeVideo.isShort);
-  const youtubeUrl = isShort
-    ? `https://www.youtube.com/shorts/${activeVideo.youtubeId}`
-    : `https://www.youtube.com/watch?v=${activeVideo.youtubeId}`;
+
+  let embedUrl = "";
+  let externalUrl = "";
+  let externalLabel = "Watch Video";
+
+  if (isDrive && activeVideo.driveId) {
+    embedUrl = `https://drive.google.com/file/d/${activeVideo.driveId}/preview`;
+    externalUrl = `https://drive.google.com/file/d/${activeVideo.driveId}/view?usp=drivesdk`;
+    externalLabel = "Watch on Google Drive";
+  } else if (isShort && activeVideo.youtubeId) {
+    embedUrl = `https://www.youtube-nocookie.com/embed/${activeVideo.youtubeId}?rel=0&modestbranding=1`;
+    externalUrl = `https://www.youtube.com/shorts/${activeVideo.youtubeId}`;
+    externalLabel = "Watch YouTube Short";
+  } else if (activeVideo.youtubeId) {
+    embedUrl = `https://www.youtube-nocookie.com/embed/${activeVideo.youtubeId}?rel=0&modestbranding=1`;
+    externalUrl = `https://www.youtube.com/watch?v=${activeVideo.youtubeId}`;
+    externalLabel = "Watch on YouTube";
+  }
+
+  const videoKey = activeVideo.driveId || activeVideo.youtubeId || `vid-${activeIndex}`;
 
   return (
     <section className="space-y-5 p-6 sm:p-8 rounded-3xl bg-[var(--surface-1)] border border-[var(--border-subtle)] shadow-xs">
@@ -35,17 +53,23 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
           </h2>
         </div>
 
-        <a
-          href={youtubeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium text-[var(--text-muted)] hover:text-rose-500 bg-[var(--surface-2)] hover:bg-[var(--surface-3)] border border-[var(--border-subtle)] transition-colors self-start sm:self-auto"
-          title="Open in YouTube"
-        >
-          <Film className="w-3.5 h-3.5 text-rose-500" />
-          <span>{isShort ? "Watch YouTube Short" : "Watch on YouTube"}</span>
-          <ExternalLink className="w-3 h-3 text-[var(--text-dim)]" />
-        </a>
+        {externalUrl && (
+          <a
+            href={externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium text-[var(--text-muted)] hover:text-rose-500 bg-[var(--surface-2)] hover:bg-[var(--surface-3)] border border-[var(--border-subtle)] transition-colors self-start sm:self-auto"
+            title={externalLabel}
+          >
+            {isDrive ? (
+              <HardDrive className="w-3.5 h-3.5 text-sky-400" />
+            ) : (
+              <Film className="w-3.5 h-3.5 text-rose-500" />
+            )}
+            <span>{externalLabel}</span>
+            <ExternalLink className="w-3 h-3 text-[var(--text-dim)]" />
+          </a>
+        )}
       </div>
 
       {/* Multi-video Switcher Tabs (Rendered if >1 video) */}
@@ -55,7 +79,7 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
             const isActive = idx === activeIndex;
             return (
               <button
-                key={vid.youtubeId}
+                key={vid.driveId || vid.youtubeId || idx}
                 onClick={() => setActiveIndex(idx)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                   isActive
@@ -65,6 +89,8 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
               >
                 {vid.isShort ? (
                   <Cloud className={`w-3.5 h-3.5 ${isActive ? "text-slate-950" : "text-sky-400"}`} />
+                ) : vid.driveId ? (
+                  <Smartphone className={`w-3.5 h-3.5 ${isActive ? "text-slate-950" : "text-emerald-400"}`} />
                 ) : (
                   <Play className={`w-3 h-3 ${isActive ? "fill-slate-950" : "fill-current"}`} />
                 )}
@@ -82,8 +108,8 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
           <div className="relative w-full py-6 sm:py-8 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 flex justify-center items-center">
             <div className="w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/15 border-4 border-slate-800 bg-black">
               <iframe
-                key={activeVideo.youtubeId}
-                src={`https://www.youtube-nocookie.com/embed/${activeVideo.youtubeId}?rel=0&modestbranding=1`}
+                key={videoKey}
+                src={embedUrl}
                 title={activeVideo.title}
                 className="w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -96,8 +122,8 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
           /* 16:9 Standard Screen Frame */
           <div className="relative w-full aspect-video">
             <iframe
-              key={activeVideo.youtubeId}
-              src={`https://www.youtube-nocookie.com/embed/${activeVideo.youtubeId}?rel=0&modestbranding=1`}
+              key={videoKey}
+              src={embedUrl}
               title={activeVideo.title}
               className="w-full h-full border-0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -128,7 +154,7 @@ export function ProjectVideoDemo({ videos, projectTitle }: ProjectVideoDemoProps
 
           <div className="flex items-center gap-2 shrink-0">
             <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-white/5 text-[var(--text-dim)] border border-white/10">
-              {isShort ? "Azure Cloud / Mobile" : "1080p HD"}
+              {isDrive ? "Google Drive HD" : isShort ? "Azure Cloud / Mobile" : "1080p HD"}
             </span>
             <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
               Verified Evidence

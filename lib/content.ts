@@ -10,7 +10,8 @@ import communityData from "@/content/community.json";
 
 export type DemoVideo = {
   title: string;
-  youtubeId: string;
+  youtubeId?: string;
+  driveId?: string;
   badge?: string;
   description?: string;
   isShort?: boolean;

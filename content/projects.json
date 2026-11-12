@@ -101,7 +101,7 @@
     "demoVideos": [
       {
         "title": "DiaBp Mobile App & Medical OCR Demo",
-        "youtubeId": "lblDO-4C-2w",
+        "driveId": "198A_O6v1IySWRiwJ7UfCSPKIm9XYxugd",
         "badge": "Mobile & OCR Walkthrough",
         "description": "Full walkthrough of the Flutter mobile client: patient biometric tracking, camera-based lab report OCR scanning, and personalized AI diet plan generation for diabetes and hypertension management."
       },
@@ -141,7 +141,7 @@
     "demoVideos": [
       {
         "title": "DiaBp Mobile App & Medical OCR Demo",
-        "youtubeId": "lblDO-4C-2w",
+        "driveId": "198A_O6v1IySWRiwJ7UfCSPKIm9XYxugd",
         "badge": "Mobile & OCR Walkthrough",
         "description": "Demonstration of the DiaBp client application with medical lab report document OCR, biometric logging, and AI dietary consulting."
       },
